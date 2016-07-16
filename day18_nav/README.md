@@ -8,12 +8,6 @@ GREAT NAVIGATION IS GREAT UX : 좋은 네비게이션은 좋은 사용자경험�
 
 - 운용의 용이성. 키보드 접근성 
 
-- [ui-patterns.com](http://ui-patterns.com/patterns/navigation/list)
-- [Essential navigation patterns in 2016](http://www.webdesignerdepot.com/2016/01/essential-navigation-patterns-in-2016/)
-- [Essential navigation patterns in 2015](http://www.webdesignerdepot.com/2015/01/3-essential-navigation-trends-for-2015/)
-
-![UX NAV](../Assets/uxnav.jpg)
-
 -
 
 #### 내비게이션 제작 실습
@@ -58,21 +52,6 @@ GREAT NAVIGATION IS GREAT UX : 좋은 네비게이션은 좋은 사용자경험�
 
 - [clebee.net](https://www.clebee.net/)
 - [bvaccel.com](https://www.bvaccel.com/) : svg를 사용하여 마스크기법 구현 
-
--
-
-### Image Trimming & Slicing
-
-1. Photoshop Action
-1. Photoshop Image Assets Generator
-1. Photoshop Exports
-
--
-
-### Sprite Image
-
-1. Sprite Sheet
-1. Online Generator Sprite Image
 
 -
 
