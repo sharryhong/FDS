@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>imagemap요소 | 3일차 공부 내용</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="프론트엔드 개발을 위한 html을 배우고 있어요."> 
+		<meta name="keywords" content="프론트엔드, 개발, 스쿨, 패스트캠퍼스"> 
+		<meta name="author" content="sharry"> 		
+	</head>
+	<body>
+		<img src="images/worldmap.jpg" alt="세계지도" width="743" height="417" usemap="#world-map">
+		<!-- img요소의 usemap속성값과 map요소의 name속성값이 같으면 연결된다. -->
+		<map name="world-map">
+		<!-- 영역이 겹치면 area 위의 것이 우선시된다. -->
+			<area shape="rect" coords="58, 104, 200, 155" href="#" alt="미국" title="미국 페이지로 이동" target="_blank">
+			<!-- shape="rect" : 사각형 -->
+			<!-- coords="x1,y1,x2,y2" : 도형의 좌표값. gui툴 필요. -->
+			<!-- title 속성 : 사용자가 마우스 올릴 때 툴팁 나옴. 마우스기반인 테스크탑에서만 나옴. 모바일환경에서는 안나옴.  -->
+			<!-- target="_blank" : 새 페이지로 열기 -->
+			<area shape="cir" coords="" href="" alt="">
+			<!-- shape="cir" : 원 -->
+			<!-- coords="center-x, center-y, radius" -->
+			<area shape="poly" coords="" href="" alt="">
+			<!-- shape="cir" : 다각형 -->
+			<!-- coords="x1,y1,x2,y2,x3,y3..." -->
+		</map>
+		
+	</body>
+</html>

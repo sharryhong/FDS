@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!-- doctype선언은 xml이므로 !를쓰는 것. html은 root를 가리킴 
+	html5 doctype선언. 이 위에 아무것도 오면 안됨. 익스플로러에서 문제가 생김
+	서버측에서 세팅이 필요할 시 doctype선언 아래에 하도록 한다. -->
+<html lang="ko-KR" dir="ltr"> 
+<!-- lang : 언어. 이 페이지에서 주로 사용되는 언어 / ko-KR : 남한식 한국어 / en-GB : 영국식 영어
+	음성엔진을 한국어로 읽어줌
+	특정문장이 영어인 경우 그 요소에 <p lang="en">이라고 쓰면 됨 -->
+<!-- dir : direction(방향) 한국 등 왼쪽에서 오른쪽으로 읽음. 기본값이 ltr이므로 안써도 된다. 아랍권 등 rtl -->
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- meta:compat -->
+		<!-- 인터넷 익스플로러에서 제대로 나오게 하기 위해. 사용자 익스플로러의 최신브라우저로 동작하도록 한다. edge는 변수이다. 
+		이 코드 안쓰면 인터넷 익스플로러 7로 동작하는 문제 일으킴 
+		원래 표준은 아니지만 안쓰면 익스플로러 7로 인식하는 문제가 있으므로 쓰도록 하자. 
+		content="IE=8" 이라고 하면 IE8버전에서 안깨지는지 테스트 가능하다. -->
+		<meta charset="utf-8"> <!-- html5버전/ meta:utf 언어의 인코딩. 작성하지 않으면 한글이 깨질 수 있다. -->
+		<!-- <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> -->
+		<!--<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		title보다 위에 작성되어야 한다. 
+		meta는 정보를 나타내는 요소. 웹브라우저와 검색로봇에게도 정보를 제공한다. http통신규약. 
+		http-equiv(equivalent동등하다) 원래는 사용자가 요청하면 서버에서 응답해서 처리해줘야하는데, 서버보다는 front에서 해석한다는 뜻. 
+		content의 속성값 text/html : 이것은 text로 구성되어있는 html파일이구나 라고 알려줌
+		charset : 언어 인코딩  UTF-8은 전세계 언어 -->
+		<title>프론트엔드 개발 스쿨 | Front End Develop School</title>
+		<!-- | 같은건 하나정도. 여러개 쓰지 않도록 한다.  
+		"현재페이지 정보 | 전체 서비스 명칭" 이렇게 적어주면 좋다. -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"> -->
+		<!--meta:vp 모바일 최적화 환경 설정. meta name관련은 title 아래에 적어주는 것이 좋다. 
+		모바일 기본은 960px이다. 
+		기기마다 다른 너비에 맞춰보이게 한다. initial-scale:초기 스케일, maximum-scale:최대 스케일... user-scalable=no 사용자가 스케일 조정 못함 -->
+
+		<!-- 검색엔진(SEO) 최적화 -->
+		<meta name="description" content="프론트엔드 개발을 위한 html을 배우고 있어요."> 
+		<!-- 200~300자 내외. 한글의 경우 더 짧다. 모든 페이지마다 title(여러개 띄워놨을 때 ux에 안좋다), meta요소 값들은 바뀌는 것이 좋다.-->
+		<meta name="keywords" content="프론트엔드, 개발, 스쿨, 패스트캠퍼스"> <!-- 10개 내외 / 구글은 수집 안함 -->
+		<meta name="author" content="sharry"> 		<!-- seo수집안함 -->
+
+		<!-- 외부 스타일 문서 파일 호출(링크, 연결) -->
+		<link rel="stylesheet" href="css/style.css">
+		<!-- 크롬 개발자도구에서 network에서 제대로 연결되었는지 확인 
+		절대경로 : "css/style.css" : 서버구동시.. index.html 위치(day1폴더)를 root로 잡고 
+		상대경로 : "../css/style.css" : 현재 index.html에서 상위로 나가서 css폴더를 찾음 (x)
+		"./css/style.css" : 현재 내 위치에서 css폴더 찾음 (0)
+		-->
+	</head>
+	<body>
+		<!-- 단락 (Paragraph) -->
+		<p>title보다 위에 작성되어야 한다. 
+		meta는 정보를 나타내는 요소. 웹브라우저와 검색로봇에게도 정보를 제공한다. http통신규약. 
+		http-equiv 원래는 사용자가 요청하면 서버에서 응답해서 처리해줘야하는데, 서버보다는 front에서 해석한다는 뜻. 
+		content의 속성값 text/html : 이것은 text로 구성되어있는 html파일이구나 라고 알려줌
+		charset : 언어 인코딩  UTF-8은 전세계 언어</p>
+	</body>
+</html>

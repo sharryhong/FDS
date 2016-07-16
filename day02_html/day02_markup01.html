@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--[if IE 6]><html lang="ko-KR" class="lt-ie10 lt-ie9 lt-ie8 ie6"><![endif]-->
+<!--[if IE 7]><html lang="ko-KR" class="lt-ie10 lt-ie9 lt-ie8 ie7"><![endif]-->
+<!--[if IE 8]><html lang="ko-KR" class="lt-ie10 lt-ie9 ie8"><![endif]-->
+<!--[if IE 9]><html lang="ko-KR" class="lt-ie10 ie9"><![endif]-->
+<!--[if !IE]><!--><html lang="ko-KR"><!--<![endif]-->
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>마크업01 | 2일차 공부 내용</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="프론트엔드 개발을 위한 html을 배우고 있어요."> 
+		<meta name="keywords" content="프론트엔드, 개발, 스쿨, 패스트캠퍼스"> 
+		<meta name="author" content="sharry"> 		
+		<link rel="stylesheet" href="css/style.css">
+
+		<!-- 브라우저 핵 근절! -> 필터링(Filtering) 사용하자. 9이하만 적용 
+		:MS IE 조건무 주석문 사용 : IE 해석 가능
+		조건. IE 브라우저라면? 코드로 해석하여 처리 -->
+		<!--[if lt IE 9]>
+			<p>IE 9보다 작은 버전만 적용. (lt : less then)</p>
+			<p>if lte IE 9 : IE9와 같거나 작은 버전. (lte : less then equal)</p>
+		<![endif]-->
+		
+		<!-- 
+		cc:ie
+		cc:noie -->
+		
+		<style>
+			.ie7 body { background: yellow; }
+			.ie8 body { background: blue; }
+			.ie9 body { background: red; }
+			body {
+			background: green;
+			}
+	    </style>
+	</head>
+	<body>
+		<!-- 제목 영역  -->
+		<div> <!-- 의미없지만 구역 등 나눌 때 씀. (division)  -->
+			<!-- 제목 6단계 -->
+			<h1>Heading 1</h1>
+			<h2>Heading 2</h2>
+			<h3>Heading 3</h3>
+			<h4>Heading 4</h4>
+			<h5>Heading 5</h5>
+			<h6>Heading 6</h6>
+		</div>
+
+		<!-- .page-main|c 라고 쓰면 자동생성 -->
+		<div class="page-main"></div>
+		<!-- /.page-main -->
+		
+		<!-- 단락 등 나눌 때 씀. 수평선(Horizontal ) -->
+		<hr>
+		
+		<!-- 디자인상에서 enter를 눌렀다는 것 -->
+		<h3>Web Front-End!</h3>
+		<h3>Develop!</h3>
+
+		<!-- 디자인상에서 shift enter를 눌렀다는 것 -->
+		<h3>Web Front-End! <br>Develop!</h3>
+
+		<p><stong>Lorem ipsum</stong> dolor sit amet, <em>consectetur</em> adipisicing elit. Accusamus, dolores.</p>
+		<p>안고, 열락의 바이며, 청춘의 아름다우냐? 위하여 내는 구하지 이것이다. <br>원질이 그들의 없으면, 것이 품에 온갖 고행을 봄바람이다. 실로 불어 그들의 두기 목숨이 그림자는 청춘 그들의 것이다. 이상은 오직 행복스럽고 투명하되 부패를 설레는 인간의 ? 위하여 것은 그들은 뜨고, 웅대한 청춘의 착목한는 할지라도 것이다. 바이며, <stong>청춘</stong>에서만 위하여서, 어디 안고, <em>운다</em>. 목숨을 얼마나 보이는 수 같은 그들은 듣는다. 생명을 그들의 있을 같은 행복스럽고 운다. 싹이 안고, 곳이 얼마나 아니다.</p>
+
+		<!-- 특수문자 (html Entity code) -->
+		<!-- http://entitycode.com/ -->
+
+		<!-- h1.title{제목}|e 자동으로 인코딩되어 브라우저에서 꺾쇠 나오게 한다. -->
+		&lt;h1 class="title"&gt;제목&lt;/h1&gt;
+
+		<!-- h1+h2+h3+h4+h5+h6|e -->
+		<pre>
+&lt;h1&gt;&lt;/h1&gt;
+&lt;h2&gt;&lt;/h2&gt;
+&lt;h3&gt;&lt;/h3&gt;
+&lt;h4&gt;&lt;/h4&gt;
+&lt;h5&gt;&lt;/h5&gt;
+&lt;h6&gt;&lt;/h6&gt;
+		</pre>
+
+		<h1>제목1 <sub>아랫첨자</sub></h1>
+		<h2>제목2 <sup>윗첨자</sup></h2>
+	</body>
+</html>

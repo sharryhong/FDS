@@ -1,0 +1,67 @@
+body {
+	font-family: "Spoqa Han Sans";
+	font-weight: 200;
+	color: #fff;
+	background: 
+		linear-gradient(45deg, transparent 50%, hsla(0,50%,0%,0.3) 51%, transparent 52%),
+		linear-gradient(-45deg, transparent 50%, hsla(0,50%,0%,0.3) 51%, transparent 52%),
+		radial-gradient(circle at center 20%, transparent, black),
+		url("../img/halfton.png"), 
+		url("../img/rain-city.jpg") center no-repeat;
+	background-size: 
+		30px 30px,
+		30px 30px,
+		100%,
+		40px auto, 
+		cover;
+	text-shadow: 0 0 5px rgba(0,0,0,0.7);
+}
+
+
+::-moz-selection {
+	background: rgba(0,0,0,0.7);
+	color: #fff;
+	text-shadow: none;
+}
+
+::selection {
+	background: rgba(0,0,0,0.7);
+	color: #fff;
+	text-shadow: none;
+}
+
+#page-header-bar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: #fff;
+    text-shadow: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+main {
+    margin: 3em 20%;
+}
+
+#page-footer-bar {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.5) 20%);
+}
+
+#page-footer-bar h4 {
+    font-size: 1.3em;
+    text-shadow: none;
+    font-weight: 400;
+}
+
+#page-header-bar h4, #page-footer-bar h4 {
+    color: #1b7597;
+    padding: 1em;
+    margin-bottom: 0;
+    font-weight: 700;
+    text-align: center;
+}

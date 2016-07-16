@@ -1,0 +1,104 @@
+/*
+하이퍼링크 (<a href>)
+상태 디자인(State Design)
+가상 클래스 (유사클래스 Pseudo Class)
+------------------------------------
+:link 기본상태
+:visited 방문한 상태
+:hover 커서 올라간 상태 
+:active 커서로 누르고 있는 상태
+:focus 키보드 포커싱 상태 
+*/
+
+/*기본상태 a:link가 있으나 그냥 a로 한다. */
+a {
+	padding-left: 0.25em;
+	/*4px로 써도 되지만 em으로 하면 글자크기 키웠을 때 등 공간 유지에는 상대적인 em값이 좋다. */
+	padding-right: .25em;
+	/*.25 = 0.25*/
+	text-decoration: none;
+	color: #333;
+	/*font-size: 2.06em;*/
+	background-color: #fee;
+}
+
+/*방문한상태*/
+a:visited {
+	color: #999;
+	background-color: #eee;
+	background-image: url("../img/link.png");
+	/*color정도 적용되고, image 적용 안된다.*/
+}
+
+a:hover {
+	/*display: inline-block;
+	margin-top: -5px; */
+	/*display: inline-block;일 땐 margin-top: - 적용 안된다(테스트해보면 됨)*/
+	
+	/*text-decoration: underline;*/
+	/*gy등 아래로 내려가는 글자의 경우 underline을 쓰면 원하는 결과가 안나온다. */
+	padding-bottom: 1px;
+	border-bottom: 1px solid;
+	/*이렇게 하면 원하는 밑줄 생김*/
+}
+
+a:active {
+	background: #ff0;
+}
+
+a:focus {
+	outline: 3px solid green;
+}
+
+/*focus된 상태에서 hover*/
+a:focus:hover {
+	outline-offset: 10px;
+	/*outline거리를 벌려줌*/
+}
+
+.box,
+.box02{ 
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	margin-bottom: 10px;
+	background: yellow;
+}
+.box:hover{
+	border: 5px solid red; 
+}
+.box02:hover{
+	outline: 5px solid blue;
+}
+
+.rounded-box{
+	width: 200px;
+	background: #eee;
+}
+
+/*.rounded-box의 부모(body)로 부터 처음자식
+즉, 여기선 선택이 안된다. */
+.rounded-box:first-child{ 
+	background: yellow;
+}
+
+/*.rounded-box의 자손중 처음자식. 별표생략가능*/
+.rounded-box *:first-child{ 
+	background: yellow;
+}
+
+/*사용자가 커서로 클릭 후, 텍스트 블록을 선택할 경우 
+가상으로 요소를 만들어 디자인하기 IE9이상. 그룹화 안됨*/
+/*color, background-color, cursor, outline, 
+text-decoration, text-shadow 등만 반영됨*/
+/*caniuse.com에서 확인해보니 파이어폭스에선 -moz-붙여야한다.*/
+::-moz-selection{
+	background: red;
+	color: #fff;
+}
+::selection{
+	background: red;
+	color: #fff;
+	text-shadow: 2px 2px 10px blue;
+	/*x, y, blur, color*/
+}

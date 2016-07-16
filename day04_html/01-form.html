@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>form요소 | 4일차 공부 내용</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="프론트엔드 개발을 위한 html을 배우고 있어요."> 
+		<meta name="keywords" content="프론트엔드, 개발, 스쿨, 패스트캠퍼스"> 
+		<meta name="author" content="sharry"> 		
+	</head>
+	<body>
+		
+		<form action="#" method="GET" name="register_form">
+			<fieldset>
+				<legend>필수입력</legend>
+				<div>
+					<label for="user_id">ID : </label>
+					<input type="text" id="user_id" name="id" placeholder="아이디입력">
+				</div>
+				
+				<div>
+					<label for="user_pw">PW :</label>
+					<input type="password" id="user_pw" name="pw" placeholder="email@email.com">
+				</div>
+			</fieldset>
+			<!-- fieldset : 특정 필드를 묶어 구조화 시킬 수 있다. -->
+
+			<div>
+				<label for="org">활성화 안되는 입력창</label>
+				<input type="text" id="org" disabled value="입력하지마">
+			</div>
+			
+			<!-- input type 디폴트 : text. type : text / submit / button / radio / checkbox / hidden(숨겨진 데이터 정보) / image / file ... -->
+
+			<div>
+				<h3>Gender</h3>
+				<!-- label 명시적 방법 -->
+				<div>
+					<input type="radio" name="ragister-gender" id="gender-male" value="1"><label for="gender-male">Male</label>
+					<input type="radio" name="ragister-gender" id="gender-female" value="2"><label for="gender-female">Female</label>
+					<!-- name이 같으면 같은 radio 그룹  -->
+				</div>
+
+				<!-- label 암묵적 방법. 아래와 같이 코드가 짧아지며 id를 안써도 된다. -->
+				<div>
+					<label><input type="radio" name="ragister-gender2" value="1">Male</label>
+					<label><input type="radio" name="ragister-gender2" value="2" checked="checked">Female</label>
+				</div>
+			</div>
+
+			<div>
+				<h3>Hobby</h3>
+				<ul>
+					<li>
+						<label><input type="checkbox" name="register-hobby" value="book">독서</input></label>
+					</li>
+					<li>
+						<label><input type="checkbox" name="register-hobby" value="sleep" checked="checked">잠자기</input></label>
+					</li>
+					<li>
+						<label><input type="checkbox" name="register-hobby" value="movie">영화감</input></label>
+					</li>
+				</ul>
+			</div>
+
+			<div>
+				<label for="register-upload">File</label>
+				<input type="file" id="register-upload" name="register-upload" multiple>
+			</div>
+			
+
+
+			<textarea name="txt" id="txt" cols="30" rows="10"></textarea>
+			<!-- cols="30" rows="10" : css로 가로 넓이 제어하기 보다는 html에서 textarea에 써준다.  -->
+			<!-- css로 창 크기변경 하는 것을 제어할 수 있다.  -->
+
+			<!-- select : 콤보박스 -->
+			<div>
+				<h3>Your Job</h3>
+				<select name="registar-job">
+					<option value="">Select Your Job</option>
+					<optgroup label="school">
+						<option value="student">student</option>
+						<option value="teacher">teacher</option>
+					</optgroup>
+					<optgroup label="web">
+						<option value="designer">designer</option>
+						<option value="developer" selected>developer</option>
+					</optgroup>
+				</select>
+				<!-- selected : 처음에 선택되어짐 -->
+			</div>
+
+
+			<input type="submit" value="전송"> <!-- 차이 : 뒤에 컨텐츠가 없다. Role : textbox. -->
+			<!-- value="표시". button 컨텐츠처럼 표시됨 -->
+			
+			<button type="submit">button submit</button> <!-- 차이 : button은 스크린리더기에서 버튼이라고 읽어준다. Role : botton -->
+			<!-- button type = submit, reset, button -->
+			<!-- input, button 둘다 의미 submit이 된다. -->
+			<!-- 많은 사람들이 a요소로 버튼을 만들지만, 접근성엔 좋지 않다. a요소는 role이 link이다.  -->
+
+			
+		</form>
+
+	</body>
+</html>

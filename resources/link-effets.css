@@ -1,0 +1,135 @@
+@charset "utf-8";
+
+/*기본 링크 스타일 */
+/*a의 기본 밑줄선이 딱 달라붙어서 조금 떨어지게 함*/
+a {
+	text-decoration: none;
+	padding-bottom: 2px; /*하위브라우저*/
+	padding-bottom: 0.125rem;
+	border-bottom: 1px solid; /*하위브라우저*/
+	border-bottom-width: 0.0625rem solid; 
+}
+
+/*배경 색상 페이드(Fade In/Out) */
+
+.fade-bg {
+	display: inline-block;
+	vertical-align: bottom;
+	padding: 0.25rem 0.375rem;
+	transition: all 0.25s;
+}
+
+.fade-bg:hover,
+.fade-bg:focus {
+	background: #65b1e3;
+	color: #fff;
+}
+
+/*전 방위 슬라이드*/
+
+a[class*="slide-"] {
+	position: relative;
+	overflow: hidden;
+	display: inline-block;
+	padding-bottom: 0;
+	vertical-align: bottom;
+	padding: 0.06em 0.12em;
+}
+
+a[class*="slide-"]::after {
+	position: absolute;
+	width: 100%;
+	padding: 0.06em 0.12em;
+	content: attr(data-linktext);
+	background: #33a1e3;
+	color: #fff;
+	transition: all 0.5s;
+	/*
+	장면전환 A장면 -> B장면, B -> A 
+	animation과 다르다. 별도의 사용자 인터렉션 없이 처음부터 움직임을 제어하려면 animation
+	keyframe 기반으로 애니메이션 제어하려면 animation
+	*/
+}
+
+a.slide-from-left::after { left: -100%; }
+a.slide-from-left:hover::after,
+a.slide-from-left:focus::after { left: 0; }
+
+a.slide-from-right::after { right: -100px; }
+a.slide-from-right:hover::after,
+a.slide-from-right:focus::after { right: 0; }
+
+a.slide-from-top::after { top: -30px; left: 0; }
+a.slide-from-top:hover::after,
+a.slide-from-top:focus::after { top: 0px; }
+
+a.slide-from-bottom::after { bottom: -30px; left: 0; }
+a.slide-from-bottom:hover::after,
+a.slide-from-bottom:focus::after { bottom: 0px; }
+
+/*언더라인 페이드*/
+.fade-underline {
+	border-bottom: 2px solid transparent;
+	transition: color 0.25s ease, border-bottom-color 0.25s linear 0.3s;
+	/*0.2s 빠르네, 0.4s , 0.6s 보통, 1s 느리네..
+	linear : 선형(등속.가속없음)
+	0.3s : 지연*/
+}
+
+.fade-underline:hover,
+.fade-underline:focus {
+	color: #c90039;
+	border-bottom-color: currentColor;
+}
+/*transition을 주려면 border: none을 주면 안된다. border는 있는 상태에서! */
+
+a[class*="underline-"] {
+	position: relative;
+	/*background-image: linear-gradient(to bottom);*/
+	/*deg대신 to bottom, to right.. 이렇게 써도 된다. */
+	border-bottom: none;
+}
+
+a[class*="underline-"]::before {
+	content: '';
+	position: absolute;
+	top: 100%;
+	border-bottom: 2px solid currentColor;
+	transition: all 0.25s;
+}
+
+a.underline-from-left::before {
+	left: 0;
+	right: 100%;
+}
+
+a.underline-from-left:hover::before,
+a.underline-from-left:focus::before {
+	left: 0;
+	right: 0%;
+	/*left: 0; right: 0%; = width: 100% */
+}
+
+a.underline-from-right::before {
+	left: 100%;
+	right: 0;
+}
+
+a.underline-from-right:hover::before,
+a.underline-from-right:focus::before {
+	left: 0;
+	right: 0;
+	/*left: 0; right: 0%; = width: 100% */
+}
+
+a.underline-from-center::before {
+	left: 50%;
+	right: 50%;
+}
+
+a.underline-from-center:hover::before,
+a.underline-from-center:focus::before {
+	left: 0;
+	right: 0;
+	/*left: 0; right: 0%; = width: 100% */
+}

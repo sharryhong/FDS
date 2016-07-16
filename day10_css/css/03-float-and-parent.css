@@ -1,0 +1,69 @@
+.parent {
+	/* 방법 1.
+	float: left;
+	부모 요소도 띄우면(float) 자식 높이 인식 -> 쓰지 않도록 한다.*/
+	margin-bottom: 2rem;
+	background: #efefef;
+	border: 1px solid #eee;
+	/*padding: 1rem;*/
+}
+
+.child {
+	float: left;
+	width: 140px;
+	height: 100px;
+	text-align: center;
+	line-height: 100px;
+	color: #fff;
+}
+
+.child:first-child {
+	background: #f22;
+}
+.child:nth-child(2) {
+	background: #2f2;
+}
+.child:last-child {
+	background: #22f;
+}
+
+/* 방법 2. 
+.clear {
+	clear: both;
+}
+*/
+
+/*
+방법 3. 
+부모요소에 overflow: hidden이나 auto를 주면 높이가 생긴다. 
+*/
+/*.float-container {
+	overflow: hidden;
+}*/
+
+/*clearfix 처음에 했던 방법*/
+/*.clearfix::after {
+	display: block;
+	content: 'pseudo element';
+	clear: both;
+	visibility: hidden;
+	height: 0;
+}*/
+
+/*content에 내용이 없으면 아래 두 줄 필요없음. 요샌 이렇게만 씀. IE 8이상.*/
+.clearfix::after {
+	display: block;
+	content: '';
+	clear: both;
+}
+/*이 방법은 오페라에서 안먹음*/
+
+/*이 방법은 오페라에서도 됨*/
+.micro-clearfix::before,
+.micro-clearfix::after {
+	display: table;
+	content: '';
+}
+.micro-clearfix::after {
+	clear: both;
+}

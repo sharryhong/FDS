@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+* { box-sizing: border-box; }
+
+p {
+	float: left;
+	background: #eee;
+	width: 25%;
+	padding: 1rem;
+	background: #ff0;
+	background-clip: content-box;
+	background-origin: content-box;
+	/*background-clip: content-box; 배경색 기본위치를 content영역으로 잡기 
+	background-origin: 배경이미지 기본위치는 border부터인데 padding, content등으로 바꿔줄 수 있다. */
+}

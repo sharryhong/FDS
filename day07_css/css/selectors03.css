@@ -1,0 +1,14 @@
+/*.parent *{
+	border: 1px solid #999;
+}*/
+
+/*parent클래스 내 모든 요소 중에 a요소, p요소 제외*/
+.parent *:not(a):not(p){
+	border: 1px solid #999;
+}
+
+/*이렇게는 안됨*/
+/*.parent *:not(a, p){
+	border: 1px solid #999;
+}
+*/

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>form요소 디자인 | 3일차 공부 내용</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="프론트엔드 개발을 위한 html을 배우고 있어요."> 
+		<meta name="keywords" content="프론트엔드, 개발, 스쿨, 패스트캠퍼스"> 
+		<meta name="author" content="sharry"> 		
+	</head>
+	<body>
+		<h2>폼 디자인(설계) : 사용자 정보 등록 폼</h2>
+		<!-- 사용자로부터 정보를 입력받기 위한 양식 -->
+		<form action="#" method="post" name="form_name" enctype="multipart/form-data"> 
+		<!-- action="데이터전송목적지.php" -->
+		<!-- method : 폼의 내용을 서버로 전송하는 방식. post : 보안적. get : 덜 보안적(주소 뒤에 다 붙음) -->
+		<!-- name : form에서는 _을 사용하도록 한다. javaScript에서는 _만 사용하기때문 -->
+		<!-- enctype : 위에 쓴건 파일 업로드할때만 쓰고, 아닐때는 기본처리방식이 있으므로 안써도 된다.  -->
+			<p>
+				<!-- label연결을 해야 스크린리더기가 제대로 읽어준다. -->
+				<!-- input 요소에 암묵적 레이블 연결 : 일부 스크린리더는 안읽는다. 쓰지말자. -->
+				<label>ID : <input type="text" name=""></label>	  
+				<!-- input 요소에 명시적 레이블 연결 -->
+				<!-- label for = input id -->
+				<label for="user_id">ID : </label>
+				<input type="text" name="user_id" id="user_id">
+				<!-- name이 있어야 서버에 전송된다. name값이 꼭 user_id일 필요는 없다. 
+				input text에 값이 sharry라고 입력되면 name.value로 sharry를 알 수 있다.-->
+			</p>
+			<p>
+				<label for="user_pw">PASSWORD :</label> 
+				<input type="password" name="user_pw" id="user_pw">
+			</p>
+			<p>
+				<label for="user-email">E-mail :</label> 
+				<input type="email" name="user-email" id="user-email">
+				<!-- type="email" : @가 없으면 오류안내해줌  -->
+			</p>
+			<p>
+				<button type="submit">전송</button> 
+				<button type="reset">초기화</button>
+			</p>
+		</form>
+
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>Parent Element in Floating Child Elements</title>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+	<link rel="stylesheet" href="../resources/reset.css">
+	<link rel="stylesheet" href="../resources/common.css">
+	<link rel="stylesheet" href="css/05-test-float-layout.css">
+</head>
+<body>
+	
+	<div class="wrap clearfix">
+		<div class="width-2x boxs">1</div>
+		<div class="width-1x boxs">2</div>
+		<div class="width-1x boxs">3</div>
+		<div class="width-1x boxs">4</div>
+		<div class="width-1x boxs">5</div>
+		<div class="width-1x boxs">6</div>
+		<div class="width-1x boxs">7</div>
+		<div class="width-1x boxs">8</div>
+	</div>
+	
+	<div class="wrap clearfix">
+		<div class="width-1x boxs">1</div>
+		<div class="width-1x boxs">2</div>
+		<div class="width-1x height-2x push-2x boxs">3</div>
+		<div class="width-1x boxs">4</div>
+		<div class="width-1x boxs">5</div>
+		<div class="width-1x boxs">6</div>
+		<div class="width-1x boxs">7</div>
+		<div class="width-1x boxs">8</div>
+	</div>
+
+	<div class="wrap clearfix">
+		<div class="width-3x boxs">1</div>
+		<div class="width-1x boxs">2</div>
+		<div class="width-1x height-3x boxs">3</div>
+		<div class="width-1x boxs">4</div>
+		<div class="width-1x boxs">5</div>
+		<div class="width-1x boxs">6</div>
+		<div class="width-1x boxs">7</div>
+		<div class="width-1x boxs">8</div>
+	</div>
+
+</body>
+</html>

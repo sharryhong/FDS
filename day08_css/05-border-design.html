@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>css 테두리 디자인</title>
+	<style>
+		.box {
+			display: table-cell;
+			/*vertical-align: middle; 잘 적용되나, block이 옆으로 붙는다.*/
+			width: 200px;
+			height: 200px;
+			background: #fff;
+			color: #ee3399;
+			border: 10px solid;
+			/*border color 지정 안하면 color값 상속받음*/
+			border-bottom-width: 20px;
+			border-bottom-color: transparent;
+			border-right-color: orange;
+			/*
+			1. border 속경으로 쓰고
+			2. border세부적으로 디자인해주면 다양한 디자인 적용가능 */
+			text-align: center;
+			vertical-align: middle;
+			/*display:inline, display:table-cell에만 적용됨
+			여기서 display: inline;으로 하면 width, height등 적용 안됨*/
+			/*line-height: 200px;
+			한줄일때만 잘되고, 여러줄이면 사용못함*/
+			/*가장 좋은 문제 해결방법은 flex box를 쓰는 것이다.*/
+		}
+
+		.border-solid {border-right-style: solid;}
+		.border-dashed {border-right-style: dashed;}
+		.border-dotted {border-right-style: dotted;}
+
+		.nanum {
+			font-family: "Nanum Gothic", 나눔고딕, 돋움, Dotum, Sans-Serif;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="box border-solid nanum">SOLID</div>
+	<div class="box border-dashed">DASHED</div>
+	<div class="box border-dotted">DOTTED</div>
+
+</body>
+</html>

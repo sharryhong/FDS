@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>css선택자 활용 파일 포멧 아이콘 설정</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="프론트엔드 개발 넌 나에게 와라~">
+	<meta name="keywords" content="프론트엔드, 개발, 스쿨, 패스트캠퍼스">
+	<meta name="author" content="sharry">
+	<link rel="stylesheet" href="css/file-format-icons.css">
+</head>
+<body>
+	
+	<div class="lecture">
+		<h2 class="lecture-title">파일포멧 타입 체크 아이콘들</h2>
+		
+		<!-- 이렇게 작성 단점 : 유지보수가 어렵다. -->
+		<ul class="lecture-file-list">
+			<li class="lecture-file-item"><a href="resources/file.doc"><img src="img/icons-doc.png" alt>file-doc</a></li>
+			<li class="lecture-file-item"><a href="resources/file.mov"><img src="img/icons-mov.png" alt>file-mov</a></li>
+			<li class="lecture-file-item"><a href="resources/file.psd"><img src="img/icons-psd.png" alt>file-psd</a></li>
+			<!-- 내용에 설명이 있으므로 alt값 없어도 되나, alt는 반드시 써야한다. IE8이상부터는 alt="" 대신 alt만 써도 된다. -->
+		</ul>
+	</div>
+
+	<div class="lecture reset-list">
+		<!-- css의 속성선택자로 자동화 하자 -->
+		<ul class="lecture-file-list">
+			<li class="lecture-file-item"><a href="resources/file.doc">file-doc</a></li>
+			<li class="lecture-file-item"><a href="resources/file.mov">file-mov</a></li>
+			<li class="lecture-file-item"><a href="resources/file.psd">file-psd</a></li>
+		</ul>
+	</div>
+
+	<!-- .demo>ul>li*3>a{item-$$@10}
+	숫자 10부터  -->
+	<!-- <div class="demo reset-list">
+		<ul>
+			<li><a href="">item-10</a></li>
+			<li><a href="">item-11</a></li>
+			<li><a href="">item-12</a></li>
+		</ul>
+	</div> -->
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+div {
+	display: inline-block;
+}
+
+.sprite-ani-boy {
+	width: 120px;
+	height: 182px;
+	background: url("../images/css-sprite-animation-steps-adam.png") no-repeat;
+	animation: goBoy steps(7) .7s infinite;
+}
+
+.sprite-ani-ken{
+	width: 70px;
+	height: 110px;
+	background: url("../images/css-sprite-animation-steps-ken-shoryuken.png") no-repeat;
+	animation: ken steps(6) .4s infinite;
+}
+
+.sprite-ani-cat{
+	width: 399px;
+	height: 199.4166px;
+	background: url("../images/css-sprite-animation-steps-rachel.png") no-repeat;
+	animation: cat steps(11) .8s infinite;
+}
+
+.sprite-ani-mario{
+	width: 40px;
+	height: 57px;
+	background: url("../images/css-sprite-animation-steps-mario.png") no-repeat;
+	animation: mario steps(26) 1s infinite;
+}
+
+@keyframes goBoy {
+	0% { background-position-x: 0; }
+	100% { background-position-x: -840px; }
+}
+
+@keyframes ken {
+	0% { background-position-x: 0; }
+	100% { background-position-x: -420px; }
+}
+
+@keyframes cat {
+	0% { background-position-y: 0; }
+	100% { background-position-y: -2194px; }
+}
+
+@keyframes mario {
+	0% { background-position-x: 0; }
+	100% { background-position-x: -1040px; }
+}

@@ -1,0 +1,113 @@
+@charset "utf-8";
+/*꼭 써야하는건 아니지만 한글이 깨져보일 경우 꼭 쓰자.*/
+
+/*! selectors.css 홍효선, 2016 */
+/*나중에 압축할 때 주석은 지우지만 저작권 정보가 들어있는 이 부분만 남긴다.*/
+
+/*
+* ----------------
+* CSS 선택자 
+* ----------------
+* 요소 선택자 요소명(E) : 점수 0001
+* 전체 선택자 * : 0점 
+* 자손 선택자 E E (띄어쓰기) 
+* 자식 선택자 부모E > 자식E 
+* 클래스 선택자 . : 0010점
+* 아이디 선택자 # : 0100점
+
+* 그룹핑 E, E, E : 작성하고 공통적인 것을 묶자 
+*/
+
+body {
+	/*margin: 0;*/
+	/*글자 크기 변경*/
+	/* font-size: 20px;
+	고정 값(기기에 따라 다르다.) px을 상대 값(em : equal M)으로 변경하고자 한다면?
+	font-size: 20/16em;
+	emmet에서 지원 : ctrl+shift+y; */
+	font-size: 1.25em;
+}
+
+/*body * {
+	margin: 0;
+}*/
+
+/*body, body * {
+	margin: 0;
+}*/
+
+html * {
+	margin: 0;
+}
+
+* {	margin: 0; }
+/* 이렇게 쓰지 않도록 하자. -> 속도 부하가 생길 수 있다. */
+/*각 섹션을 초기화 하는 것이 좋다.*/
+
+body, #shopping1 * {
+	margin: 0;
+}
+/*이런식으로 요소 + 그룹핑 + 아이디 + 전체선택자 */
+/*점수 : body 1점, 클래스 10점, id 100점, * 0점 */
+
+/*#shopping1 > * */
+/*id가 shopping1인 요소의 직접적인 자식들 */
+
+#shopping1 > h4 {
+	color: red;
+}
+#shopping1 h4 {
+	background: yellow;
+}
+/*button {
+	border: none;
+	background: transparent;
+}*/
+.btn {
+	color: #fff;
+	background: #000;
+	border: none;
+	cursor: pointer;
+}
+.btn-buy {
+	color: orange;
+}
+.btn-cancel-buy {
+	color: lime;
+}
+.btn.btn-cancel-buy {
+	background: #666;
+}
+
+/*인접 형제 선택자 E + E*/
+.parent ul { border: 1px solid red; }
+.parent h4 + ul { border: 2px solid lightblue; }
+
+/*일반형제 선택자 [ E ~ E ]*/
+.products h4 ~ ul { color: green; }
+
+/*id 속성을 지닌 요소에 적용 : 실무에선 안쓴다.*/
+[id] { border: 2px dotted blue; }
+
+/*특정 id선택자를 찾을 때
+방법 1. [id="idname"] {}
+방법 2. #idname {}*/
+
+/*class속성을 지닌 요소에 적용*/
+[class] { outline: 3px solid rgba(255,255,0,0.5); }
+
+/*특정 class선택자를 찾을 때
+방법 1. [class=""]
+방법 2. */
+
+[type="button"] { font-size: 3em; }
+
+
+[class="snack"] : classname이 반드시 snack이어야 한다. 
+[class="snack seeu"] : classname이 반드시 snack seeu이어야 한다.
+
+[class^="snack"] : classname에 snac으로 시작하는 클래스 모두 적용됨 
+
+a[href][title][data-href] : 셋다 가지고 있을 때 
+
+a[href$=".docx"] : 끝나는 값이 .docx이면 워드 아이콘주기.. 이렇게 활용하면 좋다.

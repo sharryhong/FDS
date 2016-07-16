@@ -1,0 +1,49 @@
+/*
+.container {
+	width: 100%;
+	background: yellow;
+
+}
+
+.boxmodel {
+	width: 300px;
+	height: 300px;
+	padding: 20px;
+	border: 30px solid rgba(100,100,0,0.5);
+	margin: 30px;
+	background-color: #eee;
+}*/
+
+/*마진이 상하방향으로 접혀지는 현상*/
+h2 {
+	font-weight: bolder;
+	/*하위브라우저는 숫자지원 안함*/
+	font-weight: 900;
+	/*normal 400, bold 700, bolder 900*/
+	font-size: 2.2em;
+	/*px로 입력할 경우 소숫값이 있으면 브라우저마다 다르게될 수 있다. */
+	/*나중엔 em단위의 단점을 보완한 rem단위를 주로 쓸 것*/
+	/*margin-bottom: 1.88em;*/
+	/*h1요소 font-size에 대한 1.88배*/
+	margin-bottom: 30px;
+}
+
+p {
+	margin-top: 20px;
+	color: #333;
+	font-size: 0.875em;
+}
+
+/*h2의 margin-bottom이 p의 margin-top보다 크므로 30px이 적용된다.*/
+
+/*p는 블록이나, 안의 텍스트는 인라인*/
+
+p a {
+	background: #000;
+	color: #fff;
+}
+
+p span {
+	background: red;
+	color: yellow;
+}

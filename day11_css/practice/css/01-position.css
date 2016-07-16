@@ -1,0 +1,89 @@
+body {
+	color: #fff;
+}
+
+.wrap {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	background-image: url("../img-position/ring-bg.jpg");
+	background-size: 100% 100%;
+}
+
+h1 {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	font-size: 1.5rem;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.search {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+[type="search"] {
+	width: 120px;
+	background: none;
+	border: none;
+	border-bottom: 1px solid rgba(255,255,255,0.8);
+	color: inherit;
+	font-size: inherit;
+}
+
+.search button {
+	background: none;
+	border: none;
+	cursor: pointer;
+	color: #fff;
+	font-size: 1.2rem;
+}
+
+i.fa {
+	overflow: hidden;
+}
+
+i.fa span {
+	position: absolute; 
+	left: -9999px;
+}
+
+.title {
+	width: 70vw;
+	padding-top: 50vh;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	color: #edd358;
+	text-shadow: 0.125rem 0.3125rem 0.3125rem rgba(0,0,0,0.5);
+}
+
+.title h2 {
+	font-size: 5vmax;
+	font-weight: bold;
+	margin-bottom: 1.5vmax;
+}
+
+.title h3 {
+	font-size: 2vmax;
+	font-weight: bold;
+}
+
+.setting {
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+}
+
+.todo {
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+}
+

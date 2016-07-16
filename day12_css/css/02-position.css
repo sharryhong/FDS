@@ -1,0 +1,58 @@
+body {
+	height: 100vh;
+	background: #eee;
+	background-image: radial-gradient(closest-corner, #fff 0%, #3478aa 100%);
+}
+
+.button-movie-control {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	/*Chrome, Safari, Opera*/
+	-webkit-transform: translate(-50%, -50%);
+	/*IE 9*/
+	-ms-transform: translate(-50%, -50%);
+	/*web standard*/
+	transform: translate(-50%, -50%);
+}
+
+button[class^="button-"] {
+	position: relative;
+	float: left;
+	padding: 1em 3em;
+	border: none;
+	border-left: 2px solid #333;
+	border-top: 2px solid #333;
+	border-bottom: 2px solid #333;
+	cursor: pointer;
+	background: none;
+	background-image: linear-gradient(0deg, #399 0%, #3cc 100%);
+	box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+button[class^="button-"]:hover,
+button[class^="button-"].on {
+	background-image: linear-gradient(180deg, #e33 0%, #eaa 100%);
+}
+
+button[class^="button-"]:active {
+	background-image: linear-gradient(180deg, #f33 0%, #faa 100%);
+}
+
+button[class^="button-"]:first-child {
+	border-top-left-radius: 30px;
+	border-bottom-left-radius: 30px;
+}
+
+button[class^="button-"]:last-child {
+	border-right: 3px solid #333;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 30px;
+}
+
+button[class^="button-"] .fa {
+	position: absolute;
+	top: 0.3125rem;
+	left: 0.9375rem;
+	font-size: 0.5em;
+}

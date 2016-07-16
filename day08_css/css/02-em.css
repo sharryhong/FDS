@@ -1,0 +1,95 @@
+/*em단위 사용의 어려움*/
+/*rem(root em)단위는 IE9부터 가능. IE9부터 고려한다면 필수!
+root = html 의 폰트사이즈 바꿔주면 자동으로 변경된다. 
+유지보수, 설계상 아주 좋다. px은 아주 안좋음. 
+*/
+
+html {
+	font-size: 100%;
+	/*16px*/
+}
+
+body {
+	font-size: 87.5%;
+	/*16*0.875 = 14px*/
+}
+
+div {
+	width: 60%;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10%;
+}
+
+.wrapper-parent {
+	font-size: 40px;
+	font-size: 2.5em;
+	/*40/16(기본폰트크기)를 적용하여 2.5em으로 했으나
+	body에서 14px로 바꿨기 때문에 
+	2.5*14 = 35px로 된다.*/
+	font-size: 2.5rem;
+	background: #eee;
+}
+.parent {
+	font-size: 30px;
+	font-size: 1.88em;
+	/*폰트사이즈는 상속된다. 35*1.88 = 65.8px이 된다.*/
+	font-size: 1.88rem;
+	background: #999;
+}
+.child {
+	font-size: 20px;
+	font-size: 1.25em;
+	font-size: 1.25rem;
+	background: yellow;
+}
+.inner-child {
+	font-size: 10px;
+	font-size: 0.63em;
+	font-size: 0.63rem;
+	background: green;
+}
+
+/*실제 작업시엔 px, rem만 쓰면된다*/
+/*rem의 경우 IE9부터 되는데, IE9, 10에서 font: ..px serif;처럼 속경으로 쓸 땐 rem단위 쓰면 안된다.*/
+
+/*css3 미디어쿼리 사용
+  @media 조건1 and 조건2*/
+/*중단점(Breakpoint) 설계 : 브라우저 width크기에 따라 글자 크기 달라지게 해보기 
+  --1-- 600px --2-- 1000px --3--
+*/
+/*모바일 first로 하는 것이 좋다. 모바일 시장성이 크므로 */
+
+/*미디어*/
+@media screen {
+	/*모든 스크린에서 됨*/
+	/*ie8이하에서도 되는데 미디어쿼리가 안먹을 경우 의도한 바가 다를수 있어서 
+	아래처럼 only로 쓰는 경우가 많다.*/
+}
+@media only screen {
+	/*ie8이하는 안됨*/
+}
+
+/*미디어쿼리*/
+/*아래 px단위보다는 em단위로 쓰는 것이 좋다.*/
+/*기준값이 항상 16px이다. 600/16으로 하면됨*/
+@media only screen and (max-width: 600px) {
+	body::before {
+		content: "스크린 폭이 600px보다 작다."
+	}
+	body { background: #000; }
+}
+@media only screen and (min-width: 601px) and (max-width: 1000px) {
+	body::before {
+		content: "스크린 폭이 601px ~ 1000px."
+	}
+	body { background: #999; }
+}
+@media only screen and (min-width: 1001px) {
+	body::before {
+		content: "스크린 폭이 1001px보다 크다."
+	}
+	body { background: #ffe; }
+}
+

@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+html, body { height: 100%; }
+
+header, footer {
+	height: 200px;
+	background: green;
+}
+
+main {
+	min-height: 100%;
+	margin-top: -200px;
+	margin-bottom: -200px;
+	background: yellow;
+}
+

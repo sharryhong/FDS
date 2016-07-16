@@ -1,0 +1,109 @@
+/*
+width : 960px
+Grid System (120 [unit(120) + gutter(0)], 8 columns)
+base font-size : 
+base leading-ratio : 10px
+*/
+
+
+/*grid-container Module*/
+.grid-container {
+	position: relative;
+	width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.grid-container.show-grid::before {
+	content: '';
+	position: absolute;
+	z-index: 1000;
+	top: 0;
+	width: 100%;
+	height: 2000px;
+}
+
+.grid-container.show-grid::before {
+	background: hsla(60, 50%, 50%, 0.3);
+	background: 
+		linear-gradient(90deg, rgba(191, 64, 64, 0.3) 50%, rgba(0,0,0,0.1) 50%),
+		linear-gradient(transparent 90%, #26923f 90%);
+	background-size: 
+		240px 1px,
+		1px 10px;
+}
+
+/*grid Module*/
+.grid::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+/*unit Module*/
+[class*="unit-"] {
+	float: left;
+}
+
+
+.grid .last, .grid .omega { margin-right: 0; }
+
+.unit-1 { width: 120px; }
+.unit-2 { width: 240px; }
+.unit-3 { width: 360px; }
+.unit-4 { width: 480px; }
+.unit-5 { width: 600px; }
+.unit-6 { width: 720px; }
+.unit-7 { width: 840px; }
+.unit-8 { width: 960px; }
+
+/*
+push, pull Module : using position: relative;
+*/
+.grid [class*="push-"],
+.grid [class*="pull-"] {
+	position: relative;
+}
+
+.push-1 { left: 120px; }
+.push-2 { left: 240px; }
+.push-3 { left: 360px; }
+.push-4 { left: 480px; }
+.push-5 { left: 600px; }
+.push-6 { left: 720px; }
+.push-7 { left: 840px; }
+.push-8 { left: 960px; }
+
+/*
+pull
+*/
+.pull-1 { right: 120px; }
+.pull-2 { right: 240px; }
+.pull-3 { right: 360px; }
+.pull-4 { right: 480px; }
+.pull-5 { right: 600px; }
+.pull-6 { right: 720px; }
+.pull-7 { right: 840px; }
+.pull-8 { right: 960px; }
+
+/*
+prefix, suffix Module : float -> margin, padding
+margin or padding 
+*/
+.prefix-1 { margin-left: 120px; }
+.prefix-2 { margin-left: 240px; }
+.prefix-3 { margin-left: 360px; }
+.prefix-4 { margin-left: 480px; }
+.prefix-5 { margin-left: 600px; }
+.prefix-6 { margin-left: 720px; }
+.prefix-7 { margin-left: 840px; }
+.prefix-8 { margin-left: 960px; }
+
+.suffix-1 { margin-right: 120px; }
+.suffix-2 { margin-right: 240px; }
+.suffix-3 { margin-right: 360px; }
+.suffix-4 { margin-right: 480px; }
+.suffix-5 { margin-right: 600px; }
+.suffix-6 { margin-right: 720px; }
+.suffix-7 { margin-right: 840px; }
+.suffix-8 { margin-right: 960px; }

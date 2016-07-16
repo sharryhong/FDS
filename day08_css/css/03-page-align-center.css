@@ -1,0 +1,43 @@
+.page {
+	background: yellow;
+	/*width: 50%;*/
+	/*width: 50vw;*/
+	/*vw : viewport width
+	width: 50%;와 동일*/
+	width: 70%;
+	height: 100vh;
+	/*vh : viewport height 브라우저 보이는 높이*/
+	margin-left: auto;
+	margin-right: auto;
+	/*자동으로 여백의 반씩 이동해줘서 중앙으로 이동*/
+}
+
+.vcenter {
+	width: 500px;
+	height: 50vh;
+	margin: 25vh auto;
+	padding-top: 1.25rem;
+	padding-left: 1.25rem;
+	background: #3e9;
+}
+
+.print-class-attr::before {
+	display: block;
+	content: attr(data-name);
+	/*동적으로 data-name값 가져와서 content내용되기. 많이 쓰진않는다.*/
+	color: #fff;
+	font-size: 1.38rem;
+}
+
+.inner-vcenter {
+	width: 70%;
+	height: 50%;
+	padding-top: inherit;
+	padding-left: inherit;
+	background: #e95;
+}
+
+.inner-vcenter::before {
+	font-size: 1.25rem;
+}
+

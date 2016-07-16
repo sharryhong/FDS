@@ -1,0 +1,89 @@
+.wrap {
+	width: 902px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid #eee;
+}
+
+.boxs {
+	float: left;
+	width: 50%;
+	text-align: center;
+}
+
+.speaker-1x {
+	float: left;
+	width: 50%;
+}
+
+.boxs-texts {
+	position: relative;
+}
+
+.speaker-2x:hover,
+.speaker-1x:hover {
+	background: #fff1e2;
+}
+
+.img-left:hover .boxs-texts::after,
+.img-right:hover .boxs-texts::after {
+	position: absolute;
+	top: 50%;
+	display: block;
+	content: '';
+	width: 15px;
+	height: 30px;
+	z-index: 100;
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent;
+}
+
+.img-left:hover .boxs-texts::after{
+	left: -15px;
+	border-right: 15px solid #fff1e2;
+}
+
+.img-right:hover .boxs-texts::after{
+	right: -15px;
+	border-left: 15px solid #fff1e2;
+}
+
+.boxs-texts h3 {
+	margin-top: 55px;
+	margin-bottom: 18px;
+	font-family: 'Montserrat';
+	font-size: 1.19rem;
+	line-height: 1.1;
+	color: #464646;
+}
+
+.boxs-texts p {
+	margin-left: 20px;
+	margin-right: 20px;
+	font-family: 'Open Sans';
+	font-size: 1rem;
+	line-height: 1.5;
+	color: #464646;
+}
+
+.boxs-texts p::after {
+	display: block;
+	content: '';
+	width: 50px;
+	height: 1px;
+	margin-top: 13px;
+	margin-left: auto;
+	margin-right: auto;
+	background: #b1a89e;
+}
+
+.icon-twitter {
+	display: block;
+	width: 15px;
+	height: 15px;
+	margin-top: 15px;
+	margin-left: auto;
+	margin-right: auto;
+	background-image: url("../img/icon-twitter.svg");
+	text-indent: -9999px;
+}

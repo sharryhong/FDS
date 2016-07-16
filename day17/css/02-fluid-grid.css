@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+body {
+	font: 0.875rem/1.5rem "Spoqa Han Sans", sans-serif;
+	color: #202020;
+}
+
+
+.grid > * {
+	/*background: yellow;*/
+
+}
+
+.flex-img {
+	width: 100%;
+}
+
+.column {
+	/*padding-left: 10%;*/
+	/*padding-right: 10%;*/
+	/*padding은 부모 컨테이너의 폭에 따라 달라진다. */
+	background-clip: content-box;
+	/*background-origin: content-box; 배경이미지도 content-box내 위치*/
+}
+
+.unit12 img {
+	height: 100px;
+}

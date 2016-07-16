@@ -1,0 +1,56 @@
+/*
+page 구조 css float 레이아웃 디자인 
+공부 포인트 : float 영향을 받는 요소에서 해제를 하지 않을 경우 발생하는 문제 */
+
+/* 색상 지정 
+header 	red
+nav 	orange
+main 	yellow
+aside 	green
+footer 	blue */
+
+/*공통 모듈 디자인*/
+[class^="page"] {
+	height: 20vh;
+	line-height: 20vh;
+	font-size: 2em;
+}
+
+[class^="page"]::before {
+	display: inline-block;
+	content: attr(class);
+	width: 100%;
+	text-align: center;
+}
+
+/*개별 모듈 디자인*/
+.page-header {
+	background: red;
+}
+
+.page-nav {
+	background: orange;
+}
+
+.page-main {
+	float: left;
+	width: 70%;
+	height: 50vh;
+	background: yellow;
+	line-height: 50vh;
+}
+
+.page-sidebar {
+	float: right;
+	width: 30%;
+	height: 50vh;
+	background: green;
+	line-height: 50vh;
+}
+
+.page-footer {
+	clear: both;
+	background: blue;
+}
+
+

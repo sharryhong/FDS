@@ -1,0 +1,67 @@
+html {
+	font-size: 100%; /*=16px*/
+}
+body {
+	width: 80vmax; 
+	/*브라우저의 가로, 세로길이 중 긴 길이의 80%보다 width가 작아지면 더이상 줄어들지않고 스크롤생김*/
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 1rem;
+	line-height: 1.5; /*행간 16*1.5 = 24px*/
+	background-image: url('../img/leading-24px.png');
+}
+h1, p {
+	margin-bottom: 1.5rem;
+}
+img {
+	vertical-align: bottom;
+	/*알 수 없는 공간 없애기 (top, middle, bottom 아무거나해도 됨)*/
+}
+
+.small-caps {
+	font-variant: small-caps;
+}
+.uppercase {
+	text-transform: uppercase;
+}
+.lowercase {
+	text-transform: lowercase;
+}
+.capitalize {
+	text-transform: capitalize;
+}
+
+/*
+font 속기형 작성법
+기본 작성법
+font: size/line-height family;  (필수)
+font: style weight size/line-height family;  (선택. 앞에는 순서상관없고 style, weight, font-variant등이 올 수 있다.)
+*/
+
+/*.font-short-properties {
+	font: 1.2rem/2rem Helverica, Sans-Serif;
+	font: italic 1.2rem/2rem Helverica, Sans-Serif;
+} 
+*/
+
+.spoqa {
+	font-family: "Spoqa Han Sans";
+	letter-spacing: -0.02em;
+	word-spacing: 0.2em;
+}
+
+/*
+IR 기법 (이미지 대체 기법) : 자주 바뀌지 않는 이미지의 경우 이미지스프라이트 기법으로 넣으면 좋은데.. 
+이 때 저시력자들은 고대비(검정, 흰색만 나옴)를 켜고(IE에서 alt+shift+print screen버튼 누르면 켜짐) 사용할 수 있는데, 이 때 보이지 않을 수 있다. 
+나중에 javascript로 하는 좋은 방법이 있다. 
+*/
+.logo {
+	display: block;
+	width: 192px;
+	height: 263px;
+	background: url("../img/logo.png") no-repeat;
+	text-indent: -9999px;
+}
+
+
+

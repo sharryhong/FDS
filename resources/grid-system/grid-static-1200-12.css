@@ -1,0 +1,44 @@
+/*
+grid-system(Static)
+width: 1200px, 컬럼12개_70px, 거터 30px 
+*/
+
+body.overlay-grid::after {
+	position: absolute;
+	z-index: 100;
+	width: 1200px;
+	height: 1205px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	content: '';
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	background: url("grid-15-70-15.png");
+}
+
+.row::after {
+	display: block;
+	content: '';
+	clear: both;
+}
+
+[class*=col-] {
+	float: left;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+.col-1 { width: 70px; }
+.col-2 { width: 170px; } /*(70*2)+(30*(2-1)) */
+.col-3 { width: 270px; } /*(70*3)+(30*(3-1)) */
+.col-4 { width: 370px; } /*(70*4)+(30*(4-1)) */
+.col-5 { width: 470px; } /*(70*5)+(30*(5-1)) */
+.col-6 { width: 570px; } /*(70*6)+(30*(6-1)) */
+.col-7 { width: 670px; } /*(70*7)+(30*(7-1)) */
+.col-8 { width: 770px; } /*(70*8)+(30*(8-1)) */
+.col-9 { width: 870px; } /*(70*9)+(30*(9-1)) */
+.col-10 { width: 970px; } /*(70*10)+(30*(10-1)) */
+.col-11 { width: 1070px; } /*(70*11)+(30*(11-1)) */
+.col-12 { width: 1170px; } /*(70*12)+(30*(12-1)) */

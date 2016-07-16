@@ -1,0 +1,159 @@
+/*
+속성 선택자 : 최대한 간결하게 쓰자
+
+[attr]
+[attr="value"] : 반드시 value가 같아야 선택된다.
+[attr|="value"] : value- (하이픈(-)으로 구분되어있는 이름 찾음) 
+[attr~="value"] : 공백(앞뒤상관없이)으로 구분되는 단어가 일치할 때 선택 
+[attr*="value"] : value단어만 있으면 다 선택
+*/
+
+/*class가 있는 요소 선택*/
+[class]{
+	border: 1px dashed #999;
+}
+
+/*속성 lang="en-" 인 요소 선택*/
+[lang|="en"]{
+	text-decoration: underline;
+}
+
+/*class="container" 앞뒤중 공백있는 요소 선택, container만 있어도 선택*/
+/*[class~="container"]{
+	background-color: #1ee;
+}
+*/
+/*[class*="con-"]{
+	color: red;
+}*/
+
+/*
+상태디자인(Station Design) 선택자
+
+기본상태(normal)
+:hover (:는 가상클래스 생성) 마우스 커서가 올라간 상태(hover)
+:active 커서로 누른 상태(active)
+*/
+
+/*기본상태(normal)*/
+p {
+	margin-top: 0;
+	margin-bottom: 0;
+	padding: 0.88em;
+	color: green;
+	background: #eee;
+}
+
+/*마우스 커서가 올라간 상태(hover)*/
+p:hover {
+	color: #000;
+}
+
+/*커서로 누른 상태(active)*/
+p:active {
+	background-color: yellow;
+}
+
+/*
+하이퍼링크 (<a href>)
+상태 디자인(State Design)
+가상 클래스 (유사클래스 Pseudo Class)
+------------------------------------
+:link 기본상태
+:visited 방문한 상태
+:hover 커서 올라간 상태 
+:active 커서로 누르고 있는 상태
+:focus 키보드 포커싱 상태 
+*/
+
+/*기본상태 a:link가 있으나 그냥 a로 한다. */
+a {
+	text-decoration: none;
+	color: #333
+	background: #eee;
+}
+
+/*다른 언어에 다른 스타일 주고 싶을 때 */
+/*스페인어*/
+:lang(es) {
+	font-weight: bold;
+}
+
+/*
+가상(유사,의사) 요소 
+Pseudo Element 
+가상클래스와의 차이 : 실제로 가상으로 요소(콘텐츠)를 만들어준다.
+
+::first-line
+::first-letter
+::before
+::after
+
+가상이므로 접근성에 좋지않다. 스크린리더기에서 못읽는다. 
+이미지로 처리된다. 꾸밈에만 이용하도록 한다. 
+
+css2.1까지는 :하나만 써도 되나(하위호환)
+css3에선 가상클래스와 구분위해 :: 두개쓴다. 
+*/
+
+/*예: 잡지디자인 드롭캡(Dropcap) : 앞글자 하나 크게 하기 */
+.dropcap-demo {
+	color: #ec0904;
+}
+/*.dropcap 요소의 첫글자*/
+.dropcap::first-letter {
+	color: #ec0904;
+	font-size: 3em;
+}
+
+/*반드시 content가 있어야 한다.*/
+/*.msg의 첫자식*/
+/*before, after는 기본적으로 display:inline으로 들어온다.*/
+/*스타일 다 먹는다. */
+.msg::before{
+	content: '캬캬캬';
+	color: skyblue;
+	font-size: 2em;
+}
+/*before로 붙은건 first-child로 인식되지 않는다. */
+.msg :first-child{
+	font-size: 2em;
+}
+.msg p::before{
+	content: '메롱메롱';
+}
+
+/*접근성 관점에서 링크의 주소를 출력하는 스타일*/
+a::after{
+	/*함수 : ()안에 전달하는 무엇을 통해 뭔가를 처리해서 결과를 보여준다.*/
+	/*href속성을 보여주는 함수*/
+	content: '(' attr(href) ')';
+	color: hotpink;
+}
+abbr::after{
+	content: '(' attr(title) ')';
+}
+
+/*print모드에서만 작동 - 접근성!*/
+@media print {
+	a::after{
+	/*함수 : ()안에 전달하는 무엇을 통해 뭔가를 처리해서 결과를 보여준다.*/
+	content: '(' attr(href) ')';
+	color: hotpink;
+	}
+	abbr::after{
+		content: '(' attr(title) ')';
+	}
+}
+
+/*page의 root. html의 경우 <html>
+xml의 경우 다를 수 있다. */
+:root {}
+:nth-child(n) 부모로 부터 몇번째
+:nth-last-child(n) 부모의 마지막으로부터 몇번째
+:nth-of-type(n) 유용함. 내 타입으로부터 몇번째. IE9이상
+:first-of-type 내 타입 중 첫번째놈
+:only-child 부모중 자식이 하나인 것 
+:target 타겟 id로 가는 것 스타일주기 
+/*css only tabmenu 절대 따라하지말자. 접근성에 안좋음. 그냥 이런속성 이용해서 만든것일뿐 */
+

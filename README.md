@@ -1,0 +1,8 @@
+******************************************************
+# Sharry Hong's Fast Campus Front-End Develop School
+패스트캠퍼스 프론트엔드개발 스쿨! 
+******************************************************
+###### Front-End Develop SCHOOL
+
+###### + Sharry's keyword : 호기심, 탐구, 열정 & 여행 
+###### + HTML5 (HTML, CSS, Javascript & 수많은 신기술들) WoW~! 

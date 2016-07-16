@@ -1,0 +1,28 @@
+/*본문 크기 18px / 행간 1.5*/
+body {
+	font: 18px/1.5 'Spoqa Han Sans', 'Sans-serif';;
+	background: url(../img/leading-27.png);
+	color: #2c2c2c;
+}
+
+/*본문 디자인*/
+p, h1, h2, h3, h4, h5, h6 {
+	margin-bottom: 27px; /*글자본문크기 x 행간비율*/
+}
+
+/*제목 디자인. 크기는 1.2씩 곱해줌*/
+h6, h5, h4 { font-weight: 700; }
+h3, h2, h1 { font-weight: 200; }
+h6, h5 { line-height: 27px; }
+h4, h3, h2 { line-height: 54px; }
+h1 { line-height: 81px; }
+
+h5 { font-size: 21.6px; }
+
+h4 { font-size: 25.92px; }
+
+h3 { font-size: 31.1px; }
+
+h2 { font-size: 37.32px; }
+
+h1 { font-size: 44.78px; }

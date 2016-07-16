@@ -1,0 +1,58 @@
+/* 
+base lind을 background로 그리자
+*/
+
+body {
+	font: 1.13rem/1.5 'Spoqa Han Sans', 'Sans-serif';
+	/*background: url(../img/leading-27.png);*/
+	color: #2c2c2c;
+	/*선형 그래디언트*/
+	/*background-image: linear-gradient(angle, colo-stop 0%(로케이션), , colo-stop 0%(로케이션,...);*/
+	/*background-image: linear-gradient(180deg, #34c0ff, #7045cf);
+	180deg : 처음 지정한 색이 맨 위 
+	*/
+}
+
+body:hover {
+	background-image: linear-gradient(180deg, transparent 95%,  #7045cf 95%);
+	/*0~95%는 투명, 95~100%는 색상*/
+	background-size: 1px 27px;
+}
+
+/*.gradient {
+	width: 100px;
+	height: 15px;
+	background-image: linear-gradient(180deg, #34c0ff, #7045cf);
+}
+.gradient2 {
+	width: 100px;
+	height: 15px;
+	background-image: linear-gradient(180deg, transparent,  #34c0ff 50%, #7045cf 50%);
+}
+.gradient3 {
+	width: 100px;
+	height: 15px;
+	background-image: linear-gradient(180deg, transparent 95%,  #7045cf 95%);
+}*/
+
+/*본문 디자인*/
+p, h1, h2, h3, h4, h5, h6 {
+	margin-bottom: 1.6875rem; /*글자본문크기 x 행간비율*/
+}
+
+/*제목 디자인. 크기는 1.2씩 곱해줌*/
+h6, h5, h4 { font-weight: 700; }
+h3, h2, h1 { font-weight: 200; }
+h6, h5 { line-height: 1.6875rem; }
+h4, h3, h2 { line-height: 3.375rem; }
+h1 { line-height: 5.0625rem; }
+
+h5 { font-size: 1.35rem; }
+
+h4 { font-size: 1.62rem; }
+
+h3 { font-size: 1.94375rem; }
+
+h2 { font-size: 2.3325rem; }
+
+h1 { font-size: 2.79875rem; }

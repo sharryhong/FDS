@@ -1,0 +1,99 @@
+
+@charset "UTF-8";
+
+.well-poster {
+	position: relative;
+	width: 710px;
+	height: 57.5rem;
+	/*padding: 4%;*/
+	margin: 1.25rem auto 0 auto;
+	background-color: #fff;
+	box-shadow: -20px 5px 20px 7px rgba(0,0,0,0.1);
+	overflow: hidden;
+}
+
+/*.well-poster .typo {
+	text-align: justify;
+	-moz-text-align-last: justify;
+	text-align-last: justify;
+}
+*/
+.typo > * {
+	display: inline-block;
+	position: relative;
+	opacity: 0;
+}
+
+.well-poster img {
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	margin-left: -205px;
+}
+
+.align-last-justify {
+  width: 31.875rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 8rem;
+  text-align: justify;
+  -moz-text-align-last: justify;
+  text-align-last: justify;
+  font-weight: 900;
+}
+
+/* 
+animation Module
+*/
+.size-big-origin {
+	animation: sizeBigOrigin 1s cubic-bezier(0.68, 0.18, 0.13, 0.73) forwards;
+}
+
+/*
+animation-fill-mode: none|forwards|backwards|both|initial|inherit;
+forwards : stop when the animation ending 
+*/
+
+.size-big-origin.second {
+	animation-delay: 1.5s;
+}
+
+.slide-right-skew {
+	animation: slideRightSkew 0.5s ease-out forwards;
+	animation-delay: 0.5s;
+}
+
+.slide-right-skew.second {
+	animation-delay: 2s;
+}
+
+@keyframes sizeBigOrigin {
+  0% {
+  	opacity: 0;
+    transform: scale(3);
+  }
+  30% {
+  	opacity: 1;
+    transform: scale(0.7);
+  }
+  100% {
+  	opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideRightSkew {
+  0% {
+  	opacity: 0;
+  	left: 30%;
+    transform: skewX(-45deg);
+  }
+  80% {
+  	left: -10%;
+  	transform: skewX(-45deg);
+  }
+  100% {
+  	opacity: 1;
+    left: 0;
+  }
+}

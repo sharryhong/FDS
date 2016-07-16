@@ -1,0 +1,63 @@
+.blind {
+	position: absolute;
+	left: -9999em;
+}
+
+.page-header {
+	height: 80px;
+}
+
+.page-slider {
+	height: 480px;
+}
+
+.page-slider .slider-main {
+	height: 100%;
+	background: #e9d025;
+}
+
+.page-slider li{
+	height: 120px;
+	background: #e99dff;
+}
+
+.page-slider li:nth-child(2n) {
+	background: #bd3277;
+}
+
+.major-products {
+	height: 240px;
+}
+
+.major-products .women {
+	height: 100%;
+	background: #DC7B2D;
+}
+
+.major-products .men {
+	height: 100%;
+	background: #EAA622;
+}
+
+.major-products .accessories {
+	height: 100%;
+	background: #DC7B2D;
+}
+
+.featured-products .heading,
+.our-blog .heading {
+	height: 240px;
+	background: #bd3277;
+}
+
+.featured-products li,
+.our-blog li {
+	height: 240px;
+	background: #e99dff;
+}
+
+.featured-products li:nth-child(2),
+.featured-products li:nth-child(5),
+.featured-products li:nth-child(7) {
+	background: #bb6677;
+}

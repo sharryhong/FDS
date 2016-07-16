@@ -1,0 +1,5 @@
+@charset "utf-8";
+
+#parent > .child + .child{
+	color: red;
+}

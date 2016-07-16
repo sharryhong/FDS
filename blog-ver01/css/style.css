@@ -1,0 +1,125 @@
+@charset "utf-8";
+
+.hide-grid .center-con::before {
+	content: '';
+	position: absolute;
+	z-index: 1000;
+	top: 0;
+	width: 100%;
+	height: 2000px;
+	background: 
+		linear-gradient(90deg, rgba(191, 64, 64, 0.1) 50%, rgba(0,0,0,0.1) 50%),
+		linear-gradient(transparent 95%, #26923f 95%);
+	background-size: 
+		16.6666666% 16.6666666%,
+		1px 1.3125rem;
+}
+
+.hide-grid .center-con:hover::before {
+	background: none;
+	z-index: -10;
+}
+
+.center-con {
+	position: relative;
+	width: 80%;
+	min-width: 750px;
+	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.page-header {
+	position: fixed;
+	width: 100%;
+	height: 168px;
+	background: #fdfdfd;
+	box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+}
+
+.page-header::before {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	opacity: 0.2;
+	background: url("../img/snoopy03.jpg") no-repeat;
+	background-position: 5% 0%;
+	animation: snoopy .5s 2 cubic-bezier(0.68, -0.55, 0.27, 1.55) .5s;
+}
+
+@keyframes snoopy {
+	0% { background-position: 5% 0%; }
+	25% { background-position: 8% 50%; }
+	50% { background-position: 12% 0%; }
+	75% { background-position: 7% 50%; }
+	100% { background-position: 5% 0%; }
+}
+
+.logo {
+	padding-left: 75px;
+	margin-top: 42px;
+}
+
+.logo a::after {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	top: -50px;
+	left: 227px;
+	background: url("../img/Woodstock.png") no-repeat;
+	background-size: 50px 50px;
+	transition: all .5s cubic-bezier(0.19, 0.63, 0.4, 0.88);
+}
+
+.logo a:hover::after,
+.logo a:focus::after {
+	top: 23px;
+	left: 113px;
+}
+
+.logo .small {
+	font-size: 1rem;
+}
+
+.gnb { 
+	text-align: center;
+	padding-top: 32px; 
+}
+
+.gnb a { 
+	display: inline-block; 
+	padding: 0.625rem;
+	opacity: 0.5;
+	background: radial-gradient(circle, rgba(0,0,0,0.1) 10%, transparent 50%);
+	border-radius: 50%;
+}
+
+.gnb a > * {
+	display: block;
+	text-align: center;
+	text-shadow: 1px 1px 0px rgba(255,255,255,0.5);
+}
+
+.gnb a:hover,
+.gnb a:focus {
+	opacity: 1;
+	background: radial-gradient(circle, rgba(28,135,235,0.2) 10%, transparent 50%);
+	transition: all .3s;
+}
+
+/*main*/
+.page-main {
+	text-align: center;
+}
+
+.page-main > section {
+	padding-top: 220px;
+	height: 100vh;
+}

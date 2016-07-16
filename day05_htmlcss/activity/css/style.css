@@ -1,0 +1,7 @@
+@charset "utf-8";
+
+.primary{
+	width: 200px;
+	height: 250px;
+	border: 1px solid #eee;
+}

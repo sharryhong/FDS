@@ -1,0 +1,43 @@
+.parent {
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	background: #ff0;
+	/*border: 3px solid red;*/
+}
+
+.child {
+	width: 300px;
+	background: #00f;
+	padding-top: 2em;
+	padding-bottom: 2em;
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right: auto;
+
+	/*border-top-style: solid dashed dotted ... 모양 ;
+	border-top-width: 두께; 
+	border-top-color: 색상;*/
+	/*border 속기형 작성법 패턴 1. 순서와 상관없다.*/
+	border-top: 5px solid #333;
+	border-right: red 10px inset;
+
+	/*border 속기형 작성법 패턴 2. 순서와 상관없다.*/
+	border: 2px dashed red;
+}
+
+/*핵심 1. Q_ 부모에 padding나 border가 있을 때, 자식이 margin-top이 있다면?
+A_ 자식의 margin-top이 부모의 바깥으로 나간다. 
+
+핵심 2. Q_ 부모에 padding나 border가 없을 때, 자식이 margin-top이 있다면?
+A_ 자식의 margin-top은 부모 내부에서 적용된다. */
+
+
+
+/*body > .parent:nth-last-of-type(1) {
+	background: #ee22ff;
+}
+body > .parent:nth-last-of-type(1) > .child:only-child {
+	background: #f35555;
+}*/
+

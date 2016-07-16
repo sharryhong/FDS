@@ -1,0 +1,72 @@
+body {
+	height: 100vh;
+	background: #eee;
+	background-image: radial-gradient(closest-corner, #fff 0%, #C6D6B9 50%);
+}
+
+.button-movie-control {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	min-width: 300px;
+	box-shadow: 0 3px 15px rgba(0,0,0,0.3);
+	/*Chrome, Safari, Opera*/
+	-webkit-transform: translate(-50%, -50%);
+	/*IE 9*/
+	-ms-transform: translate(-50%, -50%);
+	/*web standard*/
+	transform: translate(-50%, -50%);
+}
+
+.button-movie-control:first-child {
+	border-top-left-radius: 30px;
+	border-bottom-left-radius: 30px;
+}
+.button-movie-control:last-child {
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 30px;
+}
+
+button[class^="button-"] {
+	position: relative;
+	float: left;
+	width: 100px;
+	height: 50px;
+	border: none;
+	border-left: 5px solid #A09F9D;
+	border-top: 1px solid #A09F9D;
+	border-bottom: 1px solid #A09F9D;
+	cursor: pointer;
+	text-shadow: 0 1px 2px rgba(255,255,255,0.3);
+	background: none;
+	background-image: linear-gradient(180deg, #fff 0%, #F4F2DD 20%, #FAFAA4 80%, #E6E664 100%);
+}
+
+button[class^="button-"]:hover,
+button[class^="button-"].on {
+	border: inset;
+}
+
+button[class^="button-"]:active {
+	background-image: linear-gradient(180deg, #fff 0%, #F4F2DD 10%, #FAFAA4 50%, #E6E664 100%);
+}
+
+button[class^="button-"]:first-child {
+	border-top-left-radius: 30px;
+	border-bottom-left-radius: 30px;
+}
+
+button[class^="button-"]:last-child {
+	border-right: 5px solid #A09F9D;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 30px;
+}
+
+button[class^="button-"] .fa {
+	position: absolute;
+	top: 0.5rem;
+	left: 0.9375rem;
+	font-size: 0.5em;
+	color: #333;
+	text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}

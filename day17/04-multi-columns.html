@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <title>css3 멀티 컬럼 레이아웃 디자인</title>
+  <link rel="stylesheet" href="../resources/spoqa.css">
+  <link rel="stylesheet" href="../resources/normalize.css">
+  <link rel="stylesheet" href="../resources/common.css">
+  <link rel="stylesheet" href="../resources/grid-system/grid-fluid(flexable).css">
+  <style>
+    .column-container {
+      max-width: 56.25rem;
+      margin: 3rem auto;
+    }
+    .column-container::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+    .column {
+      /*box-sizing: border-box;*/
+      /*float: left;*/
+      /*width: 33.33333%;*/
+      padding-right: 1.5rem;
+      line-height: 1.5rem;
+    }
+    .column:last-child { padding-right: 0; }
+    .column p { margin-bottom: 1.5rem; }
+    .no-multi-columns { background: #eee; }
+    .use-multi-columns {
+      line-height: 1.5rem;
+      color: #6c6045;
+      /*
+        css3 Multi Columns - 쉽게 구현됨
+        크로스브라우징 신경써야함
+        잡지처럼 문맥이 흐름
+        columns: width gap rule... ; (속기형)
+      */
+      /*컬럼 개수*/
+      -webkit-column-count: 3;
+      -moz-column-count: 3;
+      column-count: 3;
+      /*컬럼 사이 간격(gap)*/
+      -webkit-column-gap: 1.5rem;
+      -moz-column-gap: 1.5rem;
+      column-gap: 1.5rem;
+      /*컬럼사이 간격의 중앙에 배치되는 수직 선 */
+      -webkit-column-rule: 1px dashed #999;
+      -moz-column-rule: 1px dashed #999;
+      column-rule: 1px dashed #999;
+    }
+    .use-multi-columns p { 
+      background-color: #eee;
+      margin-bottom: 1.5rem; 
+      text-align: justify;
+      letter-spacing: 0.1em;
+      word-spacing: 0.1em;
+    }
+    h2 { font-size: 2rem; line-height: 1.2  ; }
+    .use-multi-columns p:first-of-type { color: #e66; }
+    .use-multi-columns p:nth-of-type(2n) { color: #6e6; }
+    
+    .column-span h2 {
+      -webkit-column-span: all;
+      -moz-column-span: all;
+      column-span: all;
+      /*column 합치기*/
+    }
+  </style>
+</head>
+<body>
+
+  <div class="no-multi-columns column-container">
+   <div class="column">
+      <p>내 뉴스를 매우 슬퍼했어 웃긴게, 우리는 안 들었다 그래도 너 욕을 눈물이 났다네 우리가 장소를 줬었다 이런  안 샀다 우리의 햄버거를 다쳤습니다 사실  내 물건처럼 소중하게 다루었고, 우리가 거짓말을 막았어 언젠가 저 공기를 닥치는대로 주었다 꾸준하게 난 줄 것이니 우리가 손을 또 샀겠지 그 날  피했음 난 바다를 찢었었다 그리고.. 난 반복하였다 맙소사,  들판을 미쳤다 완벽해</p>
+     <p>내 뉴스를 매우 슬퍼했어 웃긴게, 우리는 안 들었다 그래도 너 욕을 눈물이 났다네 우리가 장소를 줬었다 이런  안 샀다 우리의 햄버거를 다쳤습니다 사실  내 물건처럼 소중하게 다루었고, 우리가 거짓말을 막았어 언젠가 저 공기를 닥치는대로 주었다 꾸준하게 난 줄 것이니 우리가 손을 또 샀겠지 그 날  피했음 난 바다를 찢었었다 그리고.. 난 반복하였다 맙소사,  들판을 미쳤다 완벽해</p>
+   </div>
+    <div class="column">
+     <p>내 뉴스를 매우 슬퍼했어 웃긴게, 우리는 안 들었다 그래도 너 욕을 눈물이 났다네 우리가 장소를 줬었다 이런  안 샀다 우리의 햄버거를 다쳤습니다 사실  내 물건처럼 소중하게 다루었고, 우리가 거짓말을 막았어 언젠가 저 공기를 닥치는대로 주었다 꾸준하게 난 줄 것이니 우리가 손을 또 샀겠지 그 날  피했음 난 바다를 찢었었다 그리고.. 난 반복하였다 맙소사,  들판을 미쳤다 완벽해</p>
+     <p>내 뉴스를 매우 슬퍼했어 웃긴게, 우리는 안 들었다 그래도 너 욕을 눈물이 났다네 우리가 장소를 줬었다 이런  안 샀다 우리의 햄버거를 다쳤습니다 사실  내 물건처럼 소중하게 다루었고, 우리가 거짓말을 막았어 언젠가 저 공기를 닥치는대로 주었다 꾸준하게 난 줄 것이니 우리가 손을 또 샀겠지 그 날  피했음 난 바다를 찢었었다 그리고.. 난 반복하였다 맙소사,  들판을 미쳤다 완벽해</p>
+    </div>
+    <div class="column">
+      <p>내 뉴스를 매우 슬퍼했어 웃긴게, 우리는 안 들었다 그래도 너 욕을 눈물이 났다네 우리가 장소를 줬었다 이런  안 샀다 우리의 햄버거를 다쳤습니다 사실  내 물건처럼 소중하게 다루었고, 우리가 거짓말을 막았어 언젠가 저 공기를 닥치는대로 주었다 꾸준하게 난 줄 것이니 우리가 손을 또 샀겠지 그 날  피했음 난 바다를 찢었었다 그리고.. 난 반복하였다 맙소사,  들판을 미쳤다 완벽해</p>
+      <p>내 뉴스를 매우 슬퍼했어 웃긴게, 우리는 안 들었다 그래도 너 욕을 눈물이 났다네 우리가 장소를 줬었다 이런  안 샀다 우리의 햄버거를 다쳤습니다 사실  내 물건처럼 소중하게 다루었고, 우리가 거짓말을 막았어 언젠가 저 공기를 닥치는대로 주었다 꾸준하게 난 줄 것이니 우리가 손을 또 샀겠지 그 날  피했음 난 바다를 찢었었다 그리고.. 난 반복하였다 맙소사,  들판을 미쳤다 완벽해</p>
+    </div>
+  </div>
+  <div class="use-multi-columns column-container">
+    <h2>css3 Multi Columns 아웅 편해~</h2>
+    <p>tate voluptas necessitatibus, vero rerum quis nihil animi voluptatum doloribus, consequuntur distinctio unde culpa libero, veniam! Perspiciatis earum quos harum sit. Voluptas dolor tempora, accusamus aliquam vel unde repudiandae quam reiciendis ipsa possimus.</p>
+    <p>Incidunt laborum porro neque error facere distinctio tempore atque totam. Minus dicta repellat eius optio! Et, rerum at dolore sequi reprehenderit voluptas eius placeat, pariatur deleniti! Suscipit culpa quisquam vero, itaque, facilis amet. Accusantium ipsum culpa architecto quaerat quasi. Et a esse, dolor repudiandae nesciunt dicta repellendus cumque. Beatae labore veritatis maxime aliquid, nobis obcaecati aliquam necessitatibus, soluta, dolore adipisci, numquam! Facilis veritatis, nulla optio beatae accusamus explicabo doloribus ad?</p>
+    <p>Consequatur illum consequuntur voluptas iusto eius odio dolor delectus dolorum, praesentium perferendis distinctio a dolores incidunt nostrum suscipit doloremque ipsum quibusdam vitae repellendus amet. Ipsam laboriosam aspernatur ex nesciunt optio doloremque hic laborum iusto rem fugit voluptatem deleniti libero excepturi sed a fuga molestias cumque quibusdam, numquam itaque temporibus animi minus facere. Magnam ex fugit minus a, inventore repellat modi possimus distinctio sapiente earum saepe. Numquam sunt perspiciatis delectus. Non.</p>
+    <p>Cumque nobis est, nam sequi voluptates dolor facere dolore quasi asperiores! Cupiditate, quisquam sapiente minus mollitia eius magnam excepturi possimus error eaque, fugit, delectus molestias repellendus unde dicta officiis blanditiis soluta rerum obcaecati atque quas laborum vel beatae. Quaerat aliquam est dolorum in natus ullam ut, consectetur architecto, mollitia deserunt sapiente totam provident veritatis, molestiae illum consequatur magnam dignissimos repellat! Repellat perspiciatis culpa unde. Nesciunt sunt cumque harum a, repellendus!</p>
+    <p>Ad a aliquid eveniet obcaecati, officiis illum fuga, at libero blanditiis suscipit autem, aut repellendus mollitia, tempore accusantium sapiente totam. Numquam odio consequatur voluptas accusantium qui, recusandae soluta corrupti fugit et quae maiores esse blanditiis magni, enim temporibus hic in aliquam illo voluptatum, voluptatibus! Repellendus in, assumenda cupiditate delectus, impedit rem voluptas doloremque ab quidem quos facilis quisquam totam natus aperiam dolor nisi debitis est nulla eum? Earum nostrum, blanditiis.</p>
+    <p>Perferendis debitis tenetur quas autem eum nobis deleniti assumenda quisquam quibusdam consectetur consequatur repellendus ipsa a dolores, sit voluptas dignissimos maiores et similique. Facilis tempora numquam possimus ipsum ut quod laborum aliquam reiciendis odit eaque placeat ullam aut rem neque, delectus nemo exercitationem optio maiores quasi magnam. Tenetur saepe asperiores nemo hic odio suscipit nisi optio eum non ea veritatis, minus sint aspernatur, dicta repellat consequatur magnam blanditiis ipsa. Itaque.</p>
+  </div>
+  <div class="column-span use-multi-columns column-container">
+    <h2>css3 Multi Columns 아웅 편해~</h2>
+    <p>tate voluptas necessitatibus, vero rerum quis nihil animi voluptatum doloribus, consequuntur distinctio unde culpa libero, veniam! Perspiciatis earum quos harum sit. Voluptas dolor tempora, accusamus aliquam vel unde repudiandae quam reiciendis ipsa possimus.</p>
+    <p>Incidunt laborum porro neque error facere distinctio tempore atque totam. Minus dicta repellat eius optio! Et, rerum at dolore sequi reprehenderit voluptas eius placeat, pariatur deleniti! Suscipit culpa quisquam vero, itaque, facilis amet. Accusantium ipsum culpa architecto quaerat quasi. Et a esse, dolor repudiandae nesciunt dicta repellendus cumque. Beatae labore veritatis maxime aliquid, nobis obcaecati aliquam necessitatibus, soluta, dolore adipisci, numquam! Facilis veritatis, nulla optio beatae accusamus explicabo doloribus ad?</p>
+    <p>Consequatur illum consequuntur voluptas iusto eius odio dolor delectus dolorum, praesentium perferendis distinctio a dolores incidunt nostrum suscipit doloremque ipsum quibusdam vitae repellendus amet. Ipsam laboriosam aspernatur ex nesciunt optio doloremque hic laborum iusto rem fugit voluptatem deleniti libero excepturi sed a fuga molestias cumque quibusdam, numquam itaque temporibus animi minus facere. Magnam ex fugit minus a, inventore repellat modi possimus distinctio sapiente earum saepe. Numquam sunt perspiciatis delectus. Non.</p>
+    <p>Cumque nobis est, nam sequi voluptates dolor facere dolore quasi asperiores! Cupiditate, quisquam sapiente minus mollitia eius magnam excepturi possimus error eaque, fugit, delectus molestias repellendus unde dicta officiis blanditiis soluta rerum obcaecati atque quas laborum vel beatae. Quaerat aliquam est dolorum in natus ullam ut, consectetur architecto, mollitia deserunt sapiente totam provident veritatis, molestiae illum consequatur magnam dignissimos repellat! Repellat perspiciatis culpa unde. Nesciunt sunt cumque harum a, repellendus!</p>
+    <p>Ad a aliquid eveniet obcaecati, officiis illum fuga, at libero blanditiis suscipit autem, aut repellendus mollitia, tempore accusantium sapiente totam. Numquam odio consequatur voluptas accusantium qui, recusandae soluta corrupti fugit et quae maiores esse blanditiis magni, enim temporibus hic in aliquam illo voluptatum, voluptatibus! Repellendus in, assumenda cupiditate delectus, impedit rem voluptas doloremque ab quidem quos facilis quisquam totam natus aperiam dolor nisi debitis est nulla eum? Earum nostrum, blanditiis.</p>
+    <p>Perferendis debitis tenetur quas autem eum nobis deleniti assumenda quisquam quibusdam consectetur consequatur repellendus ipsa a dolores, sit voluptas dignissimos maiores et similique. Facilis tempora numquam possimus ipsum ut quod laborum aliquam reiciendis odit eaque placeat ullam aut rem neque, delectus nemo exercitationem optio maiores quasi magnam. Tenetur saepe asperiores nemo hic odio suscipit nisi optio eum non ea veritatis, minus sint aspernatur, dicta repellat consequatur magnam blanditiis ipsa. Itaque.</p>
+  </div>
+
+</body>
+</html>
