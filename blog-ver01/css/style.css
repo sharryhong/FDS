@@ -33,7 +33,8 @@
 	position: fixed;
 	width: 100%;
 	height: 168px;
-	background: #fdfdfd;
+	background: #000;
+	color: #fff;
 	box-shadow: 0 1px 5px rgba(0,0,0,0.05);
 }
 
@@ -46,10 +47,10 @@
 	z-index: -1;
 	top: 0;
 	left: 0;
-	opacity: 0.2;
-	background: url("../img/snoopy03.jpg") no-repeat;
+	opacity: 0.5;
+	background: url("../img/snoopy05.png") no-repeat;
 	background-position: 5% 0%;
-	animation: snoopy .5s 2 cubic-bezier(0.68, -0.55, 0.27, 1.55) .5s;
+	animation: snoopy .8s 2 cubic-bezier(0.68, -0.55, 0.27, 1.55) .5s;
 }
 
 @keyframes snoopy {
@@ -104,13 +105,14 @@
 .gnb a > * {
 	display: block;
 	text-align: center;
-	text-shadow: 1px 1px 0px rgba(255,255,255,0.5);
+	text-shadow: 1px 1px 0px rgba(0,0,0,0.5);
 }
 
 .gnb a:hover,
 .gnb a:focus {
 	opacity: 1;
-	background: radial-gradient(circle, rgba(28,135,235,0.2) 10%, transparent 50%);
+	/*background: radial-gradient(circle, rgba(28,135,235,0.2) 10%, transparent 50%);*/
+	background: radial-gradient(circle, rgba(28,135,235,0.5) 10%, transparent 50%);
 	transition: all .3s;
 }
 
