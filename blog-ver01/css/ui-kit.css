@@ -11,7 +11,10 @@ body {
 	background: #F9F9F9;
 }
 
-[lang="en"] { font-family: 'Oswald', sans-serif; }
+[lang="en"] { 
+	font-family: 'Oswald', sans-serif; 
+}
+/*[lang="en"] { font-family: 'Helvetica Neue', sans-serif; }*/
 
 p,
 h2.normal span {
