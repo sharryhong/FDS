@@ -1,18 +1,20 @@
-/****************
-/*Typography*/
+/*
+* Typography
+*/
 
 body {
 	height: 1000px;
 	font-family: "Spoqa Han Sans", sans-serif;
 	font-size: 0.875rem;
 	line-height: 1.5;
-	letter-spacing: 0.03rem;
-	color: #222;
+	letter-spacing: -0.03rem;
+	color: #333;
 	background: #F9F9F9;
 }
 
 [lang="en"] { 
 	font-family: 'Oswald', sans-serif; 
+	letter-spacing: 0.05rem;
 }
 /*[lang="en"] { font-family: 'Helvetica Neue', sans-serif; }*/
 
@@ -60,3 +62,4 @@ h6 {
 h2.normal {
 	margin-bottom: 0;
 }
+
