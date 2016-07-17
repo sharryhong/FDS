@@ -141,7 +141,7 @@
 
 .page-main > * {
 	/*padding-top: 168px;*/
-	height: 100vh;
+	min-height: 100vh;
 }
 
 .page-main .heading {
