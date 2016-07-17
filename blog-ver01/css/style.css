@@ -145,8 +145,8 @@
 }
 
 .page-main .heading {
-	padding-top: 2.625rem;
-	margin-bottom: 2.625rem;
+	padding-top: 63px;
+	margin-bottom: 63px;
 }
 
 .page-light {
@@ -198,7 +198,7 @@
 }
 
 .page-til .til {
-	margin-bottom: 42px;
+	margin-bottom: 63px;
 }
 
 .page-til .til h3 {
@@ -210,9 +210,28 @@
 	margin-bottom: 1.3125em;
 }
 
-.fa-question {
+.page-til .fa-question {
 	color: #cb3333;
 }
-.fa-exclamation {
+
+.page-til .fa-exclamation, 
+.page-til .fa-code {
 	color: #3390CB;
 }
+
+.til-con h5 {
+	display: inline-block;
+	margin-right: 21px;
+	margin-bottom: 0px;
+}
+
+.code {
+	padding: 10px;
+	margin-bottom: 10px;
+	background: #eee;
+}
+
+/*.code .right {
+	display: block;
+	text-align: right;
+}*/

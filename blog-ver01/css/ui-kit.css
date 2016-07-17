@@ -62,3 +62,19 @@ h2.normal {
 	margin-bottom: 0;
 }
 
+/*
+* button
+*/
+
+.btn {
+	display: inline-block;
+	border: 1px solid #666;
+	padding: 0.4375em 0.625em 0.25em 0.625em;
+	background: #3390CB;
+	color: #fff;
+}
+
+.btn:hover {
+	background: #cb3333;
+
+}
