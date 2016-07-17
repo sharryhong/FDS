@@ -111,72 +111,80 @@ li는 focus가 되지 않아 접근성에 문제 생김
 	min-width: 1070px;
 }
 
-/**
- * --------------------------------
- * #holzweiler-notice
- * ----------------------------- */
- .fixed-sticky-bottom {
-  position: fixed;
-  z-index: 1000;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100px;
-  line-height: 100px;
-  text-align: center;
-  background: #231f20;
-  color: #fff;
+.video-txt {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
 }
 
-#holzweiler-notice a {
-  color: inherit;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  padding-bottom: 0.1em;
-  transition: all 0.3s;
-  font-size: 1.375rem;
-  font-weight: 100;
+.video-txt h3 {
+	font-size: 7rem;
 }
 
-#holzweiler-notice a:hover,
-#holzweiler-notice a:focus {
-  border-bottom-color: #fff;
+.video-txt .goshop {
+	position: relative;
+	display: inline-block;
 }
 
-.fixed-sticky-bottom .holzweiler-close-button {
-  cursor: pointer;
-  position: absolute;
-  top: 40px;
-  right: 80px;
-  border: none;
-  background: none;
-  width: 20px;
-  height: 20px;
+.video-txt .goshop::after {
+	content: '->';
+	display: inline-block;
+	margin-left: 10px;
+	position: absolute;
+	top: 0;
+	right: -24px;
+	transition: all .2s;
 }
 
-.fixed-sticky-bottom .holzweiler-close-button::before,
-.fixed-sticky-bottom .holzweiler-close-button::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 20px;
-  height: 1px;
-  background: #fff;
-  transition: all 0.3s;
+.page-goshop a:hover .goshop::after,
+.page-goshop a:focus .goshop::after {
+	right: -35px;
 }
 
-.fixed-sticky-bottom .holzweiler-close-button::before {
-  transform: rotate(45deg);
+/*notice*/
+.fixed-bottom {
+	position: fixed;
+	z-index: 1000;
+	bottom: 0;
+	width: 100%;
+	height: 100px;
+	padding-top: 40px;
+	background: rgba(0,0,0,0.5);
+	text-align: center;
 }
 
-.fixed-sticky-bottom .holzweiler-close-button::after {
-  transform: rotate(-45deg);
+.btn-close {
+	position: relative;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	margin-left: 100px;
 }
 
-.fixed-sticky-bottom .holzweiler-close-button:hover::before,
-.fixed-sticky-bottom .holzweiler-close-button:hover::after,
-.fixed-sticky-bottom .holzweiler-close-button:focus::before,
-.fixed-sticky-bottom .holzweiler-close-button:focus::after {
-  transform: rotate(0deg);
+.btn-close::before,
+.btn-close::after {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 20px;
+	height: 1px;
+	background: #fff;
+	transition: all .2s;
+}
+
+.btn-close::before {
+	transform: rotate(45deg);
+}
+
+.btn-close::after {
+	transform: rotate(-45deg);
+}
+
+.btn-close:hover::before,
+.btn-close:hover:after,
+.btn-close:focus::before,
+.btn-close:focus:after {
+	transform: rotate(0deg);
 }
