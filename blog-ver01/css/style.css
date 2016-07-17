@@ -215,19 +215,20 @@
 }
 
 .page-til .fa-exclamation, 
-.page-til .fa-code {
+.page-til .fa-code,
+.page-til .fa-link {
 	color: #3390CB;
 }
 
 .til-con h5 {
 	display: inline-block;
 	margin-right: 21px;
-	margin-bottom: 0px;
+	/*margin-bottom: 0px;*/
 }
 
 .code {
 	padding: 10px;
-	margin-bottom: 10px;
+	margin-bottom: 21px;
 	background: #eee;
 }
 

@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+body {
+	font-family: "Helvetica", "serif";
+}
+
 a {
 	color: #fff;
 	text-decoration: none;
@@ -128,19 +132,16 @@ li는 focus가 되지 않아 접근성에 문제 생김
 	display: inline-block;
 }
 
-.video-txt .goshop::after {
-	content: '->';
-	display: inline-block;
-	margin-left: 10px;
+.goshop .fa {
 	position: absolute;
-	top: 0;
-	right: -24px;
+	top: 2px;
+	right: -30px;
 	transition: all .2s;
 }
 
-.page-goshop a:hover .goshop::after,
-.page-goshop a:focus .goshop::after {
-	right: -35px;
+.page-goshop a:hover .fa-arrow-right,
+.page-goshop a:focus .fa-arrow-right {
+	right: -40px;
 }
 
 /*notice*/
