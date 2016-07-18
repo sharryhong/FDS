@@ -4,24 +4,24 @@
 
 # HTML
 
-## 1. HTML 문법
- #### DOCTYPE 선언
- #### `<html>`
- #### `<head>`
-## 1. 기본 레이아웃
-## 1.
+### 1. HTML 문법
+#### DOCTYPE 선언
+#### `<html>`
+#### `<head>`
+### 1. 기본 레이아웃
+### 1.
 
 ---
 
-## 1. HTML 문법
+### 1. HTML 문법
 
- #### DOCTYPE 선언
+#### DOCTYPE 선언
 
- - HTML5 doctype선언 형식을 따른다.
- - doctype선언 위에 주석 포함 아무런 코드를 적지 않는다. 
+- HTML5 doctype선언 형식을 따른다.
+- doctype선언 위에 주석 포함 아무런 코드를 적지 않는다. 
 
- ```
+```
  <!DOCTYPE html>
- ```
+```
 
- #### `<html>`
+#### `<html>`
