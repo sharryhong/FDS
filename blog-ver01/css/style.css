@@ -175,6 +175,7 @@
 	opacity: 0.2;
 	background: url("../img/hongs.jpg") no-repeat;
 	background-size: cover;
+	background-position: 80% center;
 	background-attachment: fixed;
 }
 
