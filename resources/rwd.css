@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+/*
+Fluid Grid
+-----------
+target:content = result
+ex) 450px:1200px = 37.5%
+*/
+
+
+/*
+Flexible Image 
+---------------
+[ content image ]
+width: 100%;
+height: auto;
+
+[ keep scale image ]
+max-width: 100%;
+
+[ bg image ]
+width: 100%;
+padding-bottom: 62.5%; (높이/가로*100  1200/1920 *100 62.5)
+
+[ crop image ]
+bg image 방식에 height 고정값 
+*/
+
+/*
+Flexible  Video
+-----------------
+html5 video : Flexible Image 방법과 비슷
+youtube, vimeo 비디오파일 : <iframe>, <object>, <embed>
+*/
+
+Media Qeueries / Breakpoint

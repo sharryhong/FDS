@@ -16,9 +16,16 @@
  1) 선택자 <br>
  2) 작성 순서 <br>
  3) Media query 
+ 4) 그 외
+
+### 4. 네이밍 규칙 
+
+ 1) 폴더명
+ 2) id, class명 
 
 
 -
+
 
 ### 1. HTML 문법
 
@@ -79,6 +86,7 @@
 </head>
 ```
 
+
 ### 2. 기본 레이아웃
 
 - `<section>`, `<nav>`, `<main>`, `<article>`, `<aside>`, `<header>`, `<footer>`등의 시멘틱한 요소를 쓰도록 한다. 
@@ -105,6 +113,7 @@
 <section class="page-footer"></section>
 ```
 
+
 ### 3. CSS 문법
 
 1) 선택자
@@ -118,8 +127,6 @@
 .selector-third {
 }
 ```
-
-- color hex values 값의 경우 줄여쓴다. `#ffffff'` -> `#fff`
 
 2) 작성 순서
 
@@ -173,3 +180,16 @@ opacity: 1;
   .element { ...}
 }
 ```
+
+4) 그 외 
+
+- css파일에 `@import url("style.css");`를 쓰지않도록 한다.<br> html에 `<link rel="stylesheet" href="style.css">`로 쓴다. 
+- color hex values 값의 경우 줄여쓴다. `#ffffff'` -> `#fff`
+
+
+### 4. 네이밍 규칙 
+
+1) 폴더명
+
+
+2) id, class명 
