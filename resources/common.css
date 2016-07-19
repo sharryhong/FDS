@@ -43,3 +43,35 @@ img {
 	text-indent: -9999em;
 	overflow: hidden;
 }
+
+/*콘텐츠 이미지에 적용되는 fluid image*/
+img.flex-img {
+	width: 100%;
+	height: auto;
+}
+
+/*원래 이미지 크기 유지*/
+img.keep-original-scale {
+	max-width: 100%
+}
+
+/*배경이미지에 적용되는 fluid bg image*/
+.flex-img-3-4 {
+	width: 100%;
+	padding-bottom: 75%;
+	background-size: cover;
+	background-position: center center;
+}
+
+.flex-img-9-16 {
+	width: 100%;
+	padding-bottom: 56.25%;
+	background-size: cover;
+	background-position: center center;
+}
+/*여기들에 높이만 px로 주면 responsive-crop이된다.*/
+
+img.horizontal-center-img {
+	margin-left: 50%;
+	transform: translateX(-50%);
+}

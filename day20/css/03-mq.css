@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+body {
+	min-width: 20rem;
+	height: 100vh;
+	background: #fa5552;
+	font: 1rem/100vh "Spoqa Han Sans", sans-serif;
+	text-align: center;
+}
+
+body::before {
+	content: "Mobile View";
+	font-size: 3rem;
+	color: #fff;
+}
+
+@media (orientation: landscape) {
+	body {
+		background: #aefe53;
+	}
+}
+
+@media (min-width: 600px) {
+	body {
+		background: #532478;
+	}
+	body::before {
+		content: "Tablet View";
+	}
+}
+
+@media (min-width: 600px) and (min-height: 500px) {
+	body {
+		background: #9924a3;
+	}
+	body::before {
+		content: "Tablet View + min-height: 400px";
+	}
+}
+
+@media (min-width: 1000px) {
+	body {
+		background: #5324fe;
+	}
+	body::before {
+		content: "Desktop View";
+	}
+}
+
+@media (min-width: 1000px) and (max-height: 600px) {
+	body {
+		background: #5379ae;
+	}
+	body::before {
+		content: "Desktop View + max-height: 600px";
+	}
+}

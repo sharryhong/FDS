@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <title>동영상 | 반응형 웹디자인(RWD)</title>
+  <link rel="stylesheet" href="../resources/normalize.css">
+  <link rel="stylesheet" href="../resources/common.css">
+  <link rel="stylesheet" href="../resources/rwd.css">
+</head>
+<style>
+
+	/*Hi-DPI 이미지를 처리하기 위한 미디어 쿼리 구문*/
+	@media 
+		(-webkit-min-device-pixel-ratio: ${1:2}),
+		(min--moz-device-pixel-ratio: ${1:2}),
+		(min-resoluton: ${1:2}dppx),
+		(min-resoluton: 96*${1:2}$2dpi) 
+	{
+		/*고해상도 처리를 위한 Bitmap 이미지 코드*/
+		$0
+	}
+
+
+	.container {
+		max-width: 920px;
+		min-height: 100vh;
+		margin-left: auto;
+		margin-right: auto;
+		background: #eee;
+	}
+	.container h2 {margin-top: 0;}
+	.rwd-video {
+		width: 100%;
+		height: auto;
+	}
+	.rwd-original-video {
+		width: 100%;
+		max-width: 640px;
+		height: auto;
+	}
+	iframe {
+		border: 0;
+	}
+	.rwd-media-container {
+		position: relative;
+		width: 100%;
+		height: 0; 
+		/*혹시 height가 설정되어 있다면 없애고 시작. 
+		padding-bottom으로 놓이지정할 것이므로*/
+		padding-bottom: 56.25%; /*16:9의 비율*/
+		/* 스크린비율(가로 세로)
+		4:3 = 75%의 비율 (예전 tv)
+		21:9 = 42.857% (극장) */
+	}
+	.rwd-media{
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	@media 
+		(-webkit-min-device-pixel-ratio: 2),
+		(min--moz-device-pixel-ratio: 2),
+		(min-resoluton: 2dppx),
+		(min-resoluton: 192dpi) 
+	{
+		
+	}
+
+</style>
+<body>
+  
+  <div class="container">
+  	<h2>RWD Video</h2>
+
+	<h3>video요소 | width:100%, height: auto;</h3>
+  	<video 
+  		width="640" 
+  		height="360" 
+  		class="rwd-video" 
+  		poster="img/underthesea.jpg" 
+  		src="media/The Little Mermaid - Under the Sea.mp4"
+  		controls>
+  	</video>
+  	
+  	<h3>video요소 | width:100%, max-width: 640px;, height: auto;</h3>
+  	<video 
+  		width="640" 
+  		height="360" 
+  		class="rwd-original-video" 
+  		poster="img/underthesea.jpg" 
+  		src="media/The Little Mermaid - Under the Sea.mp4"
+  		controls>
+  	</video>
+  	<!-- width, height값을 적지 않으면 css에서 width: 100%;만 줘도 반응형 된다. -->
+  	<!-- width, height값을 적으면 width: 100%, height: auto도 줘야 한다. -->
+  	
+  	<h3>iframe요소 | youtube파일</h3>
+  	<div class="rwd-media-container">
+  		<iframe 
+  			class="rwd-media" 
+  			width="640" 
+  			height="360" 
+  			src="https://www.youtube.com/embed/GC_mV1IpjWA" frameborder="0" 
+  			allowfullscreen>
+  		</iframe>
+  	</div>
+
+	<h4>iframe요소 | vimeo파일</h4>
+	<div class="rwd-media-container">
+		<iframe 
+			class="rwd-media"
+			src="https://player.vimeo.com/video/174170491?color=ffffff&title=0&byline=0" width="640" 
+			height="360" 
+			frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+		</iframe>
+<p><a href="https://vimeo.com/174170491">Toni Kerkela &bull; Les Deux Alpes</a> from <a href="https://vimeo.com/differentvisionprod">DVP</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+	</div>
+
+
+  </div>
+
+  <!-- youtube > share > embed에서 크기 등 설정 후 링크 복사 -->
+
+</body>
+</html>
+
+
+
