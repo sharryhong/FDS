@@ -89,10 +89,58 @@ https://www.thinkwithgoogle.com/research-studies/the-new-multi-screen-world-stud
 - 중단점 설정 / 미디어쿼리 
 
 
-**** 반응형 웹디자인 고려 사항 
+#### 반응형 웹디자인 고려 사항 
 - 기술지원되는가(IE8이하는 미디어쿼리 안되는 등)
 - device-apis
 - performance(성능)
 - 조건에 따른 로딩
 - 콘텐츠
 - 터치
+
+#### 미디어쿼리
+
+- `<link rel="stylesheet" media="(min-width:769px)"  href="css/layout_large.css">` 처럼 불러올 경우 브라우저 크기에 상관없이 다운로드 된다. 다만 스타일 적용은 안된다. 
+
+- `@media (min-width: 700px) and (orientation: landscape) { ... }` <br>
+100px 이상 & 회전방향(orientation)이 가로(landscape)일때, 세로(portrait)
+
+- `@media (min-width: 700px), handheld and (orientation: landscape) { ... }` <br> ,를 쓰면.. or 개념이다. 
+
+- `@media screen and (device-aspect-ratio: 16/9)` <br>
+화면비율이 16:9일때 
+
+- `@media screen and (min-resolution: 2dppx)` <br>
+이미지해상도.. 2배 dppx.. 레티나
+
+- snippet으로 레티나 디스플레이에 대응하는 코드 만들기 
+ > css파일에서 retina/ 만 치면 아래처럼 코드 호출 <br>
+ > emmet을 쓰고 있어서 /를 써야한다. 
+
+```
+<snippet> 
+	<content><![CDATA[@media 
+		(-webkit-min-device-pixel-ratio: ${1:2}),
+		(min--moz-device-pixel-ratio: ${1:2}),
+		(min-resoluton: ${1:2}dppx),
+		(min-resoluton: 96*${1:2}$2dpi) 
+	{
+		$0
+	}]]></content> 
+	<tabTrigger>retina/</tabTrigger> 
+	<scope>source.css</scope> 
+	<description>Bitmap 고해상도 이미지 처리 미디어쿼리 구문</description> 
+</snippet> 
+```
+
+[ 미디어쿼리 고려사항 ]
+
+- 메뉴가 고정형일 경우 높이가 낮으면 화면이 작아지니 고려한다. 
+- modal(팝업) : 높이가 낮을 경우 고려 
+- 가로, 세로 모드일때 고려 
+- sidebar vs header 위치 (예: min-width, min-height이면 header를 왼쪽에 위치 등)
+
+
+### 참고 사이트 
+
+- 유투브 등 코드 만들어주는 사이트 <http://embedresponsively.com/>
+- 구글 레이아웃관련, 중단점 설계 참고 <https://material.google.com/layout/principles.html>

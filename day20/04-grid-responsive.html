@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <title>반응형 그리드 시스템</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../resources/spoqa.css">
+  <link rel="stylesheet" href="../resources/common.css">
+  <link rel="stylesheet" href="../resources/normalize.css">
+  <link rel="stylesheet" href="../resources/grid-system/grid-responsive.css">
+  <style>
+    .container section { box-sizing: border-box; padding: 1.2em; height: 100vh;}
+    
+    .container .headline { margin-top: 0; margin-bottom: 0; }
+    .container section:nth-child(1) { background: #aefe53; }
+    .container section:nth-child(2) { background: #5379ae; }
+    .container section:nth-child(3) { background: #9924a3; }
+
+    @media (max-width: 600px) {
+      
+    }
+    @media (min-width: 601px) and (max-width: 900px) {
+      .container section:nth-child(1),
+      .container section:nth-child(2),
+      .container section:nth-child(3) {
+        float: left;
+        width: 50%
+      }
+      .container section:nth-child(1) {
+        height: 100vh;
+      }
+      .container section:nth-child(2),
+      .container section:nth-child(3) {
+        height: 50vh;
+      }
+    }
+    @media (min-width: 901px) {
+      .container section:nth-child(1),
+      .container section:nth-child(2),
+      .container section:nth-child(3) {
+        float: left;
+        width: 33.3333333%;
+        height: 100vh;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  
+  <div class="container">
+    <section>
+      <h2 class="headline">Headline 1</h2>
+    </section>
+    <section>
+      <h2 class="headline">Headline 2</h2>
+    </section>
+    <section>
+      <h2 class="headline">Headline 3</h2>
+    </section>
+  </div>
+
+
+</body>
+</html>

@@ -29,8 +29,23 @@ bg image 방식에 height 고정값
 /*
 Flexible  Video
 -----------------
-html5 video : Flexible Image 방법과 비슷
-youtube, vimeo 비디오파일 : <iframe>, <object>, <embed>
+1. html5 video : Flexible Image 방법과 유사
+
+2. youtube, vimeo 비디오파일 : <iframe>, <object>, <embed>
+<iframe>을 감싸는 컨테이너 요소가 필요하다.
+position속성 필요 : <iframe>요소는 absolute, 부모는 relative
+<iframe> 요소에 top: 0; width: 100%; height: 100%;
+부모 컨테이너 요소에는 height: 0; padding-bottom: 아래 스크린 비율;
+margin, padding 속성에 설정되는 %값의 기준 크기는 부모 요소가 된다.
 */
 
-Media Qeueries / Breakpoint
+/*Media Qeueries / Breakpoint*/
+
+/*css ver2
+@media screen {}
+@media all {}
+@media print {}*/
+
+/*css ver3*/
+@media [only|not] <media-type> and <condition> {}
+
