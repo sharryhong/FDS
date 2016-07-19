@@ -17,32 +17,12 @@
     .container section:nth-child(2) { background: #5379ae; }
     .container section:nth-child(3) { background: #9924a3; }
 
-    @media (max-width: 600px) {
-      
+    @media (min-width: 600px) {
+      .container section { float: left; width: 50%; height: 50vh; }
+      .container section:first-child { height: 100vh; }
     }
-    @media (min-width: 601px) and (max-width: 900px) {
-      .container section:nth-child(1),
-      .container section:nth-child(2),
-      .container section:nth-child(3) {
-        float: left;
-        width: 50%
-      }
-      .container section:nth-child(1) {
-        height: 100vh;
-      }
-      .container section:nth-child(2),
-      .container section:nth-child(3) {
-        height: 50vh;
-      }
-    }
-    @media (min-width: 901px) {
-      .container section:nth-child(1),
-      .container section:nth-child(2),
-      .container section:nth-child(3) {
-        float: left;
-        width: 33.3333333%;
-        height: 100vh;
-      }
+    @media (min-width: 900px) {
+      .container section { width: 33.3333333%; height: 100vh; }
     }
 
   </style>
