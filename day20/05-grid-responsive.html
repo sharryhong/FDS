@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <title>반응형 그리드 시스템</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../resources/spoqa.css">
+  <link rel="stylesheet" href="../resources/common.css">
+  <link rel="stylesheet" href="../resources/normalize.css">
+  <link rel="stylesheet" href="../resources/grid-system/grid-responsive.css">
+  <style>
+    .container section { box-sizing: border-box; padding: 1.2em; height: 100vh;}
+    .container .headline { margin-top: 0; margin-bottom: 0; }
+    .container section:nth-child(even) { background: #aefe53; }
+    .container section:nth-child(odd) { background: #5379ae; }
+    /*.container section:nth-child(3) { background: #9924a3; }*/
+
+    /*@media (min-width: 600px) {
+      .container section { float: left; width: 50%; height: 50vh; }
+      .container section:nth-child(1) { height: 100vh; }
+    }
+    @media (min-width: 900px) {
+      .container section { width: 33.3333333%; height: 100vh; }
+      .container section:nth-child(1) { float: right; }
+    }*/
+  </style>
+</head>
+<body>
+  
+  <div class="container grid">
+    <section class="unit-m-1-3 unit-l-1-6">
+      <h2 class="headline">Headline 1</h2>
+      <div class="unit-l-1-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, laborum illum commodi ad id dolor, cupiditate nisi illo voluptates inventore porro, aspernatur non autem obcaecati, quibusdam. Minima, perferendis, atque! Perspiciatis.</div>
+      <div class="unit-l-1-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, laborum illum commodi ad id dolor, cupiditate nisi illo voluptates inventore porro, aspernatur non autem obcaecati, quibusdam. Minima, perferendis, atque! Perspiciatis.</div>
+    </section>
+    <section class="unit-m-1-3 unit-l-1-6">
+      <h2 class="headline">Headline 2</h2>
+    </section>
+    <section class="unit-m-1-3 unit-l-1-6">
+      <h2 class="headline">Headline 3</h2>
+    </section>
+    <section class="unit-m-1-3 unit-l-1-6">
+      <h2 class="headline">Headline 4</h2>
+    </section>
+    <section class="unit-m-1-3 unit-l-1-6">
+      <h2 class="headline">Headline 5</h2>
+    </section>
+    <section class="unit-m-1-3 unit-l-1-6">
+      <h2 class="headline">Headline 6</h2>
+    </section>
+  </div>
+
+
+</body>
+</html>

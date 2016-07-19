@@ -12,5 +12,15 @@
 	padding-bottom: 63%; /*1200/1920 *100*/
 	background-image: url("../img/landscape-photos.jpg");
 	background-size: cover;
-	/*background-position: center;*/
+	background-position: center;
+}
+
+.parent {
+	width: 300px;
+	height: 500px;
+	background: #999;
+}
+.child {
+	height: 50%;
+	background: yellow;
 }
