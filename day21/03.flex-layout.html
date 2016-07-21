@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <title>html문서 기본 layout</title>
+  <link rel="stylesheet" href="../resources/common.css">
+  <link rel="stylesheet" href="../resources/normalize.css">
+  <style>
+    header {
+      height: 100px;
+      background: #ee3;
+    }
+    footer {
+      height: 100px;
+      background: #e99;
+    }
+    main {
+      display: flex;
+      height: 500px; 
+      /*main안의 요소들이 자동으로 400px로 된다. oh~!! 단, 자식들이 높이가 있음 안되공~ 
+      align-items: stretch; 가 기본값이기 때문 */
+      border: 2px solid #999;
+    }
+    section { background: #aaa; order: 2; flex-basis: 300px; flex-grow: 1;}
+    /*flex-basis: auto가 기본. 컨텐츠만큼만 폭 가진다. 
+    flex기준 폭 정하기*/
+    /*flex-basis: 300px; 늘어나지 않았을 때 기준 값. width와 비슷*/
+    /*flex-grow: 1; 쭉 늘어난다.
+    0은 false, 1은 true개념 */
+
+    aside { flex-shrink: 0; }
+    /*flex-shrink: 0; 1이면 오그라들고, 0이면 오그라들지 않는다. 
+    flex-shrink: 1; 이 기본값 
+    안쓰면 오그라들때 width가 줄어든다. */
+    .aside-a { background: #3e9; width: 200px; order: 1; height: 200px;}
+    .aside-b { background: #39e; width: 200px; order: 3; align-self: flex-end; height: 100px;}
+  </style>
+</head>
+<body>
+
+  <header>header</header>
+  <main>
+    <section>section</section>
+    <aside class="aside-a">aside A</aside>
+    <aside class="aside-b">aside B</aside>
+  </main>
+  <footer>footer</footer>
+
+</body>
+</html>

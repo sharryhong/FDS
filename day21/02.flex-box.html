@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <title>css3 flexbox layout</title>
+  <link rel="stylesheet" href="../resources/common.css">
+  <link rel="stylesheet" href="../resources/normalize.css">
+  <!-- <link rel="stylesheet" href="../resources/grid-system/grid-fluid-1280-8.css"> -->
+  <style>
+
+    .flex-container {
+      display: flex;
+      /*display: inline-flex;*/
+
+      /*기본값 좌 -> 우. main(주)축이 가로, cross(교차)축이 세로*/
+      flex-direction: row; 
+
+      /*float:right과 비슷*/
+      /*flex-direction: row-reverse; */
+
+      /*cross(교차)축 위->아래*/
+      /*flex-direction: column; */
+
+      /*cross(교차)축 아래->위*/
+      /*flex-direction: column-reverse; */
+      
+      /*flex-wrap: wrap;*/
+      /*flex-wrap: wrap-reverse;*/
+      
+      /*direction과 wrap같이쓰기*/
+      /*flex-flow: row nowrap;*/
+
+      /*main(주)축에 따른 기본 왼쪽(위)정렬*/
+      justify-content: flex-start;
+      /*main(주)축에 따른 오른쪽(아래)정렬.(items는 순서 바뀌지 않는다.) */
+      justify-content: flex-end;
+      /*가운데정렬*/
+      /*justify-content: center;*/
+      /*등분*/
+      /*justify-content: space-between;*/
+      /*justify-content: space-around;*/
+
+      /*cross(교차)축에 따른 가운데정렬*/
+      align-items: center;
+      /*교차축에 맞춰서 쭉 늘어남. 단, px값이 있다면 안됨*/
+      align-items: stretch;
+
+      margin: 2rem;
+      border: 2px solid #333;
+      padding: 0.625rem;
+      height: 500px;
+    }
+    .flex-items {
+      /*width: 200px;*/
+      background: #333;
+      color: #fff;
+    }
+    .item-1 { background: #3355fe; /*height: 50px;*/ }
+    .item-2 { background: #66e3fe; height: 100px; }
+    .item-3 { background: #aa11fe; height: 80px; }
+
+    .center-x-y {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+  </style>
+</head>
+<body>
+
+  <img src="http://placehold.it/320x480/ddd/333/?text=alt" alt="alt">
+  
+  <div class="flex-container">
+    <div class="flex-items item-1 center-x-y">Flexbox1맨 처음</div>
+    <div class="flex-items item-2 center-x-y">Flexboxxxxxx 2</div>
+    <div class="flex-items item-3 center-x-y">Flexbox 3맨 아래</div>
+  </div>
+
+  <img src="http://placehold.it/320x480/ddd/333/?text=alt" alt="alt">
+
+  <div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias esse consequatur odit, illum est ipsam id earum iusto deserunt cupiditate.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias esse consequatur odit, illum est ipsam id earum iusto deserunt cupiditate.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias esse consequatur odit, illum est ipsam id earum iusto deserunt cupiditate.</p>
+  </div>
+
+</body>
+</html>

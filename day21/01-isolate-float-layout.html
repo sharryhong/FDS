@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <title>격리된 플로팅 레이아웃</title>
+  <link rel="stylesheet" href="../resources/common.css">
+  <link rel="stylesheet" href="../resources/normalize.css">
+  <link rel="stylesheet" href="../resources/grid-system/grid-fluid-1280-8.css">
+  <style>
+
+    .grid {
+      margin-bottom: calc(27px * 1);
+    }
+
+    .box {
+      /* calc() : IE10 이상 */
+      float: left;
+      width: calc(12.8% * 0.81); 
+      /* 전체폭 중에 1unit+gutter가 12.8%이고, unit는 81%이다.
+      1 unit*/
+      height: calc(27px * 2);
+      text-align: center;
+      line-height: calc(27px * 2);
+      background: #333;
+      color: #fff;
+    }
+
+    /*본래 사용하는 float 방식*/
+    .box-float {
+      margin-right: calc(12.8% * 0.19); /*1 gutter*/
+    }
+
+    /*Isolate-Float Layout 방식 : 반응형할 때 %하면 브라우저마다 약간씩 버그가 있다. 이를 해결하기 위한 방법 */
+    [class*="box-isolate"] {
+      margin-right: -100%; /*Key Point!!!*/
+      /*float된 박스이기 때문에, 오른쪽 박스가 왼쪽으로 모두 몰아넣어짐 */
+      /*margin-left: ($column*2 + $gutter *2); */
+    }
+    
+    /*순서 바꾸기 매우 쉽다.*/
+    .isolate-order-1 { margin-left: calc(12.8% * 0); }
+    .isolate-order-2 { margin-left: calc(12.8% * 1); }
+    .isolate-order-3 { margin-left: calc(12.8% * 2); }
+    .isolate-order-4 { margin-left: calc(12.8% * 3); }
+    .isolate-order-5 { margin-left: calc(12.8% * 4); }
+    .isolate-order-6 { margin-left: calc(12.8% * 5); }
+    .isolate-order-7 { margin-left: calc(12.8% * 6); }
+    .isolate-order-8 { margin-left: calc(12.8% * 7); }
+
+    .grid *:nth-child(1) { background: #fe3355; }
+    .grid *:nth-child(2) { background: #ae3355; }
+    .grid *:nth-child(3) { background: #663355; }
+    .grid *:nth-child(4) { background: #333355; }
+
+    /*이 이후는 아래로 내리자*/
+    .clear-both { clear: both; }
+
+    /*.child { height: calc(27px * 2);  width: calc(12.8% * 0.81);}
+    .child1 { background: yellow; }
+    .child2 { background: skyblue; }*/
+
+
+
+
+  </style>
+</head>
+<body>
+  
+  <div class="grid-container show-grid">
+    <div class="grid">
+      <div class="box box-float">1</div>
+      <div class="box box-float">2</div>
+      <div class="box box-float">3</div>
+      <div class="box box-float">4</div>
+    </div>
+  </div>
+
+  <div class="grid-container grid">
+    <div class="box box-isolate isolate-order-8">A</div>
+    <div class="box box-isolate isolate-order-7">B</div>
+    <div class="box box-isolate isolate-order-1 clear-both">C</div>
+    <div class="box box-isolate isolate-order-2 ">D</div>
+  </div>
+
+  <!-- <div class="parent grid-container">
+    <div class="child child1">test1</div>
+    <div class="child child2">test2</div>
+  </div> -->
+
+</body>
+</html>

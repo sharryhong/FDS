@@ -57,12 +57,12 @@ container Module (=clearfix / micro clearfix)
 .unit-10-12 { width: 83.3333%; }
 
 /*.unit-1-7 { width: 1/7*100%; }*/
-.unit-1-7 { width: 14.29%; }
-.unit-2-7 { width: 28.57%; }
-.unit-3-7 { width: 42.86%; }
-.unit-4-7 { width: 57.14%; }
-.unit-5-7 { width: 71.43%; }
-.unit-6-7 { width: 85.71%; }
+.unit-1-7 { width: 14.2857%; }
+.unit-2-7 { width: 28.5714%; }
+.unit-3-7 { width: 42.8571%; }
+.unit-4-7 { width: 57.1428%; }
+.unit-5-7 { width: 71.4285%; }
+.unit-6-7 { width: 85.7142%; }
 
 /*.unit-1-8 { width: 1/8*100%; }*/
 .unit-1-8 { width: 12.5%; }
@@ -71,12 +71,12 @@ container Module (=clearfix / micro clearfix)
 .unit-7-8 { width: 87.5%; }
 
 /*.unit-1-9 { width: 1/9*100%; }*/
-.unit-1-9 { width: 11.11%; }
-.unit-2-9 { width: 22.22%; }
-.unit-4-9 { width: 44.44%; }
-.unit-5-9 { width: 55.56%; }
-.unit-7-9 { width: 77.78%; }
-.unit-8-9 { width: 88.89%; }
+.unit-1-9 { width: 11.1111%; }
+.unit-2-9 { width: 22.2222%; }
+.unit-4-9 { width: 44.4444%; }
+.unit-5-9 { width: 55.5555%; }
+.unit-7-9 { width: 77.7778%; }
+.unit-8-9 { width: 88.8889%; }
 
 /*.unit-1-10 { width: 1/10*100%; }*/
 .unit-1-10 { width: 10%; }
@@ -85,22 +85,22 @@ container Module (=clearfix / micro clearfix)
 .unit-9-10 { width: 90%; }
 
 /*.unit-1-11 { width: 1/11*100%; }*/
-.unit-1-11 { width: 9.09%; }
-.unit-2-11 { width: 18.18%; }
-.unit-3-11 { width: 27.27%; }
-.unit-4-11 { width: 36.36%; }
-.unit-5-11 { width: 45.45%; }
-.unit-6-11 { width: 54.55%; }
-.unit-7-11 { width: 63.64%; }
-.unit-8-11 { width: 72.73%; }
-.unit-9-11 { width: 81.82%; }
-.unit-10-11 { width: 90.91%; }
+.unit-1-11 { width: 9.0909%; }
+.unit-2-11 { width: 18.1818%; }
+.unit-3-11 { width: 27.2727%; }
+.unit-4-11 { width: 36.3636%; }
+.unit-5-11 { width: 45.4545%; }
+.unit-6-11 { width: 54.5454%; }
+.unit-7-11 { width: 63.6363%; }
+.unit-8-11 { width: 72.7272%; }
+.unit-9-11 { width: 81.8181%; }
+.unit-10-11 { width: 90.909%; }
 
 /*.unit-1-12 { width: 1/12*100%; }*/
-.unit-1-12 { width: 8.33%; }
-.unit-5-12 { width: 41.67%; }
-.unit-7-12 { width: 58.33%; }
-.unit-11-12 { width: 91.67%; }
+.unit-1-12 { width: 8.3333%; }
+.unit-5-12 { width: 41.6667%; }
+.unit-7-12 { width: 58.3333%; }
+.unit-11-12 { width: 91.6667%; }
 
 /*gutter Module*/
 .gutter,
