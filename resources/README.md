@@ -55,7 +55,7 @@ IE 9 이하에서 버전별로 스크립트나 스타일을 적용할 경우
 <!--[if IE 9]><html lang="ko-KR" class="ie9"><![endif]-->  // IE9에서만 인식
 <!--[if !IE]><!--><html lang="ko-KR"><!--<![endif]-->      // IE10이상, 나머지 브라우저에서 인식 
 ```
-<br><br>
+<br>
 
 #### 1-3) `<head>` 
 
@@ -90,7 +90,7 @@ IE 9 이하에서 버전별로 스크립트나 스타일을 적용할 경우
 	<link rel="stylesheet" href="css/style.css">
 </head>
 ```
-<br><br>
+<br>
 
 #### 1-4) 기본 레이아웃
 
@@ -124,7 +124,7 @@ IE 9 이하에서 버전별로 스크립트나 스타일을 적용할 경우
 <footer class="page-footer">
 </footer>
 ```
-<br><br><br>
+<br><br>
 
 ### 2. CSS 
 
@@ -141,7 +141,7 @@ grouping 선택자의 경우 아래와 같이 한줄, 다음줄, ... 형식으�
 }
 ```
 
-<br><br>
+<br>
 #### 2-2) 작성 순서
 
 1. Positioning
@@ -182,7 +182,7 @@ border-radius: 3px;
 opacity: 1;
  ```
 
-<br><br>
+<br>
 2-3) Media query 
 
 mobile first로 작성한다. 특별한 이유 제외 <br>
@@ -196,16 +196,16 @@ Media query 코드 위치는 관련 코드 바로 하단에 작성한다. (파�
 }
 ```
 
-<br><br>
+<br>
 #### 2-4) 그 외 
 
 css파일에 `@import url("style.css");`를 쓰지않도록 한다.<br> html에 `<link rel="stylesheet" href="style.css">`로 쓴다. 
 color hex values 값의 경우 줄여쓴다. `#ffffff'` -> `#fff`
 
-<br><br><br>
+<br><br>
 ### 3. 네이밍 규칙 
 
 #### 3-1) 폴더명
 
-<br><br>
+<br>
 #### 3-2) id, class명 
