@@ -15,12 +15,12 @@
 
  1) 선택자 <br>
  2) 작성 순서 <br>
- 3) Media query 
+ 3) Media query <br>
  4) 그 외
 
 ### 4. 네이밍 규칙 
 
- 1) 폴더명
+ 1) 폴더명<br>
  2) id, class명 
 
 
