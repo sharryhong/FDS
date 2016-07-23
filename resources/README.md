@@ -30,8 +30,8 @@
 
 1-1) DOCTYPE 선언
 
-- HTML5 doctype선언 형식을 따른다.
-- doctype선언 위에 주석 포함 아무런 코드를 적지 않는다. 
+HTML5 doctype선언 형식을 따른다.
+doctype선언 위에 주석 포함 아무런 코드를 적지 않는다. 
 
 ```
  <!DOCTYPE html>
@@ -39,13 +39,13 @@
 
 1-2) `<html>`
 
-- 기본 코드 
+기본 코드 
 
 ```
 <html lang="ko-KR">
 ```
 
-- IE 9 이하에서 버전별로 스크립트나 스타일을 적용할 경우 
+IE 9 이하에서 버전별로 스크립트나 스타일을 적용할 경우 
 
 ```
 <!--[if IE 6]><html lang="ko-KR" class="ie6"><![endif]-->  // IE6에서만 인식
@@ -88,9 +88,9 @@
 
 1-4) 기본 레이아웃
 
-- `<section>`, `<nav>`, `<main>`, `<article>`, `<aside>`, `<header>`, `<footer>`등의 시멘틱한 요소를 쓰도록 한다. 
+`<section>`, `<nav>`, `<main>`, `<article>`, `<aside>`, `<header>`, `<footer>`등의 시멘틱한 요소를 쓰도록 한다. 
 
-- `<section>` <br>일반적인 문서의 섹션<br>Heading 요소를 사용하여 제목을 넣어 사용한다.
+`<section>` <br>일반적인 문서의 섹션<br>Heading 요소를 사용하여 제목을 넣어 사용한다.
 
 ```
 <header class="page-header">
@@ -125,8 +125,9 @@
 
 2-1) 선택자
 
-- id 선택자 보다는 class 선택자로 스타일을 준다. 
-- grouping 선택자의 경우 아래와 같이 한줄, 다음줄, ... 형식으로 작성한다. 
+id 선택자 보다는 class 선택자로 스타일을 준다. 
+4개 이상의 선택자를 사용하지 않도록 적절한 class를 준다. 
+grouping 선택자의 경우 아래와 같이 한줄, 다음줄, ... 형식으로 작성한다. 
 
 ```
 .selector,
@@ -145,12 +146,12 @@ top: 0;
 right: 0;
 bottom: 0;
 left: 0;
- z-index: 100;
-```
+z-index: 100;
+ ```
 
 2. Box model
  
-```
+ ```
 display: block;
 float: right;
 width: 100px;
@@ -177,8 +178,8 @@ opacity: 1;
 
 2-3) Media query 
 
-- mobile first로 작성한다. 특별한 이유 제외 
-- Media query 코드 위치는 관련 코드 바로 하단에 작성한다. (파일을 따로 작성하지 않는다.)
+mobile first로 작성한다. 특별한 이유 제외 
+Media query 코드 위치는 관련 코드 바로 하단에 작성한다. (파일을 따로 작성하지 않는다.)
 
 ```
 .element { ... }
@@ -190,8 +191,8 @@ opacity: 1;
 
 2-4) 그 외 
 
-- css파일에 `@import url("style.css");`를 쓰지않도록 한다.<br> html에 `<link rel="stylesheet" href="style.css">`로 쓴다. 
-- color hex values 값의 경우 줄여쓴다. `#ffffff'` -> `#fff`
+css파일에 `@import url("style.css");`를 쓰지않도록 한다.<br> html에 `<link rel="stylesheet" href="style.css">`로 쓴다. 
+color hex values 값의 경우 줄여쓴다. `#ffffff'` -> `#fff`
 
 
 ### 3. 네이밍 규칙 
