@@ -3,33 +3,32 @@
 
 ### [ 목차 ]
 
-### 1. HTML 문법
+### 1. HTML
 
- 1) DOCTYPE 선언 <br>
- 2) `<html>` <br>
- 3) `<head>`
+ 1-1) DOCTYPE 선언 <br>
+ 1-2) `<html>` <br>
+ 1-3) `<head>`
+ 1-4) HTML 기본 레이아웃
 
-### 2. HTML 기본 레이아웃
+### 2. CSS
 
-### 3. CSS 문법
+ 2-1) 선택자 <br>
+ 2-2) 작성 순서 <br>
+ 2-3) Media query <br>
+ 2-4) 그 외
 
- 1) 선택자 <br>
- 2) 작성 순서 <br>
- 3) Media query <br>
- 4) 그 외
+### 3. 네이밍 규칙 
 
-### 4. 네이밍 규칙 
-
- 1) 폴더명<br>
- 2) id, class명 
+ 3-1) 폴더명<br>
+ 3-2) id, class명 
 
 
 -
 
 
-### 1. HTML 문법
+### 1. HTML
 
-1) DOCTYPE 선언
+1-1) DOCTYPE 선언
 
 - HTML5 doctype선언 형식을 따른다.
 - doctype선언 위에 주석 포함 아무런 코드를 적지 않는다. 
@@ -38,7 +37,7 @@
  <!DOCTYPE html>
 ```
 
-2) `<html>`
+1-2) `<html>`
 
 - 기본 코드 
 
@@ -56,7 +55,7 @@
 <!--[if !IE]><!--><html lang="ko-KR"><!--<![endif]-->      // IE10이상, 나머지 브라우저에서 인식 
 ```
 
-3) `<head>` 
+1-3) `<head>` 
 
 - `<meta http-equiv="X-UA-Compatible" content="IE=Edge">` 
 <br>사용자 익스플로러의 최신브라우저로 동작하도록 한다.
@@ -87,36 +86,44 @@
 ```
 
 
-### 2. 기본 레이아웃
+1-4) 기본 레이아웃
 
 - `<section>`, `<nav>`, `<main>`, `<article>`, `<aside>`, `<header>`, `<footer>`등의 시멘틱한 요소를 쓰도록 한다. 
 
 - `<section>` <br>일반적인 문서의 섹션<br>Heading 요소를 사용하여 제목을 넣어 사용한다.
 
 ```
-<section class="page-header">
+<header class="page-header">
 	<h1>로고</h1>
-	<nav>
-		<ul class="gnb">
-			<li>menu1</li>
-			<li>menu2</li>
-		</ul>
-	</nav>
-</section>
-<main class="">
-	<section>
-		<h2>각 섹션 제목</h2>
-		<article></article>
-	</section>
-	<aside></aside>
-</main>
-<section class="page-footer"></section>
+</header>
+<nav class="gnb">
+	<ul>
+		<li>menu1</li>
+		<li>menu2</li>
+	</ul>
+</nav>
+<div class="container-main">
+	<article class="page-main">
+		<h2>mainpage heading</h2>
+		<section class="theme-name">
+			<h3>theme heading</h3>
+			<article class="theme-01">
+				<h4>theme-01 heading</h4>
+				<p>theme-01 contents</p>
+			</article>
+		</section>
+	</article>
+	<aside class="page-aside">
+	</aside>
+</div>
+<footer class="page-footer">
+</footer>
 ```
 
 
-### 3. CSS 문법
+### 2. CSS 
 
-1) 선택자
+2-1) 선택자
 
 - id 선택자 보다는 class 선택자로 스타일을 준다. 
 - grouping 선택자의 경우 아래와 같이 한줄, 다음줄, ... 형식으로 작성한다. 
@@ -128,47 +135,47 @@
 }
 ```
 
-2) 작성 순서
+2-2) 작성 순서
 
 1. Positioning
 
-```
+ ```
 position: absolute;
 top: 0;
 right: 0;
 bottom: 0;
 left: 0;
-z-index: 100;
+ z-index: 100;
 ```
 
 2. Box model
-
+ 
 ```
 display: block;
 float: right;
 width: 100px;
 height: 100px;
-```
+ ```
 
 3. Typographic
 
-```
+ ```
 font: normal 13px "Helvetica Neue", sans-serif;
 line-height: 1.5;
 color: #333;
 text-align: center;
-```
+ ```
 
 4. Visual
 
-```
+ ```
 background-color: #f5f5f5;
 border: 1px solid #e5e5e5;
 border-radius: 3px;
 opacity: 1;
-```
+ ```
 
-3) Media query 
+2-3) Media query 
 
 - mobile first로 작성한다. 특별한 이유 제외 
 - Media query 코드 위치는 관련 코드 바로 하단에 작성한다. (파일을 따로 작성하지 않는다.)
@@ -181,15 +188,15 @@ opacity: 1;
 }
 ```
 
-4) 그 외 
+2-4) 그 외 
 
 - css파일에 `@import url("style.css");`를 쓰지않도록 한다.<br> html에 `<link rel="stylesheet" href="style.css">`로 쓴다. 
 - color hex values 값의 경우 줄여쓴다. `#ffffff'` -> `#fff`
 
 
-### 4. 네이밍 규칙 
+### 3. 네이밍 규칙 
 
-1) 폴더명
+3-1) 폴더명
 
 
-2) id, class명 
+3-2) id, class명 
