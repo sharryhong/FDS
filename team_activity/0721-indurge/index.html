@@ -8,7 +8,7 @@
   <link href='https://fonts.googleapis.com/css?family=Lato:400,300,100,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet'>
   <link rel="stylesheet" href="../../resources/common.css">
   <link rel="stylesheet" href="../../resources/normalize.css">
-  <link rel="stylesheet" href="../../resources/grid-system/grid-responsive.css">
+  <link rel="stylesheet" href="css/grid-responsive.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="reset-list">
@@ -17,27 +17,29 @@
     <h1><a href=""><img src="img/logo-header.png" alt="indulge logo"></a></h1>
   </header>
   
-  <nav class="page-manu desktop-center">
+  <nav class="page-manu desktop-center grid">
     <div class="gnb-group">
-      <button type="button" class="hamberger"><img src="img/icon-hamberger@2x.png" alt="메인 버튼" width="33" height="25"></button>
-      <button type="button"><img src="img/icon-search@2x.png" alt="검색 버튼" width="35" height="35"><span class="only-desktop">Search</span></button>
-      <button type="button"><img src="img/icon-card@2x.png" alt="검색 버튼" width="42" height="32"><span class="only-desktop">Checkout</span></button>
+      <button type="button" class="hamberger unit-s-1-3"><img src="img/icon-hamberger@2x.png" alt="메뉴 버튼" width="33" height="25"></button>
+      <ul class="gnb unit-s-1-1 unit-l-7-10">
+        <li><a href="">Focus</a></li>
+        <li><a href="">Carnel Pleasures</a></li>
+        <li><a href="">Hobby Horse</a></li>
+        <li><a href="">Product &amp; Services</a></li>
+        <li><a href="">Interest</a></li>
+      </ul>
+      <button type="button" class="search unit-s-1-3"><img src="img/icon-search@2x.png" alt="검색 버튼" width="35" height="35"><span class="only-desktop">Search</span></button>
+      <button type="button" class="checkout unit-s-1-3"><img src="img/icon-card@2x.png" alt="체크아웃 버튼" width="42" height="32"><span class="only-desktop">Checkout</span></button>
     </div>
-    <ul class="gnb">
-      <li><a href="">Focus</a></li>
-      <li><a href="">Carnel Pleasures</a></li>
-      <li><a href="">Hobby Horse</a></li>
-      <li><a href="">Product &amp; Services</a></li>
-      <li><a href="">Interest</a></li>
-    </ul>
+    
   </nav>
 
-  <!-- <article class="page-main">
-    <section class="main-text">
+  <article class="page-main">
+    <div class="main-text">
       <h4>Focus On</h4>
       <p>your deep dream of a summer night in the dark heart</p>
-    </section>
-  </article> -->
+      <a href="" class="btn btn-big btn-arrow">DEEP DIVE</a>
+    </div>
+  </article>
 
 </body>
 </html>
