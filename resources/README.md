@@ -36,7 +36,7 @@ doctype선언 위에 주석 포함 아무런 코드를 적지 않는다.
 ```
  <!DOCTYPE html>
 ```
-<br><br>
+<br>
 
 #### 1-2) `<html>`
 
@@ -141,7 +141,6 @@ grouping 선택자의 경우 아래와 같이 한줄, 다음줄, ... 형식으�
 }
 ```
 
-<br>
 #### 2-2) 작성 순서
 
 1. Positioning
@@ -183,7 +182,7 @@ opacity: 1;
  ```
 
 <br>
-2-3) Media query 
+#### 2-3) Media query 
 
 mobile first로 작성한다. 특별한 이유 제외 <br>
 Media query 코드 위치는 관련 코드 바로 하단에 작성한다. (파일을 따로 작성하지 않는다.)
@@ -196,7 +195,6 @@ Media query 코드 위치는 관련 코드 바로 하단에 작성한다. (파�
 }
 ```
 
-<br>
 #### 2-4) 그 외 
 
 css파일에 `@import url("style.css");`를 쓰지않도록 한다.<br> html에 `<link rel="stylesheet" href="style.css">`로 쓴다. 
