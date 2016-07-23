@@ -199,6 +199,7 @@ Media query 코드 위치는 관련 코드 바로 하단에 작성한다. (파�
 
 css파일에 `@import url("style.css");`를 쓰지않도록 한다.<br> 
 html에 `<link rel="stylesheet" href="style.css">`로 쓴다. <br>
+
 color hex values 값의 경우 줄여쓴다. `#ffffff'` -> `#fff`
 
 <br><br>
@@ -228,12 +229,12 @@ color hex values 값의 경우 줄여쓴다. `#ffffff'` -> `#fff`
 가능하면 의미가 들어간 영문명을 줄여쓰지 않도록하되, 자주사용하는 이름은 압축명을 사용할 수 있다. 
 
  > button -> btn (0), tweet -> tw(x)
-
+<br>
 `설명-기능` 의 순으로 적도록 한다. 
 
  > page-header, basic-btn 
-
-`-`(하이픈)으로 이름을 이어주되 하이픈이 4개이상 들어가지 않도록 한다. <br>
+<br>
+`-`(하이픈)으로 이름을 이어주되 하이픈이 4개이상 들어가지 않도록 한다. 
 
 
 
