@@ -140,7 +140,6 @@ grouping 선택자의 경우 아래와 같이 한줄, 다음줄, ... 형식으�
 .selector-third {
 }
 ```
-
 <br>
 #### 2-2) 작성 순서
 
@@ -195,7 +194,7 @@ Media query 코드 위치는 관련 코드 바로 하단에 작성한다. (파�
   .element { ...}
 }
 ```
-
+<br>
 #### 2-4) 그 외 
 
 css파일에 `@import url("style.css");`를 쓰지않도록 한다.<br> 
