@@ -10,7 +10,7 @@ body {
 	text-align: center;
 	letter-spacing: 1px;
 	background: #013753 url("../img/bgimg.jpg") no-repeat;
-	background-size: 90%;
+	background-size: 160%;
 	background-position: center top;
 }
 
@@ -34,7 +34,7 @@ button img {
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 3000px;
+	height: 2165px;
 	background: 
 		linear-gradient(90deg, rgba(191, 64, 64, 0.1) 50%, rgba(0,0,0,0.1) 50%),
 		linear-gradient(transparent 95%, #26923f 95%);
@@ -48,7 +48,15 @@ button img {
 	text-indent: -9999em;
 }
 
+.float-right { 
+	float: right;
+}
+
+
 @media (min-width: 800px) {
+	body {
+		background-size: 95%;
+	}
 	.only-desktop {
 		position: static;
 		text-indent: 0;
@@ -254,9 +262,13 @@ button img {
 .unit-l-4-10 .theme-wrap { padding-bottom: 53.35%; }
 .unit-l-3-10 .theme-wrap { padding-bottom: 71.1%; }
 .unit-l-3-10.height-2x .theme-wrap { padding-bottom: 142.3%; }
-.unit-l-2-10 .theme-wrap { padding-bottom: 106.7%; }
+.m-half .theme-wrap { padding-bottom: 53.3%; }
 .unit-l-4-10.height-2x .theme-wrap { padding-bottom: 106.6%; }
 .unit-l-6-10 .theme-wrap { padding-bottom: 35.7%; }
+
+@media (min-width: 800px) {
+	.m-half .theme-wrap { padding-bottom: 106.7%; }
+}
 
 .theme-wrap > *{
 	position: absolute;
@@ -321,8 +333,82 @@ button img {
 	padding-right: 42px;
 }
 
-.float-right { 
-	float: right;
+.page-footer {
+	padding-top: 45px;
+	padding-bottom: 63px;
+	text-align: center;
+	background-color: #141728;
+}
+
+.page-footer h2 img {
+	width: 142px;
+	height: 41px;
+}
+
+.page-footer .sns {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 39px;
+	margin-bottom: 38px;
+	font-size: 2.0625rem;
+}
+
+.sns li {
+	display: inline-block;
+	width: 30%;
+}
+
+.sitemap {
+	width: 76%;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 1.125rem;
+	font-weight: 300;
+	text-align: left;
+}
+
+.sitemap li {
+	margin-bottom: 21px;
+}
+
+.sitemap a:hover,
+.sitemap a:focus {
+	border-bottom: 1px solid #fff;
+}
+
+@media (min-width: 800px) {
+	.page-footer {
+		padding-top: 59px;
+	}
+	.page-footer .desktop-center > * {
+		margin-top: 0;
+		margin-bottom: 0;
+		line-height: 27px;
+	}
+	.page-footer h2 {
+		float: left;
+	}
+	.page-footer h2 img {
+		width: 93px;
+		height: 27px;
+	}
+	.page-footer .sns {
+		float: right;
+		width: 12%;
+		font-size: 1.125rem;
+	}
+	.sitemap {
+		font-size: 1rem;
+		text-align: center;
+	}
+	.sitemap li {
+		display: inline-block;
+		margin-left: 2%;
+	}
+	.sitemap li:first-child {
+		margin-left: 0;
+	}
 }
 
 /*
