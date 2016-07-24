@@ -10,7 +10,7 @@ body {
 	text-align: center;
 	letter-spacing: 1px;
 	background: #013753 url("../img/bgimg.jpg") no-repeat;
-	background-size: cover;
+	background-size: 90%;
 	background-position: center top;
 }
 
@@ -251,8 +251,12 @@ button img {
 	line-height: 1.25;
 }
 
-.unit-l-4-10.unit-s-1-1 .theme-wrap { padding-bottom: 53%; }
-.unit-l-3-10.unit-s-1-1 .theme-wrap { padding-bottom: 70.7%; }
+.unit-l-4-10 .theme-wrap { padding-bottom: 53.35%; }
+.unit-l-3-10 .theme-wrap { padding-bottom: 71.1%; }
+.unit-l-3-10.height-2x .theme-wrap { padding-bottom: 142.3%; }
+.unit-l-2-10 .theme-wrap { padding-bottom: 106.7%; }
+.unit-l-4-10.height-2x .theme-wrap { padding-bottom: 106.6%; }
+.unit-l-6-10 .theme-wrap { padding-bottom: 35.7%; }
 
 .theme-wrap > *{
 	position: absolute;
@@ -282,6 +286,16 @@ button img {
 .theme-wrap .img03 { background: url("../img/photo-03@2x.png") no-repeat; background-size: 100%; }
 .theme-wrap .img04 { background: url("../img/photo-04@2x.png") no-repeat; background-size: 100%; }
 .theme-wrap .img05 { background: url("../img/photo-05@2x.png") no-repeat; background-size: 100%; }
+.theme-wrap .img06 { background: url("../img/photo-06@2x.png") no-repeat; background-size: 100%; }
+.theme-wrap .img07 { background: url("../img/photo-07@2x.png") no-repeat; background-size: 100%; }
+.theme-wrap .img08 { background: url("../img/photo-08@2x.png") no-repeat; background-size: 100%; }
+.theme-wrap .img09 { background: url("../img/photo-09@2x.png") no-repeat; background-size: 100%; }
+.theme-wrap .img10 { background: url("../img/photo-10@2x.png") no-repeat; background-size: 100%; }
+.theme-wrap .img11 { background: url("../img/photo-11@2x.png") no-repeat; background-size: 100%; }
+.theme-wrap .img12 { background: url("../img/photo-12@2x.png") no-repeat; background-size: 100%; }
+.theme-wrap .img13 { background: url("../img/photo-13@2x.png") no-repeat; background-size: 100%; }
+.theme-wrap .img14 { background: url("../img/photo-14@2x.png") no-repeat; background-size: 100%; }
+.theme-wrap .img15 { background: url("../img/photo-15@2x.png") no-repeat; background-size: 100%; }
 
 .go-center {
 	display: flex;
@@ -307,6 +321,9 @@ button img {
 	padding-right: 42px;
 }
 
+.float-right { 
+	float: right;
+}
 
 /*
 Button Module
