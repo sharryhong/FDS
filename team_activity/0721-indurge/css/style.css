@@ -48,10 +48,7 @@ button img {
 	text-indent: -9999em;
 }
 
-@media (min-width: 580px) {
-	/*body {
-		background-size: 100%;
-	}*/
+@media (min-width: 600px) {
 	.only-desktop {
 		position: static;
 		text-indent: 0;
@@ -106,7 +103,7 @@ button img {
 }
 
 
-@media (max-width: 580px) {
+@media (max-width: 600px) {
 	.page-header::after {
 		display: block;
 		content: '';
@@ -145,7 +142,7 @@ button img {
 	}
 }
 
-@media (min-width: 580px) {
+@media (min-width: 600px) {
 	.page-manu {
 		padding-top: 18px;
 	}
@@ -230,7 +227,7 @@ button img {
 	font-weight: 700;
 }
 
-@media (min-width: 580px) {
+@media (min-width: 600px) {
 	.main-text {
 		margin-bottom: 168px;
 	}
@@ -244,41 +241,67 @@ button img {
 }
 
 /*themes*/
-.page-themes p {
+
+/*.themes p {
 	margin-top: 0;
 }
 
-.theme-wrap {
+.themes {
 	position: relative;
-	padding-bottom: 53.5%;
-}
-.theme-two {
-	position: absolute;
-	height: 100%;
+	max-height: 251px;
 	background-color: #8c7172;
+	padding-bottom: 41.5%;
 }
 
-.theme-two::before {
-	position: absolute;
-	top: 0;
+.theme-two.left {
+	padding-left: 50%;
+}
+
+.theme-two.left::before {
 	content: '';
 	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
 	width: 50%;
 	height: 100%;
 	background-image: url("../img/photo-01@2x.png");
 	background-size: cover;
 }
 
-.theme-two.left {
-	padding-left: 50%;
+.page-themes :nth-child(2)::before {
+	background-image: url("../img/photo-02@2x.png");
+}*/
+
+.theme-wrap {
+	position: relative;
+	max-height: 251px;
+	padding-bottom: 53.5%;
 }
-.theme-two.left::before {
+
+.theme-img,
+.theme-text {
+	position: absolute;
+	top: 0;
+	float: left;
+	/*background-color: #eee;*/
+	width: 50%;
+	height: 100%;
+}
+
+.theme-img.left,
+.theme-text.left {
 	left: 0;
+	background: #333;
 }
 
-@media (min-width: 580px) {
-
+.theme-img.right,
+.theme-text.right {
+	right: 0;
+	background: #666;
 }
+
+
 
 /*
 Button Module
