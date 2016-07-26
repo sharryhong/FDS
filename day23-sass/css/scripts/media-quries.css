@@ -1,0 +1,27 @@
+.page-header {
+  float: left;
+  width: 100%; }
+  @media (min-width: 780px) {
+    .page-header {
+      width: 25%; } }
+  @media (min-width: 1200px) {
+    .page-header {
+      width: 16.6666667%; } }
+  @media (min-width: 1600px) {
+    .page-header {
+      width: 10%; } }
+
+.main-content {
+  float: right;
+  width: 90%; }
+  @media (min-width: 780px) {
+    .main-content {
+      width: 33.3333333%; } }
+  @media (min-width: 1200px) {
+    .main-content {
+      width: 50%; } }
+  @media (min-width: 1600px) {
+    .main-content {
+      width: 100%; } }
+
+/*# sourceMappingURL=../../map/scripts/media-quries.css.map */

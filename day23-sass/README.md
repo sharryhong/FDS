@@ -66,7 +66,46 @@
 
 #### 변수 (Variables) $, !default
 
+- 변수이름 작성 규칙
+ - 변수 이름 사이에 공백을 사용하지 않는다.
+ - 변수 이름의 음절 사이에 _ , - 등을 사용한다. _ , - 구별을 하지 않는다.
+ - 만약 프로그래밍에 익숙해서 camelCase방식이 인숙하다면 사용가능. 다만, camelCase방식은 함수 이름에 사용되므로 권장하지는 않는다. 
+
+- !global 전역변수처럼 사용가능하게 함 (새로 생김)
+
+```
+#main {
+  $width: 5em !global;
+  width: $width;
+}
+
+#sidebar {
+  width: $width;
+}
+```
+
+- !default 기본값 
+ - null값 제외하곤 다른 값이 우선시된다.
+
+```
+$set-width: 900px;
+$set-width: 1000px !default
+의 경우 900px로 됨
+```
+
+### Sass Data Type (데이터 유형)
+- null 비어있음
+- number 숫자
+ - 1.2, 3, 14px
+- string 문자 / color (#, rgba, ...)
+ - "../img/icon.jpg", 'Time, serif', #333
+- boolean
+- [] list (배열)
+- map (객체) 
+
+
 
 ### 그외 참조
 
 - sass folder structure로 구글링하면 해외사람들이 어떻게 관리하고 있는지 많이 나온다. 참조.
+- 읽어보자! <http://thesassway.com>
