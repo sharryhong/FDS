@@ -1,0 +1,42 @@
+@charset "UTF-8";
+/* 이건 css에서 나오는 주석 */
+.page {
+  margin-top: 20px;
+  margin-right: 10px;
+  margin-bottom: 0;
+  margin-left: auto;
+  font-size: 1rem;
+  font-weight: 600;
+  font: 1rem/1.5 Helvetica, sans-serif;
+    font-weight: 200;
+    font-variant: small-caps; }
+  .page .page-header {
+    position: relative;
+    height: 20vh; }
+  .page .brand {
+    overflow: hidden;
+    position: absolute;
+    left: 25%; }
+    .page .brand a {
+      color: #fc414b; }
+      .page .brand a:hover, .page .brand a:focus {
+        color: skyblue; }
+      .page .brand a span {
+        color: green; }
+  @media (min-width: 800px) {
+    .page {
+      border: 1px solid red; } }
+
+.button, .button-error {
+  display: inline-block;
+  padding: 0.6em 0.6em;
+  background: #fe9977;
+  text-align: center; }
+  .button:hover, .button-error:hover {
+    background: skyblue; }
+
+.button-error {
+  color: #fff;
+  border: 3px solid green; }
+
+/*# sourceMappingURL=style.css.map */

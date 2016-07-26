@@ -1,0 +1,56 @@
+/* 이건 css에서 나오는 주석 */
+// 이건 css에서 안나와 ㅋㅋㅋ 
+
+.page
+	margin:
+		top: 20px
+		right: 10px
+		bottom: 0
+		left: auto
+
+	font: 
+		size: 1rem
+		weight: 600
+
+	font: 1rem/1.5 Helvetica, sans-serif
+		weight: 200
+		variant: small-caps
+
+	.page-header
+		position: relative
+		height: 20vh
+
+	.brand
+		overflow: hidden
+		position: absolute
+		left: 25%
+		a
+			color: #fc414b
+			// & <- 부모 참조 선택자, 중첩된 구조에서 사용
+			&:hover,
+			&:focus
+				color: skyblue
+			& span
+				color: green
+
+	@media (min-width: 800px)
+		border: 1px solid red
+
+$btn-radius: 4px
+$btn-align: center
+$btn-gap: .6em
+$btn-bg: #fe9977
+
+.button
+	display: inline-block
+	padding: $btn-gap $btn-gap
+	background: $btn-bg
+	text-align: $btn-align
+
+	&:hover
+		background: skyblue
+
+.button-error
+	@extend .button
+	color: #fff
+	border: 3px solid green
