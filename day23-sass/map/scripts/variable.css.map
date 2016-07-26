@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "../../css/scripts/variable.css",
+	"sources": [
+		"../../sass/scripts/variable.sass"
+	],
+	"mappings": "AAWA,AAAA,IAAI,AACF,QAAQ,CAAC;EACT,OAAO,EAJC,QAAQ;EAKhB,OAAO,EALC,QAAQ,GAKI",
+	"names": []
+}

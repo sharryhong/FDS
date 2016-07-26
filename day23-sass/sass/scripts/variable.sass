@@ -1,0 +1,15 @@
+// Sass 변수는 변수 이름 앞에 $ 기호를 붙인다. 
+// Sass 변수이름 작성 규칙 
+// 1. 변수 이름 사이에 공백을 사용하지 않는다. 
+// 변수 이름의 음절 사이에 _ , - 등을 사용한다.
+// 만약 프로그래밍에 익숙해서 camelCase방식이 인숙하다면 사용가능. 
+// 다만, camelCase방식은 함수 이름에 사용되므로 권장하지는 않는다. 
+
+// _ , - 구별을 하지 않는다. 아래를 참고하자 
+$my-nick: 'sharry hong'
+$my_nick: 'sharry'
+
+body 
+	&::before
+		content: $my_nick
+		content: $my-nick

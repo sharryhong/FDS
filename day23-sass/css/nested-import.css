@@ -1,7 +1,19 @@
+.box, .demo-extend {
+  border: 1px solid;
+  padding: 20px; }
+
+.box-small {
+  padding: 5px; }
+
 .demo {
   font: 1em Arial,sans-serif; }
-  .demo .box {
-    border: 1px solid #333;
-    padding: 10px; }
+  .demo .box, .demo .demo-extend {
+    border: 1px solid white;
+    padding: 30px; }
+  .demo .box-small {
+    padding: 5px; }
+
+.demo-extend {
+  color: red; }
 
 /*# sourceMappingURL=../map/nested-import.css.map */
