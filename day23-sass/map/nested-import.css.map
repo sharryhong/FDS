@@ -1,0 +1,10 @@
+{
+	"version": 3,
+	"file": "../css/nested-import.css",
+	"sources": [
+		"../sass/nested-import.sass",
+		"../sass/_box.sass"
+	],
+	"mappings": "AAAA,AAAA,KAAK,CAAC;EAEL,IAAI,EAAE,oBAAqB,GAAG;EAF/B,ACAA,KDAK,CCAL,IAAI,CAAC;IACJ,MAAM,EAAE,cAAe;IACvB,OAAO,EAAE,IAAK,GAAG",
+	"names": []
+}

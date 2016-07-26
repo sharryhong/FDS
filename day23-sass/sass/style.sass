@@ -1,0 +1,36 @@
+/* sass 연습 */
+// 정신차리고 열심히 합니다. :) 
+
+$main-color: #5566fe
+
+%small
+	font-size: .75rem
+
+.page-header
+	$border-color: #fe5566
+
+	position: relative
+	font-size: 1rem
+	border:
+		top: 1px solid $border-color
+
+	h1
+		position: absolute
+
+		a
+			border: 1px dotted
+			&:hover
+				backgound: #eee
+
+	@media (min-width: 600px)
+		font-size: 3rem
+
+.btn
+	color: $main-color
+	padding: .5em 1em
+
+.btn-big 
+	@extend .btn
+	border-bottom: 1px solid
+
+	@extend %small
