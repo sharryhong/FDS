@@ -20,7 +20,7 @@ equality operators (==, !=)
 
 > 10px/5px 연산안됨 10px/5 연산됨 
 
-- Interpolation: #{} 인터폴레이션방법을 쓰면 손쉽게 사용가능하다. 
+- Interpolation(인터폴레이션. 보간법): #{} 인터폴레이션방법을 쓰면 손쉽게 사용가능하다. 
 
 ```
 $language: kr
@@ -46,13 +46,74 @@ p.foo {
   border-color: blue; }
 ```
 
-- 비교연산 Relational operators (<, >, <=, >=)
+```
+// 인터폴레이션 => 문자를 처리하기 위해 접합시키는 방법
+@import url("http://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-#{$spoqa-language}.css")
 
->> 디버깅해보기 : sass파일내에  `@debug 1<4`라고 하면 터미널에서 DEBUG: true 라고 나온다.
+@import url("https://fonts.googleapis.com/css?family=#{$noto-sans}:#{$normal-weight},#{$bold-weight}")
+@import url("https://fonts.googleapis.com/css?family=#{$roboto}")
+@import url("https://fonts.googleapis.com/css?family=#{$oswald}:#{$normal-weight},#{$bold-weight},#{$light-weight}")
+
+body 
+  // font-size: $base-font-size
+  // font-family: "Spoqa Han Sans"
+  // line-height: $base-line-height
+  font: #{$base-font-size}/#{$base-line-height}
+  // 인터폴레이션 방법을 쓰면 잘되는데, 인터폴레이션을 쓰지않으면 /가 연산자로 인식된다.
+
+// @debug 디렉티브(지시자)를 사용하면 명령창에 디버그 결과를 출력한다. 
+@debug 1<4 // 터미널에서 DEBUG: true 라고 나온다.
+@debug type-of(red) // DEBUG: color
+@debug type-of(Noto Sans) // list (배열)
+@debug type-of("Noto Sans") // string
+
+// interpolation보간법 #{}
+$selector: sharryhong
+$pseudo-name: after
+
+// 선택자영역에 사용하기
+#area .#{$selector}
+  margin: 
+    left: 20%
+    right: 20%
+  // 가상선택자에 사용하기 
+  &::#{$pseudo-name}
+    // content: 'um'
+    content: $selector
+
+//미디어쿼리에 사용하기
+$media-md: "screen and (min-width: 760px)"
+$media-lg: "screen and (min-width: 1220px)"
+$media-print: "not screen and (min-width: 21cm)"
+
+.#{$selector}
+  @media #{$media-md}
+    display: flex
+  @media #{$media-lg}
+    display: block
+  //일반적으로 !important를 쓰진않지만, 인쇄시 설정 등을 위해 써도 무방하다.
+  @media #{$media-print}
+    background: #fff !important
+    color: #000 !important
+```
+
+#### list : 집합. 배열 개념. list 대표 함수들 (나머지는 [sass-lang.com](http://sass-lang.com/documentation/file.SASS_REFERENCE.html)읽자!)
+
+- length() 함수를 사용하여 몇개인지 알 수 있다. 
+
+> length('10px', '#333', 'solid') // 3개
+
+- nth($list, $n) // 배열, 몇번째꺼 (sass는 1부터. 자바스크립트 등 대부분은 0부터)
+
+#### Mixins @mixin, @include, =, +
+
+#### 그 외 
+
+> 디버깅해보기 : sass파일내에  `@debug 1<4`라고 하면 터미널에서 DEBUG: true 라고 나온다.
 
 - 문자 접합
 
->> cursor: n + -resize; // n-resize 
+> cursor: n + -resize; // n-resize 
 
 ### 그외 참조
 
