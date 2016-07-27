@@ -1,0 +1,53 @@
+// 의존 function 모듈
+@import "function/percent";
+
+//목록 초기화 스타일 모듈
+%reset-list ul,
+%reset-list ol, 
+%reset-list,
+%reset-list {
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-left: 0;
+	list-style: none;
+}
+
+%rm-img-blank {
+	vertical-align: bottom;
+}
+
+%align-img-bottom img + * {
+	overflow: hidden;
+}
+
+%rwd-media {
+	width: 100%;
+	height: auto;
+}
+
+// _는 지역모듈이라는 표시만 해준 것임(원래는 전역, 지역모듈개념은없다.)
+%_rwd-media-ratio {
+	width: 100%;
+	height: 0;
+	background-size: cover;
+	background-position: center center;
+}
+
+%flex-media-4-3 {
+	@extend %_rwd-media-ratio;
+	padding-bottom: percent(3,4);
+}
+
+%flex-media-16-9 {
+	@extend %_rwd-media-ratio;
+	padding-bottom: percent(9,16);
+}
+
+%flex-media-21-9 {
+	@extend %_rwd-media-ratio;
+	padding-bottom: percent(9,21);
+}
+
+.col-3 {
+	border: 3px solid;
+}

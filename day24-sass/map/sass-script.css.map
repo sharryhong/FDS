@@ -1,0 +1,10 @@
+{
+	"version": 3,
+	"file": "../css/sass-script.css",
+	"sources": [
+		"../sass/sass-script.sass",
+		"../sass/_var.sass"
+	],
+	"mappings": "AAKA,OAAO,CAAC,oEAAI;AAEZ,AAAA,IAAI,CAAC;EAIJ,IAAI,EAAqB,QAAoB;CAC5C",
+	"names": []
+}
