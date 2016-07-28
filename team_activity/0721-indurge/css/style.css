@@ -30,7 +30,7 @@ button img {
 .show-grid::before {
 	content: '';
 	position: absolute;
-	z-index: -100;
+	z-index: 100;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -39,7 +39,7 @@ button img {
 		linear-gradient(90deg, rgba(191, 64, 64, 0.1) 50%, rgba(0,0,0,0.1) 50%),
 		linear-gradient(transparent 95%, #26923f 95%);
 	background-size: 
-		100% 100%,
+		100%,
 		1px 1.3125rem;
 }
 
