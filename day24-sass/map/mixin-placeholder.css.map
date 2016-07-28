@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "../css/mixin-placeholder.css",
+	"sources": [
+		"../sass/mixin-placeholder.sass"
+	],
+	"mappings": "AAwBA,AAfA,MAeM,EAKN,AApBA,MAoBM,EAKN,AAzBA,UAyBU,EAIV,AA7BA,EA6BE,CA7BU;EACX,UAAU,EAAE,UAAW;CAAG;;AAc3B,AAAA,MAAM,CAAC;EAjBN,UAAU,EADc,UAAU;EAelC,KAAK,EAMS,KAAK;EALnB,MAAM,EAKe,IAAI;CAAI;;AAE9B,AAAA,MAAM,CAAC;EAtBN,UAAU,EAwBU,WAAW;EAV/B,KAAK,EAWS,KAAK;CAAI;;AAExB,AAAA,UAAU,CAAC;EAZV,MAAM,EAciB,IAAI;CAAI",
+	"names": []
+}

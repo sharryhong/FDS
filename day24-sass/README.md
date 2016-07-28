@@ -105,7 +105,113 @@ $media-print: "not screen and (min-width: 21cm)"
 
 - nth($list, $n) // 배열, 몇번째꺼 (sass는 1부터. 자바스크립트 등 대부분은 0부터)
 
-#### Mixins @mixin, @include, =, +
+#### Mixins @mixin(정의), @include(호출), =(sass에선 @mixin대신 사용가능), +(sass에선 @include 대신 사용가능)
+
+- 믹스인(Mixin) 정의 : 코드를 섞다. 
+- javascript의 함수와 흡사하다. 
+
+- 기본 규칙 
+
+```
+@mixin 믹스인이름($매개변수) {
+    섞고자하는 코드들 
+}
+```
+
+- % placeholder와의 차이점? 
+ - % placeholder는 코드덩어리는 하나고 그룹으로 묶인다(성능엔 좋음). mixin은 안묶여서 코드양이 많아진다.
+ - %, @extend를 많이 사용하면 css코드를 볼 때 해석하기 어려울 수도있다. 
+ - 확장성은 mixin이 좋다. 또다른 mixin안에 + 가능
+ - %는 지정한 것만 기능하지만 mixin은 인자를 사용함으로서 더욱 확장성이 생긴다.
+
+- 그럼 언제 mixin을 쓰면 좋을까?
+ - 인자, 매개변수를 써서 확장성 응용 
+
+- 그럼 언제 %, placeholder를 쓰면 좋을까?
+ - 뭔가를 초기화시키는 등 바뀔일이 없을때. 예를들어 common파일 내 코드들 
+
+- 인자(변수전달)
+ - 매개변수자리에 값설정 가능하다(default) -> 자바스크립트 ES6에서도 가능해졌다.
+
+- 매개변수에 default값 사용가능. 호출할때 인자값 안쓸 때 적용됨 
+
+```
+// 문법
+// @mixin(정의), @include(호출)
+// %(정의), @extend %(호출)
+
+@mixin box-sizing($type: border-box)
+  box-sizing: $type
+
+%box-sizing
+  box-sizing: border-box
+
+// 기본값 null로 주면 인자값없으면 아무것도 안나옴
+// mixin정의시 매개변수 많아지면 보기 힘들 수 있다. 
+// scss에서는 
+// @mixin size(
+//  $width: null, 
+//  $height: null
+// )
+// 이렇게 쓸 수 있다.
+@mixin size($width: null, $height: null)
+  width: $width
+  height: $height
+
+header
+  @extend %box-sizing
+  @include box-sizing
+  @include size(100px, 50px)
+
+footer
+  @extend %box-sizing
+  @include box-sizing(content-box)
+  +size(400px) //width: 400px; 만 나옴
+
+.page-main
+  @extend %box-sizing
+  +size($height: 30px) //이렇게 매개변수 중 하나만 골라서 사용가능 
+
+h2
+  @extend %box-sizing
+
+>> 결과 << 
+header, footer, .page-main, h2 {
+  box-sizing: border-box;
+}
+
+header {
+  box-sizing: border-box;
+  width: 100px;
+  height: 50px;
+}
+
+footer {
+  box-sizing: content-box;
+  width: 400px;
+}
+
+.page-main {
+  height: 30px;
+}
+```
+
+- 프로젝트 진행할 때마다 mixin등을 써서 본인의 라이브러리처럼 만들어 재사용해보자. 
+
+#### 
+
+- 변수범위(scope)와 @content
+ - 미디어쿼리도 잘 사용해보자. 
+ - 예: +mq(800px 1200px color portrait)
+
+```
+@mixin colors(..)
+  @content // 여기에 { 안의 내용이 들어온다. } 따라서 확장이 가능. 미디어쿼리 사용시 많이 쓴다.
+
+.selector
+  @include { 여기서 설정한 것이 }
+
+```
 
 #### 그 외 
 

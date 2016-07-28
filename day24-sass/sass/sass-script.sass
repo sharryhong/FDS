@@ -1,6 +1,7 @@
 // Sass Script Operation
 
 @import var
+@import mixins
 
 // 인터폴레이션 => 문자를 처리하기 위해 접합시키는 방법
 @import url("http://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-#{$spoqa-language}.css")
@@ -50,3 +51,22 @@ $media-print: "not screen and (min-width: 21cm)"
 	@media #{$media-print}
 		background: #fff !important
 		color: #000 !important
+
+// mixin
+
+header
+	@include box-sizing
+	// @extend %box-sizing
+
+footer
+	@include box-sizing
+	// @extend %box-sizing
+
+// % placeholder는 코드덩어리는 하나고 그룹으로 묶인다. mixin은 안묶여서 코드양이 많아진다.
+// %, @extend를 많이 사용하면 css코드를 볼 때 해석하기 어려울 수도있다. 
+// 확장성은 mixin이 좋다. 또다른 mixin안에 + 가능
+
+%box-sizing 
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
