@@ -157,7 +157,7 @@ Returns a random number.
 
 ### loop / @while, @for, @each
 
-#### while
+#### @while
 
 - @if문과 유사하지만 반복 수행한다는 차이점이 있다. 
 
@@ -167,8 +167,47 @@ Returns a random number.
 }
 
 // @if는 1회만
+
+$i: 1;
+
+@while $i <= $column-num {
+  .unit-#{$i} { width: coulmnWidth($i); }
+  $i: $i + 1;
+}
 ```
 
+#### @for
+
+- Sass의 for문에서는 값이 반드시 1씩 증가한다. 
+- to : ~12전까지. 즉 11까지
+- through : ~12포함
+
+```
+$total: 12;
+@for $i from 1 through $total { // 1부터 12까지
+  .grid {
+    @extend %cf;
+  }
+  .col-#{$i} {
+    @extend %col;
+    width: width($i);
+  }
+}
+```
+
+#### @each
+
+- jQuery의 for~in, forEach문과 유사한 반복문 처리
+- list, map 과 같이 사용시 강력 
+- ex) icon들 
+
+```
+@each $obj in phone, table, cup, mouse {
+  .item-#{$obj} {
+    background-image: url("img/#{$obj}.jpg");
+  }
+}
+```
 
 ### 그외 참조
 

@@ -8,6 +8,13 @@
 // 기존 css -> Sass 
 // 몇 개 컬럼, unit, gutter비율, gutter를 넣을것인가
 
+// $grid-setting: (
+// 	이 Map기능을 써서 변수를 한데 묶어줄 수 있다. 
+// 	$container-width: 1280px,
+// 	$column-num: 8,
+// 	...
+// )
+
 $container-width: 1280px;
 $column-num: 8;
 $column-width: $container-width/$column-num;
@@ -18,13 +25,22 @@ $leading: 27px;
 $base-font-size: 18px;
 $base-leading-ratio: $base-font-size * 1.5;
 
+$fluid: true; // $fluid: true이면 유동그리드(%)로 바꾸기 
+// target / content * 100 
+// percentage(width/context)
+$page-width: $column-num * $unit-width + $gutter-width * ($column-num - 1);
+
 
 @function draw-column($hex, $alpha: 0.3) {
 	@return linear-gradient(90deg, rgba($hex, $alpha) $location);
 }
 
 @function coulmnWidth($num) {
-	@return $unit-width*$num + $gutter-width*($num - 1);
+	$w: $unit-width*$num + $gutter-width*($num - 1);
+	@if $fluid {
+		$w: percentage($w/$page-width);
+	@return $w;
+	}
 }
 
 @function pushPull($num) {
