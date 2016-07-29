@@ -95,13 +95,15 @@ $value-map: (text: #00ff00, background: #0000ff, border: #ff0000);
 }
  ```
 
-### 함수 
+## 함수 
 
 - @function, @return 
 
-#### 내장함수
+### 내장함수
 
-[컬러함수 사이트 바로가기](http://sass-lang.com/documentation/Sass/Script/Functions.html)
+[함수 사이트 바로가기](http://sass-lang.com/documentation/Sass/Script/Functions.html)
+
+##### 컬러함수
 
 - set함수 rgba($color, $alpha), rgb('$red', $green, $blue)
  - 예) rgb(0,0,0) => #000000 /  rgba(red,0.4) => rgba(255,0,0,0.4)
@@ -109,6 +111,63 @@ $value-map: (text: #00ff00, background: #0000ff, border: #ff0000);
 
 - mix(color, color) // 색 섞어준다. 잘 쓰진 않는다. 
 
+- lighten($color, $amount) // $amount만큼 명도 올림
+- darken($color, $amount) // 명도 낮춤
+- saturate($color, $amount)  // 채도 높임
+- desaturate($color, $amount) // 채도 낮춤
+- grayscale($color, $amount) // 채도 없앰. 흑백모드
+
+- complement($color) // 보색. 채도만 반전. 
+- invert($color) // 반전색. 명도, 채도반전
+
+- alpha($color)
+- opacity($color, $amount)
+- fade-in($color, $amount) //
+- fade-out($color, $amount)
+ - ex) fade-out(#333, 0.3) -> rgba(51,51,51,0.7)
+
+##### Number Functions
+
+- percentage($number)<br>
+Converts a unitless number to a percentage.
+- round($number)<br>
+Rounds a number to the nearest whole number.
+- ceil($number)<br>
+Rounds a number up to the next whole number.
+- floor($number)<br>
+Rounds a number down to the previous whole number.
+- abs($number)<br>
+Returns the absolute value of a number.
+- min($numbers…)<br>
+Finds the minimum of several numbers.
+- max($numbers…)<br>
+Finds the maximum of several numbers.
+- random([$limit])<br>
+Returns a random number.
+
+### 사용자 정의 함수 
+
+### @if(condition) @else if, @else 조건문
+
+### if함수 
+
+`if(조건, 참일경우, 거짓일경우);` 3항식. 
+
+- if3항식 자체 내에 또 넣어도 된다. 
+
+### loop / @while, @for, @each
+
+#### while
+
+- @if문과 유사하지만 반복 수행한다는 차이점이 있다. 
+
+```
+@while 조건 {
+  조건이 참인 경우 코드 블록문 처리(반복)
+}
+
+// @if는 1회만
+```
 
 
 ### 그외 참조
@@ -116,3 +175,4 @@ $value-map: (text: #00ff00, background: #0000ff, border: #ff0000);
 - sass folder structure로 구글링하면 해외사람들이 어떻게 관리하고 있는지 많이 나온다. 참조.
 - 읽어보자! <http://thesassway.com>
 - sass test site <http://www.sassmeister.com>
+- <http://sass.js.org/>
