@@ -1,0 +1,11 @@
+@media \0screen {
+  body {
+    margin: 0 auto;
+  }
+  .content-block {
+    padding-top: 20%;
+    color: #f00;
+  }
+}
+
+/*# sourceMappingURL=../map/cross_browsing_mixin.css.map */
