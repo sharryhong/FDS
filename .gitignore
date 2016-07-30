@@ -3,3 +3,4 @@
 *.zip
 *.cmd
 node_modules/
+*.log
