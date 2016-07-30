@@ -1,3 +1,5 @@
 *.psd
 *.mov
 *.zip
+*.cmd
+node_modules/
