@@ -103,13 +103,13 @@ $value-map: (text: #00ff00, background: #0000ff, border: #ff0000);
 
 [함수 사이트 바로가기](http://sass-lang.com/documentation/Sass/Script/Functions.html)
 
-##### 컬러함수
+##### Color 함수
 
-- set함수 rgba($color, $alpha), rgb('$red', $green, $blue)
+- (set함수) rgba($color, $alpha), rgb('$red', $green, $blue)
  - 예) rgb(0,0,0) => #000000 /  rgba(red,0.4) => rgba(255,0,0,0.4)
-- get함수 red($color) green() blue() // 16진수 값을 10진수값으로 변환시켜준다. 
+- (get함수) red($color) green(Color 함수) blue(Color 함수) // 16진수 값을 10진수값으로 변환시켜준다.
 
-- mix(color, color) // 색 섞어준다. 잘 쓰진 않는다. 
+- mix(color, color) // 색 섞어준다. 잘 쓰진 않는다.
 
 - lighten($color, $amount) // $amount만큼 명도 올림
 - darken($color, $amount) // 명도 낮춤
@@ -117,43 +117,93 @@ $value-map: (text: #00ff00, background: #0000ff, border: #ff0000);
 - desaturate($color, $amount) // 채도 낮춤
 - grayscale($color, $amount) // 채도 없앰. 흑백모드
 
-- complement($color) // 보색. 채도만 반전. 
+- complement($color) // 보색. 채도만 반전.
 - invert($color) // 반전색. 명도, 채도반전
 
 - alpha($color)
 - opacity($color, $amount)
-- fade-in($color, $amount) //
+- fade-in($color, $amount) 
 - fade-out($color, $amount)
  - ex) fade-out(#333, 0.3) -> rgba(51,51,51,0.7)
 
 ##### Number Functions
 
 - percentage($number)<br>
-Converts a unitless number to a percentage.
+퍼센트
 - round($number)<br>
-Rounds a number to the nearest whole number.
+반올림
 - ceil($number)<br>
-Rounds a number up to the next whole number.
+올림
 - floor($number)<br>
-Rounds a number down to the previous whole number.
+내림
 - abs($number)<br>
-Returns the absolute value of a number.
+절대값
 - min($numbers…)<br>
-Finds the minimum of several numbers.
+최소값 반환
 - max($numbers…)<br>
-Finds the maximum of several numbers.
+최대값 반환
 - random([$limit])<br>
-Returns a random number.
+$limit이하의 랜덤한 숫자 반환
 
 ### 사용자 정의 함수 
 
 ### @if(condition) @else if, @else 조건문
 
-### if함수 
+```
+$value: null;
+
+h1 {
+  @if $value == false {
+    color: blue;
+  } @else if $value == null {
+    color: green;
+  } @else {
+    color: black;
+  }
+}
+
+/* 컴파일 결과 */
+h1 {
+  color: green; }
+```
+
+- @mixin 내부에서 @if 조건문 사용 
+
+```
+// 대비 색상 믹스인
+@mixin contrast-color($color, $compare-light: 50%, $amount: 20%) {
+  // 유효성 검사
+  @if type-of($color) != color {
+    @error "전달받은 #{$color} 값은 색상 데이터 유형이 아닙니다.";
+  }
+
+  $lightness: lightness($color) > $compare-light;
+  $bg-color: null;
+  @if ($lightness == true) {
+    $bg-color: darken($color, $amount);
+  } @else {
+    $bg-color: lighten($color, $amount);
+  }
+  color: $color;
+  background-color: $bg-color;
+}
+```
+
+### if() 함수 
 
 `if(조건, 참일경우, 거짓일경우);` 3항식. 
 
 - if3항식 자체 내에 또 넣어도 된다. 
+
+```
+$main-bg: #000
+
+.main {
+  // if (조건, 참일 경우, 거짓일 경우)
+  color: if($main-bg == black, #fff, #000)
+  // 결과: color: #fff
+}
+```
 
 ### loop / @while, @for, @each
 
@@ -207,6 +257,22 @@ $total: 12;
     background-image: url("img/#{$obj}.jpg");
   }
 }
+```
+
+```
+@each $header, $size in (h1: 2em, h2: 1.5em, h3: 1.2em) {
+  #{$header} {
+    font-size: $size;
+  }
+}
+
+결과
+h1 {
+  font-size: 2em; }
+h2 {
+  font-size: 1.5em; }
+h3 {
+  font-size: 1.2em; }
 ```
 
 ### 그외 참조
