@@ -4,5 +4,4 @@
 *.cmd
 *.log
 node_modules/
-blog-ver01/
 gulpfile.js
