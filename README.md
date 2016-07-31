@@ -1,7 +1,7 @@
 ******************************************************
 # Hong's Fast Campus Front-End Develop School
 패스트캠퍼스 프론트엔드개발 스쿨! <br><br>
-[H's Blog 바로가기](https://sharryhong.github.io/FDS/blog-ver01/index.html)
+[Hong's Blog 바로가기](https://sharryhong.github.io/FDS/blog/index.html)
 ******************************************************
 ###### Front-End Develop SCHOOL
 
