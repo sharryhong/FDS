@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "../css/cross_browsing_mixin.css",
+	"sources": [
+		"../sass/cross_browsing_mixin.sass"
+	],
+	"mappings": "AAKC,MAAM,CAAN,QAAQ;EAWR,AAAA,IAAI,CAAC;IACJ,MAAM,EAAE,MAAO;GAAG;EACnB,AAAA,cAAc,CAAC;IACd,OAAO,AAAC,CAAC,AACR,GAAG,EAAE,GAAI;IACV,KAAK,EAAE,IAAK;GAAG",
+	"names": []
+}

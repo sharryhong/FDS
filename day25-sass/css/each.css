@@ -1,0 +1,29 @@
+.icon-play {
+  background: url("../image/icon-play.png");
+}
+
+.icon-pause {
+  background: url("../image/icon-pause.png");
+}
+
+.icon-stop {
+  background: url("../image/icon-stop.png");
+}
+
+.icon-prev {
+  background: url("../image/icon-prev.png");
+}
+
+.icon-next {
+  background: url("../image/icon-next.png");
+}
+
+.icon-forward {
+  background: url("../image/icon-forward.png");
+}
+
+.icon-backward {
+  background: url("../image/icon-backward.png");
+}
+
+/*# sourceMappingURL=../map/each.css.map */

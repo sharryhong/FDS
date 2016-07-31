@@ -1,0 +1,67 @@
+// ...이라는 것은 매개변수가 많이있다. 라는 뜻이다. 
+// @mixin transition($props...) 
+
+
+// $border-color: red
+// $transparent: transparent
+$border-style: solid
+
+@mixin transform($deg: 35deg)
+   -moz-transform:    rotate($deg)
+   -webkit-transform: rotate($deg)
+   -ms-transform:     rotate($deg)
+   -o-transform:      rotate($deg)
+
+// @mixin color($color: red)   
+
+@mixin border($direction, $size, $color: red)
+   border-#{$direction}: $size $border-style $color
+
+
+
+// css 도형을 만드는 mixin만들어보자. (css-tricks에서 있는 코드 참조) 
+// @include transform
+.star-five
+   margin: 50px 0
+   position: relative
+   display: block
+   color: red
+   width: 0px
+   height: 0px
+   +border(right, 100px, transparent)
+   +border(bottom, 70px)
+   +border(left, 100px, transparent)
+   // border-right:  100px solid transparent
+   // border-bottom: 70px  solid red
+   // border-left:   100px solid transparent
+   @include transform
+.star-five:before
+   +border(bottom, 80px)
+   +border(left, 30px, transparent)
+   +border(right, 30px, transparent)
+   // border-bottom: 80px solid red
+   // border-left: 30px solid transparent
+   // border-right: 30px solid transparent
+   position: absolute
+   height: 0
+   width: 0
+   top: -45px
+   left: -65px
+   display: block
+   content: ''
+   @include transform(-35deg)
+
+.star-five:after
+   position: absolute
+   display: block
+   color: red
+   top: 3px
+   left: -105px
+   width: 0px
+   height: 0px
+   border-right: 100px solid transparent
+   border-bottom: 70px solid red
+   border-left: 100px solid transparent
+   @include transform(-70deg)
+   content: ''
+

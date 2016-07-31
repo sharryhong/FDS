@@ -1,0 +1,3 @@
+@mixin contrast-color($color, $compare-light: 50%, $amound: 20%) {
+	$lightness: lightness($color) > $compare-light;
+}

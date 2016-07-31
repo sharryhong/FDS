@@ -1,0 +1,41 @@
+@charset "UTF-8";
+/* sass-review @sharryhong
+ 여러줄 라인일 경우는 앞에 띄어쓰기 해야한다.
+ 한칸, 여러칸, 탭 등 다 가능
+ 맨 앞에 붙여쓰기만 안하면 된다. */
+.col-2 {
+  width: 100%;
+  height: auto; }
+
+.col-3 {
+  border: 3px solid; }
+
+body {
+  margin: 0; }
+
+.container {
+  max-width: 1290px;
+  margin-left: auto;
+  margin-right: auto; }
+  .container .row::before, .container .row::after {
+    content: '';
+    display: table; }
+  .container .row::after {
+    clear: both; }
+  .lt-ie8 .container .row {
+    zoom: 1; }
+
+.col-1, .col-2 {
+  float: left;
+  padding-left: 1rem;
+  padding-right: 1rem; }
+
+.col-1 {
+  width: 107.5px; }
+
+.col-2 {
+  width: 215px; }
+
+/* test */
+
+/*# sourceMappingURL=../map/01-sass-review.css.map */

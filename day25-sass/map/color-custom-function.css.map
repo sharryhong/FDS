@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "../css/color-custom-function.css",
+	"sources": [
+		"../sass/color-custom-function.scss"
+	],
+	"mappings": "",
+	"names": []
+}

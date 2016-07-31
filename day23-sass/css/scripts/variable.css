@@ -1,0 +1,22 @@
+body::before {
+  content: "sharry";
+  content: "sharry"; }
+
+.container, .page-footer {
+  margin-left: auto;
+  margin-right: auto; }
+
+.container {
+  max-width: 1203px;
+  min-height: 602px; }
+
+.page-footer {
+  width: 80vh;
+  background: #333;
+  color: rgba(153, 153, 153, 0.45);
+  border-color: #eee; }
+  @media (min-width: 720px) {
+    .page-footer {
+      width: 90%; } }
+
+/*# sourceMappingURL=../../map/scripts/variable.css.map */

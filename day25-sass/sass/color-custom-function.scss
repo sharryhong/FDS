@@ -1,0 +1,20 @@
+// sass에서 hsla() 함수가 지원되지 않는 부분 구현하기 
+// 함수이름을 hsla()라고 쓰면 커스텀함수를 내가 만든것으로 덮어쓰기 가능
+@function _hsla($hex, $alpha) {
+	//실행 : hsla(#393909, 0.4)
+	//결과 : hsla(hue, saturation, lightness, alpha)
+
+	//$hue: hue($hex); // hex값을 deg로 바꿈
+	//$hue: $hue/($hue*0+1); // deg 단위 제거
+	$hue: floor(remove-unit(hue($hex))); // floor :소숫점없애기위해 내림함수쓴것임
+	$saturation: floor(saturation($hex));
+	$lightness: floor(lightness($hex));
+	$result: "hsla(#{$hue}, #{$saturation}, #{$lightness})";
+	// 쌍따옴표 안스면 hsla함수로 인식됨
+	@return unquote($result);
+	// unquote는 쌍따옴표 없애기
+}
+
+@function remove-unit($unit) {
+	@return $unit/($unit*0+1);
+}

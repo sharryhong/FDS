@@ -1,0 +1,41 @@
+// mixin과 placeholder차이점
+
+// 문법
+// @mixin(정의), @include(호출)
+// %(정의), @extend %(호출)
+
+@mixin box-sizing($type: border-box)
+	box-sizing: $type
+
+%box-sizing
+	box-sizing: border-box
+
+// 기본값 null로 주면 인자값없으면 아무것도 안나옴
+// mixin정의시 매개변수 많아지면 보기 힘들 수 있다. 
+// scss에서는 
+// @mixin size(
+// 	$width: null, 
+// 	$height: null
+// )
+// 이렇게 쓸 수 있다.
+@mixin size($width: null, $height: null)
+	width: $width
+	height: $height
+
+header
+	@extend %box-sizing
+	@include box-sizing
+	@include size(100px, 50px)
+
+footer
+	@extend %box-sizing
+	@include box-sizing(content-box)
+	+size(400px) //width: 400px; 만 나옴
+
+.page-main
+	@extend %box-sizing
+	+size($height: 30px) //이렇게 매개변수 중 하나만 골라서 사용가능 
+
+h2
+	@extend %box-sizing
+

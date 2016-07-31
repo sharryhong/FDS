@@ -1,0 +1,71 @@
+/*
+* Typography
+*/
+
+body {
+	font-family: "Spoqa Han Sans", sans-serif;
+	font-size: 1rem;
+	line-height: 1.5;
+	color: #333;
+	background: #fff;
+}
+
+[lang="ko-KR"] {
+	font-family: "Spoqa Han Sans", sans-serif;
+}
+
+h1 { 
+	font-family: 'Indie Flower',cursive, sans-serif; 
+	letter-spacing: 0.05rem;
+}
+
+p,
+h2.normal span {
+	font-size: 1rem;
+	line-height: 1.5;
+	font-weight: 400;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+	font-weight: 400;
+	margin-bottom: 24px;  /*16*1.5px*/
+}
+
+h1 {
+	font-size: 3.9025rem; /*16*1.313*1.313*1.313*1.313*1.313*/
+	line-height: 4.5rem; /*24*3*/
+}
+
+h2 {
+	font-size: 2.97187rem ; /*16*1.313*1.313*1.313*1.313*/
+	line-height: 4.5rem; /*24*3*/
+}
+
+h3, .heading h1 {
+	font-size: 2.26375rem; /*16*1.313*1.313*1.313*/
+	line-height: 3rem; /*24*2*/
+}
+
+h4, h2.normal {
+	font-size: 1.72375rem;  /*16*1.313*1.313*/  
+	line-height: 3rem; /*24*2*/
+}
+
+h5 {
+	font-size: 1.31313rem; /*16*1.313px*/
+	line-height: 3rem; /*24*2*/
+}
+
+h6 {
+	font-weight: 700;
+}
+
+h2.normal {
+	margin-bottom: 0;
+}
+
+.font-small {
+	font-size: 0.875rem;
+	line-height: 1.5rem;
+}
+

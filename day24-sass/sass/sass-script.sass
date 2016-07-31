@@ -1,0 +1,72 @@
+// Sass Script Operation
+
+@import var
+@import mixins
+
+// 인터폴레이션 => 문자를 처리하기 위해 접합시키는 방법
+@import url("http://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-#{$spoqa-language}.css")
+
+@import url("https://fonts.googleapis.com/css?family=#{$noto-sans}:#{$normal-weight},#{$bold-weight}")
+@import url("https://fonts.googleapis.com/css?family=#{$roboto}")
+@import url("https://fonts.googleapis.com/css?family=#{$oswald}:#{$normal-weight},#{$bold-weight},#{$light-weight}")
+
+body 
+	// font-size: $base-font-size
+	// font-family: "Spoqa Han Sans"
+	// line-height: $base-line-height
+	font: #{$base-font-size}/#{$base-line-height}
+	// 인터폴레이션 방법을 쓰면 잘되는데, 인터폴레이션을 쓰지않으면 /가 연산자로 인식된다.
+
+// @debug 디렉티브(지시자)를 사용하면 명령창에 디버그 결과를 출력한다. 
+@debug 1<4 // 터미널에서 DEBUG: true 라고 나온다.
+@debug type-of(red) // DEBUG: color
+@debug type-of(Noto Sans) // list (배열)
+@debug type-of("Noto Sans") // string
+
+// interpolation보간법 #{}
+$selector: sharryhong
+$pseudo-name: after
+
+// 선택자영역에 사용하기
+#area .#{$selector}
+	margin: 
+		left: 20%
+		right: 20%
+	// 가상선택자에 사용하기 
+	&::#{$pseudo-name}
+		// content: 'um'
+		content: $selector
+
+//미디어쿼리에 사용하기
+$media-md: "screen and (min-width: 760px)"
+$media-lg: "screen and (min-width: 1220px)"
+$media-print: "not screen and (min-width: 21cm)"
+
+.#{$selector}
+	@media #{$media-md}
+		display: flex
+	@media #{$media-lg}
+		display: block
+	//일반적으로 !important를 쓰진않지만, 인쇄시 설정 등을 위해 써도 무방하다.
+	@media #{$media-print}
+		background: #fff !important
+		color: #000 !important
+
+// mixin
+
+header
+	@include box-sizing
+	// @extend %box-sizing
+
+footer
+	@include box-sizing
+	// @extend %box-sizing
+
+// % placeholder는 코드덩어리는 하나고 그룹으로 묶인다. mixin은 안묶여서 코드양이 많아진다.
+// %, @extend를 많이 사용하면 css코드를 볼 때 해석하기 어려울 수도있다. 
+// 확장성은 mixin이 좋다. 또다른 mixin안에 + 가능
+
+%box-sizing 
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box

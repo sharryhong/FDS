@@ -1,3 +1,7 @@
 *.psd
 *.mov
 *.zip
+*.cmd
+*.log
+node_modules/
+gulpfile.js

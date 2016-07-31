@@ -1,0 +1,40 @@
+@charset "UTF-8";
+/* sass 연습 */
+.btn-big {
+  font-size: .75rem;
+}
+
+.page-header {
+  position: relative;
+  font-size: 1rem;
+  border-top: 1px solid #fe5566;
+}
+
+.page-header h1 {
+  position: absolute;
+}
+
+.page-header h1 a {
+  border: 1px dotted;
+}
+
+.page-header h1 a:hover {
+  backgound: #eee;
+}
+
+@media (min-width: 600px) {
+  .page-header {
+    font-size: 3rem;
+  }
+}
+
+.btn, .btn-big {
+  color: #5566fe;
+  padding: .5em 1em;
+}
+
+.btn-big {
+  border-bottom: 1px solid;
+}
+
+/*# sourceMappingURL=style.css.map */

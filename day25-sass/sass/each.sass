@@ -1,0 +1,26 @@
+// 이 방법은 image splite 사용 못함
+$icons: play pause stop prev next forward backward // list
+
+@debug length($icons)
+
+@each $icon in $icons
+	.icon-#{$icon}
+		background: url("../image/icon-#{$icon}.png")
+
+// map사용
+$heading: (h1: 3rem 1.2, h2: 2rem 1.45, h3: 1.5rem 1.6)
+// 글자크기, 행간 
+
+// @each $heading in $headings
+// 	$h: nth($heading, 1)
+// 	$v: nth($heading, 2)
+// 	$fz: nth($v, 1)
+// 	$lh nth($v, 2)
+// 	#{$h}
+// 		font-size: $fz
+// 		line-height: $lh
+
+// 더 간단하게 바꿔보자. 
+
+@each $heading, $info in $headings
+	@debug $info

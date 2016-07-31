@@ -1,0 +1,4 @@
+// 미리보는 Sass Function
+@function percent($target, $context) {
+	@return $target/$context*100%
+}

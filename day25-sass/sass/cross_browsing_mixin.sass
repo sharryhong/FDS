@@ -1,0 +1,22 @@
+// IE 8만 지원이 되는 미디어쿼리 핵 예시.
+// @media \0screen {}
+
+// Sass 문법
+=ie8hack
+	@media \0screen
+		@content
+
+// SCSS 문법 
+	@mixin ie8hack {
+		@media \0screen {
+			@content;
+		}
+	}
+
++ie8hack
+	body 
+		margin: 0 auto
+	.content-block
+		padding:
+			top: 20%
+		color: #f00

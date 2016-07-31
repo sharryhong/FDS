@@ -1,0 +1,36 @@
+// grid system sass로 추후 수정
+// @import common
+@import grid-fluid-1280-8
+@import variable
+@import module
+@import section/_header
+
+
+.wrap
+	background: 
+		image: url("../img/bg.jpg")
+		repeat: no-repeat
+
+	@media (min-width: $m-breakpoint)
+		// @extend %block-center
+		max-width: $wrap-max-width
+		margin:
+			left: auto
+			right: auto
+
+.page-header
+	background: 
+		image: url("../img/header-bg@2x.png")
+		size: 100%
+		repeat: no-repeat
+
+.header-top
+	height: $leading * 2
+	color: #fff
+	h1
+		float: left
+		font-size: 0.875rem
+	.user-menu
+		// @extend %reset-list
+		float: right
+		font-size: 0.625rem

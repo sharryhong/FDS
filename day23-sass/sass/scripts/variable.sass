@@ -1,0 +1,52 @@
+// Sass 변수는 변수 이름 앞에 $ 기호를 붙인다. 
+// Sass 변수이름 작성 규칙 
+// 1. 변수 이름 사이에 공백을 사용하지 않는다. 
+// 변수 이름의 음절 사이에 _ , - 등을 사용한다.
+// 만약 프로그래밍에 익숙해서 camelCase방식이 인숙하다면 사용가능. 
+// 다만, camelCase방식은 함수 이름에 사용되므로 권장하지는 않는다. 
+
+// _ , - 구별을 하지 않는다. 아래를 참고하자 
+
+$my-nick: 'sharry hong'
+$my_nick: 'sharry'
+
+$container-width: 1203px
+$dark-gray: #333
+$breakpoint-md: 720px
+
+body 
+	&::before
+		content: $my_nick
+		content: $my-nick
+
+// 가운데로 정렬되는 코드 
+%center-pos
+	display: flex
+	justify-content: center
+	align-items: center
+
+%align-center-margin
+	margin:
+		left: auto
+		right: auto
+
+.container
+	// 지역변수이지만 !global이라고 하면 전역변수로 됨
+	$light-gray: #eee !global
+	@extend %align-center-margin
+	max-width: $container-width
+	min-height: round($container-width/2)
+	// 소숫점값 안나오게 처리 
+
+.page-footer
+	@extend %align-center-margin
+	width: 100vh - 20vh
+	background: $dark-gray
+	// color: lighten($dark-gray, 40%)
+	color: rgba(lighten($dark-gray, 40%), 0.45)
+	// alpha값 적용되고 자동으로 rgb모드 값 나옴
+	border:
+		color: $light-gray
+
+	@media (min-width: $breakpoint-md)
+		width: 90%
