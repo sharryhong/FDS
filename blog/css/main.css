@@ -3730,11 +3730,9 @@ container Module (=clearfix / micro clearfix)
 * Typography
 */
 body {
-  height: 1000px;
   font-family: "Spoqa Han Sans", sans-serif;
   font-size: 1rem;
   line-height: 1.5;
-  letter-spacing: 0.05rem;
   color: #333;
   background: #fff;
 }
@@ -3745,6 +3743,7 @@ body {
 
 h1 {
   font-family: 'Indie Flower',cursive, sans-serif;
+  letter-spacing: 0.05rem;
 }
 
 p,
@@ -3805,6 +3804,30 @@ h2.normal {
 
 .font-small {
   font-size: 0.875rem;
+  line-height: 1.5rem;
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 0 1.5em;
+  height: 24px;
+  line-height: 24px;
+  font-size: 0.6875rem;
+  background-color: #eee;
+}
+
+.btn.right-arrow::after {
+  position: absolute;
+  top: 0;
+  right: -15px;
+  content: '';
+  display: block;
+  width: 15px;
+  height: 24px;
+  border-left: 12px solid #eee;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
 }
 
 /* Hong HS's blog-ver01
@@ -3824,7 +3847,7 @@ h2.normal {
   z-index: 100;
   top: 0;
   width: 100%;
-  min-height: 100vh;
+  height: 1000px;
   background: linear-gradient(90deg, rgba(191, 64, 64, 0.05) 50%, rgba(0, 0, 0, 0.05) 50%), linear-gradient(transparent 95%, #26923f 95%);
   background-size: 16.6666666% 16.6666666%, 1px 24px;
 }
@@ -3877,12 +3900,76 @@ h2.normal {
 .page-til h3 {
   border-bottom: 1px solid #ddd;
   padding-bottom: 11px;
+  margin-bottom: 7px;
 }
 
 .til .time {
   float: right;
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 8px;
+  margin-bottom: 25px;
+}
+
+.til h4 {
+  margin-bottom: 0.3em;
+}
+
+.til p {
+  margin-top: 0;
+}
+
+.til strong {
+  font-weight: normal;
+  background: rgba(255, 255, 0, 0.2);
+}
+
+/*
+* footer
+*/
+.page-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 72px;
+}
+
+.page-footer p {
+  float: left;
+}
+
+.page-footer .right {
+  float: right;
+}
+
+.page-footer p,
+.page-footer .right {
+  margin-top: 25px;
+}
+
+.page-footer .right span + span {
+  margin-left: 15px;
+}
+
+.totop {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+  width: 100px;
+  height: 50px;
+  background: #fff;
+  border-top: 2px solid #eee;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  box-shadow: inset 0 15px 15px -15px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.page-footer a:hover,
+.page-footer a:focus {
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=../map/main.css.map */

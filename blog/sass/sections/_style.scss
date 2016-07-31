@@ -17,7 +17,7 @@
 	z-index: 100;
 	top: 0;
 	width: 100%;
-	min-height: 100vh;
+	height: 1000px;
 	background: 
 		linear-gradient(90deg, rgba(191, 64, 64, 0.05) 50%, rgba(0,0,0,0.05) 50%),
 		linear-gradient(transparent 95%, #26923f 95%);
@@ -64,6 +64,9 @@
 		inset 0 15px 15px -15px rgba(0,0,0,0.05),
 		inset 0 -15px 15px -15px rgba(0,0,0,0.05);
 }
+// .page-main {
+// 	min-height: 83vh;
+// }
 
 .page-til {
 	padding-top: 48px;
@@ -76,10 +79,70 @@
 .page-til h3 {
 	border-bottom: 1px solid #ddd;
 	padding-bottom: 11px;
+	margin-bottom: 7px;
+	// font-weight: 300;
 }
 
 .til .time {
 	float: right;
 	margin-top: 0;
-	margin-bottom: 0;
+	margin-bottom: 8px;
+	margin-bottom: 25px;
+}
+
+.til h4 {
+	margin-bottom: 0.3em;
+}
+
+.til p {
+	margin-top: 0;
+}
+
+.til strong {
+	font-weight: normal;
+	background: rgba(255,255,0,0.2);
+}
+
+/*
+* footer
+*/
+.page-footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 24*3px;
+}
+.page-footer p {
+	float: left;
+}
+.page-footer .right {
+	float: right;
+}
+.page-footer p,
+.page-footer .right {
+	margin-top: 25px;
+}
+.page-footer .right span+span {
+	margin-left: 15px;
+}
+.totop {
+	position: absolute;
+	top: -20px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: inline-block;
+	width: 100px;
+	height: 50px;
+	background: #fff;
+	border-top: 2px solid #eee;
+	border-top-left-radius: 50%;
+	border-top-right-radius: 50%;
+	box-shadow: 
+		inset 0 15px 15px -15px rgba(0,0,0,0.05);
+	text-align: center;
+	font-size: 1.5rem;
+}
+.page-footer a:hover,
+.page-footer a:focus {
+	text-decoration: underline;
 }
