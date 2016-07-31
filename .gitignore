@@ -2,5 +2,7 @@
 *.mov
 *.zip
 *.cmd
-node_modules/
 *.log
+node_modules/
+blog-ver01/
+gulpfile.js
