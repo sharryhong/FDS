@@ -64,6 +64,9 @@ h2.normal {
 	margin-bottom: 0;
 }
 
+p,
+li { word-break: keep-all; }
+
 .font-small {
 	font-size: 0.875rem;
 	line-height: 1.5rem;

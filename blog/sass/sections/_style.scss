@@ -40,6 +40,7 @@
 	margin-left: auto;
 	margin-right: auto;
 	padding-left: 1.3125em;
+	padding-right: 1.3125em;
 }
 
 .page-header a {
@@ -96,7 +97,8 @@
 	margin-bottom: 25px;
 }
 
-.til h4 {
+.til h4,
+.til h5 {
 	margin-bottom: 0.3em;
 }
 
@@ -151,4 +153,25 @@
 .page-footer a:hover,
 .page-footer a:focus {
 	text-decoration: underline;
+}
+
+/*
+* css-to-sass documentation 추가사항
+*/
+
+@media (min-width: 1000px) {
+	.gnb {
+		position: fixed;
+	}
+}
+
+.gnb .second-depth a {
+	display: inline-block;
+	text-indent: 10px;
+}
+.tag {
+	color: #3390CB;
+}
+.font-small {
+	display: block;
 }
