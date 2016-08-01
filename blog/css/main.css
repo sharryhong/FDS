@@ -4317,6 +4317,10 @@ li {
 /*
 * css-to-sass documentation 추가사항
 */
+.gnb {
+  color: #777;
+}
+
 @media (min-width: 1000px) {
   .gnb {
     position: fixed;
