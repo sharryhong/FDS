@@ -92,3 +92,23 @@ var user_name = window.prompt('당신의 이름은?', '예) 홍길동');
 // 실무에서 안씀
 
 window.alert(user_name+'님 반갑습니다.');
+
+/*
+* 시간을 제어하는 window 객체의 메소드
+*/
+
+var count = 10;
+
+function countDown() {
+	count = count -1;
+	console.log(count);
+	return count;
+}
+
+
+window.setInterval(countDown, 1000);
+// 바로 실행시키는 ()가 붙으면 안된다. 
+// countDown()이라고 하면 값인 9가 들어와버린다. 
+// 사용자가 직접 함수를 실행할때에는 실행연산자가 필요하다. 함수()
+// 이벤트가 실행될때 함수가 실행되게 할 때에는 ()를 쓰지 않아서 함수 그 자체가 들어오게 한다.
+// 그래서 setInterval 1초라는 이벤트가 실행된 후 함수를 불러들어와야하므로 ()를 쓰지 않는다. 
