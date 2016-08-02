@@ -168,6 +168,9 @@ if ( standard_mode ) {
 }
 ```
 
+- document.activeElement; // focus된.. 활성화된 엘리먼트를 알 수 있다. 접근성에서 중요! 
+- document.write('<link rel="stylesheet" href="css/style.css">'); // html코드에 추가됨. 이젠 이렇게 잘 쓰지 않는다. 
+
 #### 그 외
 
 - .toLowerCase() // 모두 소문자로 만듬

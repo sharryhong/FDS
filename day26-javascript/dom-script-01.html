@@ -18,6 +18,7 @@
 		if ( standard_mode ) {
 			// 변수 html에 참조된 문서 객체 <html>요소에 class 속성 값을 'standard'로 설정한다. 
 			html.setAttribute('class', 'standard');
+			document.write('<link rel="stylesheet" href="css/style.css">');
 		} else {
 			html.setAttribute('class', 'nostandard');
 		}
