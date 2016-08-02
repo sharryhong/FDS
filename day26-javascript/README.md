@@ -23,5 +23,56 @@
  그럼에도 불구하고 java처럼 컴파일 언어보다는 빠르지 않다. 
  -> Front side이야기. server side는 아니다. 
 
- #### 참고 사이트
- - [MDN javaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+#### 코어(ECMAScript) : 언어로서(server)
+#### 문서 객체 모델(DOM) : front 가장 중요한 개념
+#### 브라우저 객체 모델(BOM) : web brower구성하는 요소들 
+
+- DOM 개념으로.. jQuery : 쉽다. but 속도가 느리다. 
+- DOM을 잘하려면 core는 기본으로 해야한다. 
+
+##### 브라우저 객체 모델(BOM) : 증요도 높지않음
+
+- Window 전역객체 (윈도우창 구성) : server side에는 없다.
+ - history(이번보기 다음보기 등), navigator(위치정보 담음), location(주소창부분), screen(보는 부분), document(DOM 중요!), frames(iframe만 쓰고. 중요치 않다.)
+
+ > 크로스브라우징이 어렵다. 브라우저별로 문법이 다르기 때문이다. <br>
+ > IE9부터는 표준을 지켜서 괜찮으나... IE8은 고려해야 한다. 
+
+- window.devicePixelRatio : 기기의 픽셀 농도
+- window.innerWidth : window의 화면 가로 폭
+- window.innerHeight : window의 화면 세로 폭
+
+- window.scrollX = window.pageXOffset; : 가로 스크롤바 위치
+- window.scrollY = window.pageYOffset : 세로 스크롤바 위치 (나중에 스크롤 moving사용시 씀)
+ 
+ > 크롬은 둘다 사용. 브라우저별로 다른 문법 사용  
+
+- window.alert("Dialog 창 띄우기"); 
+- window.prompt('당신의 이름은?', '예) 홍길동');
+
+```
+window.alert("Dialog 창 띄우기"); 
+// 오늘날은 alear창 별로 쓰지 않고 console로 쓴다. 
+
+var is_youngman = window.confirm("당신은 청년입니까?"); 
+// Yes, No 값을 받을 수 있다.
+console.log('is_youngman', is_youngman);
+
+if (is_youngman == true) { // 그냥 if (is_youngman) 라고 써도 된다.
+  console.log("좋것구만");
+} else {
+  console.log("그럼 넌 누구냐");
+}
+
+// 사용자의 입력 값을 받아왔다면, 이를 기억해두기 위해 변수가 필요하다.
+var user_name = window.prompt('당신의 이름은?', '예) 홍길동');
+// 입력창 
+// 실무에서 안씀
+
+window.alert(user_name+'님 반갑습니다.');
+```
+
+-
+
+#### 참고 사이트
+- [MDN javaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
