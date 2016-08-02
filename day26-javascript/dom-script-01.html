@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--[if IE 6]><html lang="ko-KR" class="lt-ie10 lt-ie9 lt-ie8 ie6"><![endif]-->
+<!--[if IE 7]><html lang="ko-KR" class="lt-ie10 lt-ie9 lt-ie8 ie7"><![endif]-->
+<!--[if IE 8]><html lang="ko-KR" class="lt-ie10 lt-ie9 ie8"><![endif]-->
+<!--[if IE 9]><html lang="ko-KR" class="lt-ie10 ie9"><![endif]-->
+<!--[if !IE]><!--><html lang="ko-KR"><!--<![endif]-->
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>돔스크립트(DOM Script) - 자바스크립트를 사용한 문서 동적 제어</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script>
+		// 웹 표준 호환 모드라면 standard_mode에 true값이 참조(Reference)된다.
+		var standard_mode = document.compatMode == 'CSS1Compat';
+		// 문서에서 root element인 <html> 요소를 찾아서 변수 html에 참조된다.
+		var html = document.documentElement;
+		// 웹 표준 호환 모드라면 첫번째 코드 블록문이 실행
+		if ( standard_mode ) {
+			// 변수 html에 참조된 문서 객체 <html>요소에 class 속성 값을 'standard'로 설정한다. 
+			html.setAttribute('class', 'standard');
+			document.write('<link rel="stylesheet" href="css/style.css">');
+		} else {
+			html.setAttribute('class', 'nostandard');
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>

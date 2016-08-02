@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--[if IE 6]><html lang="ko-KR" class="lt-ie10 lt-ie9 lt-ie8 ie6"><![endif]-->
+<!--[if IE 7]><html lang="ko-KR" class="lt-ie10 lt-ie9 lt-ie8 ie7"><![endif]-->
+<!--[if IE 8]><html lang="ko-KR" class="lt-ie10 lt-ie9 ie8"><![endif]-->
+<!--[if IE 9]><html lang="ko-KR" class="lt-ie10 ie9"><![endif]-->
+<!--[if !IE]><!--><html lang="ko-KR"><!--<![endif]-->
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>Box Animation</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/movieclip.css">
+</head>
+<body>
+	<div id="box"></div>
+
+<script>
+	// moveBox 함수
+	// .box 객체를 화면에서 위치 이동 시킨다. 
+	function moveBox() {
+		// 문서에서 .box요소를 찾는다. 
+		// DOM API(사용 설명서)
+		// 문서의 객체에 접근하는 방법 제공 
+		var box = document.getElementById('box');
+		console.log(box);
+		// 가로 방향(left)으로 이동하도록 설정한다. 
+		// transform: translateX()을 권장!!! 
+		// absolute의 top, left를 쓰면 성능저하! 
+		// left = left + 20;
+	}
+
+	// moveBox();
+
+	// setInterval()
+	// 주기(일정한 시간)마다 할일(함수)을 수행시킨다.
+	// css의 animation보다 좋지 않다. 
+
+	// setInterval(moveBox, 200);
+
+
+	// 빠르게 디버깅하고 싶을 때 : 콘솔창에서 해당 요소 선택후 $0라면 해당요소 선택된다.
+
+	
+</script>
+</body>
+</html>

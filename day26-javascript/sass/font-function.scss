@@ -1,0 +1,42 @@
+// $base-font-size: 14px;
+// $base-line-height: 1.5;
+// $font-family: Verdana;
+
+@function _baseFont($size, $line-height) {
+	@return #{$size}/#{$line-height};
+}
+
+// body {
+// 	font: baseFont($base-font-size,$base-line-height) $font-family;
+// }
+
+
+// mixin사용해서 값만 입력하면 css코드 나오게 하기 
+
+@mixin font-shorthand($font-size, $font-family, $line-height: 1.5, $etc: null) {
+	@if $font-size== null or $font-family== null {
+		@error "font-size, font-family는 필수속성입니다.";
+	}
+	font: $etc _baseFont($font-size, $line-height) $font-family;
+}
+
+// 단축 믹스인 font
+@mixin font($args...) {
+	@include font-shorthand($args...);
+}
+
+.selector {
+	// margin: $size;
+	// background-color: $brandColor;
+	//font: font-shorhand(14px, 1.5) Verdana;
+	@include font-shorthand(
+		14px, 
+		(Arial, Sans-Serif),
+		$etc: 900
+	);
+
+	// .nested {
+	// 	margin: $size / 2;
+	// }
+}
+
