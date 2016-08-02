@@ -4338,6 +4338,25 @@ li {
 
 .font-small {
   display: block;
+  color: #666;
+}
+
+.til a {
+  color: #3390CB;
+}
+
+.til a:hover,
+.til a:focus {
+  text-decoration: underline;
+}
+
+.til .has-list {
+  margin-bottom: 0;
+}
+
+pre {
+  padding: 1rem;
+  background: #fdfdfd;
 }
 
 /*# sourceMappingURL=../map/main.css.map */

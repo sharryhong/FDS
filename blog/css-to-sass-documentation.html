@@ -46,35 +46,72 @@
 											<li><a href="#index01-03">반응형 웹 고려사항</a></li>
 										</ul>
 									</li>
+									<li><a href="#index02">폴더 구조화</a></li>
+									<li><a href="#index03">Sass 기본작업</a>
+										<ul class="second-depth">
+											<li><a href="#index03-01">_normalize.scss</a></li>
+											<li><a href="#index03-02">_common.scss</a></li>
+											<li><a href="#index03-03">_grid-responsive.scss</a></li>
+										</ul>
+									</li>
 								</ul>
 							</nav>
 						</div>
 						<div class="unit-s-12-12 unit-l-9-12 unit-l-offset-3-12">
-							<h4 id="index01">개요(Overview)</h4>
-							<p><strong>Why Sass?!</strong> CSS의 확장 언어인 Sass. CSS를 사용하다보면 그야말로 한땀한땀 하드코딩을 해나가야 합니다. 물론 하드코딩 손 맛~이라는게 있지만, 프로젝트가 커지면... 후아후아~<br>
-							Sass는 변수와 함수등의 개념을 도입함으로서 좀 더 깔끔한 코딩, 유지보수가 좋은 코딩을 할 수 있도록 도와줍니다.<br>
-							특히 공통으로 <strong>반복되는 코드 관리</strong>, <strong>자동으로 연산</strong>이 가능하게 해주는 기능만 보더라도 왜 Sass를 사용하면 편리한지 알게해주죠. 아 멋짐~!! <br>
-							Front-End 개발의 길을 걷게 된 이상, 새로운 분야에 대한 공부는 즐거움으로 받아들이기로 했습니다. 하... ^^  
-							</p>
-							<!-- <h4>Keyword</h4>
-							<p>
-								<span class="tag">#반응형 웹</span>
-								<span class="tag">#Sass</span></p> -->
-							<h5 id="index01-01">목표</h5>
-							<p>HTML, CSS로 개발한 반응형웹 사이트를 Sass로 Code Refactoring해보기<span class="font-small">(Code Refactoring : 코드의 가독성이 낮거나 중복된 로직 등 제거. 동작상태에 대한 변화없이 코드의 스타일을 변경시키는 작업)</span></p>
-							<h5 id="index01-02">Project 공통 고려사항</h5>
-							<ul>
-								<li>웹표준 준수</li>
-								<li>웹접근성 고려(음성출력/키보드 접근 등)</li>
-								<li>HTML 올바른 의미, 구조화</li>
-								<li>naming 규칙. 간결하며 읽기 용이하게</li>
-								<li>코드 최적화 : 불필요한 &lt;div&gt;, &lt;span&gt;요소의 남용 등, 중복되는 스타일 코드없애기, 코드는 읽기 쉽고 간결하게 작성</li>
-								<li>Sass 스타일 설계, 모듈화</li>
-							</ul>
-							<h5 id="index01-03">반응형 웹 고려사항</h5>
-							<p><strong>Mobile First</strong> : 모바일 화면에 맞는 UI를 우선시하여 설계 한 다음 데스크탑으로 점진적 향상시킵니다.</p>
-						</div>
+							<article class="list">
+								<h4 id="index01">개요(Overview)</h4>
+								<p><strong>Why Sass?!</strong> CSS 프리프로세서인 Sass. CSS를 사용하다보면 그야말로 한땀한땀 하드코딩을 해나가야 합니다. 물론 하드코딩 손 맛~이라는게 있지만, 프로젝트가 커지면... 후아후아~ <br>
+								Sass는 변수와 함수등의 개념을 도입함으로서 좀 더 깔끔한 코딩, 유지보수가 좋은 코딩을 할 수 있도록 도와줍니다.<br>
+								특히 공통으로 <strong>반복되는 코드 관리</strong>, <strong>자동으로 연산</strong>이 가능하게 해주는 기능만 보더라도 왜 Sass를 사용하면 편리한지 알게해주죠. 아 멋짐~!! <br>
+								Front-End 개발의 길을 걷게 된 이상, 새로운 분야에 대한 공부는 즐거움으로 받아들이기로 했습니다. 하... ^^  <span class="font-small">(css 프리프로세서(Preprocessor)인 Sass : 변수, 함수 등으로 작성된 코드를 컴파일하여 css로 사용할 수 있게 하는 css 확장언어)</span>
+								</p>
+								<h5 id="index01-01">목표</h5>
+								<p>HTML, CSS로 개발한 반응형웹 사이트를 Sass로 Code Refactoring해보기<span class="font-small">(Code Refactoring : 코드의 가독성이 낮거나 중복된 로직 등 제거. 동작상태에 대한 변화없이 코드의 스타일을 변경시키는 작업)</span></p>
+								<h5 id="index01-02">Project 공통 고려사항</h5>
+								<ul>
+									<li>웹표준 준수</li>
+									<li>웹접근성 고려(음성출력/키보드 접근 등)</li>
+									<li>HTML 올바른 의미, 구조화</li>
+									<li>naming 규칙. 간결하며 읽기 용이하게</li>
+									<li>코드 최적화 : 불필요한 &lt;div&gt;, &lt;span&gt;요소의 남용 등, 중복되는 스타일 코드없애기, 코드는 읽기 쉽고 간결하게 작성</li>
+									<li>Sass 스타일 설계, 모듈화</li>
+								</ul>
+								<h5 id="index01-03">반응형 웹 고려사항</h5>
+								<p><strong>Mobile First</strong> : 모바일 화면에 맞는 UI를 우선시하여 설계 한 다음 데스크탑으로 점진적 향상시킵니다.</p>
+								<p class="has-list">Why Mobile Frist? 이 질문에 대한 대답을 찾아보았습니다. <a href="http://bradfrost.com/blog/web/mobile-first-responsive-web-design/" target="_blank">링크 바로가기</a> 내용을 요약하자면..</p>
+								<ul>
+									<li>웹에 접속할 때 모바일 사용이 다른 기기에 비해 훨씬 많아졌습니다.</li>
+									<li>중요하고 꼭 담아야 할 콘텐츠(content)를 모바일 UI에 담는 설계를 합니다.</li>
+									<li>그 외는 추후 추가.. </li>
+								</ul>
+								<p>중단점(Breakpoint) : 사이트 콘텐츠가 정보를 전달할 수 있는 최적의 배치를 사용자에게 제공하기 위해 대응되는 지점(point)입니다. 즉, 모바일, 태블릿, 데스크탑 등의 브라우저 width의 어느 지점에서 디자인 설계를 다르게 할지 정하는 것을 말합니다. (추후 그림 제공)</p>
+							</article>
+							<article class="list">
+								<h4 id="index02">폴더 구조화</h4>
+								<pre>
+ㄴ css/
+    ㄴ main.css // html에서 이 파일만 링크 시킵니다. 
+ㄴ sass/
+    ㄴ modules/
+        ㄴ _typography.scss
+        ㄴ _buttons.scss
+    ㄴresources/
+        ㄴ _common.scss
+        ㄴ _grid-responsive.scss
+        ㄴ _normalize.scss
+    ㄴ utils/
+        ㄴ _variables.sass // 변수 모아놓은 파일
+        ㄴ _functions.scss // 각 기능을 담아 놓은 함수 
+        ㄴ _mixins.scss
+    ㄴ vendors/
+        ㄴ 
+    ㄴ sections/
+    ㄴ main.sass // @import 모아놓은 파일
+ㄴ img/
 
+index.html</pre>
+							</article>
+						</div>
 					</article>
 				</div>
 			</section>
