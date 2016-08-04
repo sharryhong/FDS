@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!--[if IE 6]><html lang="ko-KR" class="lt-ie10 lt-ie9 lt-ie8 ie6"><![endif]-->
+<!--[if IE 7]><html lang="ko-KR" class="lt-ie10 lt-ie9 lt-ie8 ie7"><![endif]-->
+<!--[if IE 8]><html lang="ko-KR" class="lt-ie10 lt-ie9 ie8"><![endif]-->
+<!--[if IE 9]><html lang="ko-KR" class="lt-ie10 ie9"><![endif]-->
+<!--[if !IE]><!--><html lang="ko-KR"><!--<![endif]-->
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>DOM Script Basic</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		#button-group { display: flex; flex-flow: wrap; position: fixed; top: 0; left: 0; width: 100%; }
+		#button-group button { cursor: pointer; flex: 1; border: none; padding: 1em; color: #fff; text-shadow: 0 0 3px rgba(0,0,0,0.36);}
+		#button-group button:focus {outline: none;}
+		#button-group button:nth-child(1) { background: #f50054; }
+		#button-group button:nth-child(2) { background: #eeee44; }
+		#button-group button:nth-child(3) { background: #139df3; }
+		#button-group button:nth-child(4) { background: #20f97d; }
+		#button-group button:nth-child(5) { background: #ed99ed; }
+		#button-group button:nth-child(1):hover,
+		#button-group button:nth-child(1):focus { background: #99002c; }
+		#button-group button:nth-child(2):hover,
+		#button-group button:nth-child(2):focus { background: #eaea55; }
+		#button-group button:nth-child(3):hover,
+		#button-group button:nth-child(3):focus { background: #115fa5; }
+		#button-group button:nth-child(4):hover,
+		#button-group button:nth-child(4):focus { background: #1b9841; }
+		#button-group button:nth-child(5):hover,
+		#button-group button:nth-child(5):focus { background: #ed99ed; }
+	</style>
+</head>
+<body>
+	<div>
+		<p title="time is Gold!">시간은 금일세</p>
+		<p id="notification">보충은 다음주부터~</p>
+	</div>
+
+	<div>
+		<h2 id="heading-01">headline</h2>
+		<ul>
+			<li><a href="">item-01</a></li>
+			<li><a href="">item-02</a></li>
+			<li><a href="">item-03</a></li>
+		</ul>
+	</div>
+	<div>
+		<h2 id="heading-02">headline</h2>
+		<ul>
+			<li><a href="">item-01</a></li>
+			<li><a href="">item-02</a></li>
+			<li><a href="">item-03</a></li>
+		</ul>
+	</div>
+	<div>
+		<h2 id="heading-03">headline</h2>
+		<ul>
+			<li><a href="">item-01</a></li>
+			<li><a href="">item-02</a></li>
+			<li><a href="">item-03</a></li>
+		</ul>
+	</div>
+	<div>
+		<h2 id="heading-04">headline</h2>
+		<ul>
+			<li><a href="">item-01</a></li>
+			<li><a href="">item-02</a></li>
+			<li><a href="">item-03</a></li>
+		</ul>
+	</div>
+
+	<button type="button" class="btn btn-red" id="btnRed">Red</button>
+	<button type="button" class="btn btn-white" id="btnWhite">white</button>
+	<button type="button" class="btn btnYellow" id="btnYellow">yellow</button>
+
+	<div id="button-group" role="group">
+		<!-- button의 기본type은 submit -->
+		<button type="button">#f50054</button>
+		<button type="button">#fefe44</button>
+		<button type="button">#44fef3</button>
+		<button type="button">#23de67</button>
+		<button type="button">#ed99ed</button>
+	</div>
+
+<script>
+	var body = document.body;
+	var btn_group = document.getElementById('button-group');
+	// console.log(btn_group);
+	var btns = btn_group.getElementsByTagName('button');
+	// console.log(btns);
+	var btn_1 = btns[0];
+	var btn_2 = btns[1];
+	var btn_3 = btns[2];
+	var btn_4 = btns[3];
+	var btn_5 = btns[4];
+
+	function changeColor() {
+		var wanted_color = this.firstChild.nodeValue;
+		// this.firstChild만 하면 text노드일 뿐이다. .nodeValue를 해야 실제 값을 가져온다.
+		//.textContent써도 되지만 크로스브라우징이 안된다. 
+		body.style.backgroundColor = wanted_color;
+	}
+
+	// 문서의대상.이벤트설정 = 할일(함수);
+	btn_1.onclick = btn_2.onclick = btn_3.onclick = btn_4.onclick = btn_5.onclick = changeColor;
+	// changeColor()라고 하면 함수가 실행된다. return값을 가져오는데, 여긴 return값이 없으므로 undefined이다. 
+	// 여기서는 changeColor변수.. 즉, 함수가 담겨있는 것이다~~~ 
+
+	// 함수를 누가 실행시켰나.. 실행시킨 주체 : context!!! 
+
+	// btn_1.onclick = function() { // 익명함수(함수명이 없다.)
+	//   var wanted_color = this.firstChild.nodeValue;
+	//   body.style.backgroundColor = wanted_color;
+	// };
+	// btn_2.onclick = function() {
+	//   var wanted_color = this.firstChild.nodeValue;
+	//   body.style.backgroundColor = wanted_color;
+	// };
+	// btn_3.onclick = function() {
+	//   var wanted_color = this.firstChild.nodeValue;
+	//   body.style.backgroundColor = wanted_color;
+	// };
+	// btn_4.onclick = function() {
+	//   var wanted_color = this.firstChild.nodeValue;
+	//   body.style.backgroundColor = wanted_color;
+	// };
+	// btn_5.onclick = function() {
+	//   var wanted_color = this.firstChild.nodeValue;
+	//   body.style.backgroundColor = wanted_color;
+	// };
+
+
+
+	// <body>요소를 메모리 => 변수
+	// 캐시(cache)
+	//var body = document.body; // DOM Legacy (lv.0), HTML DOM (XML DOM따로 있음)
+	// body요소는 하나이기 때문에 이렇게 쓸 수 있다. 
+
+	// 모든 이벤트 속성은 비어있다. null
+	// 함수에 연결하면 작동이 된다. 
+	// console.log(body.onmouseover); 
+	// body.onmouseenter = function() { // onmouseever쓰지말자. 계속 실행된다.
+	// 	// 어떤 일을 수행(할일)
+	// 	// console.log('mouseover on body');
+	// 	body.style.backgroundColor = '#fe5599'; // 값은 문자열로 넣어야 한다. 
+	// };
+
+	// body.onmouseleave = function() {
+	// 	body.style.backgroundColor = '#fff';
+	// };
+
+////////////////////////////////////////////////////////
+// 내가 만든 색상버튼
+	// function tagName(name) {
+	// 	return document.getElementById(name);
+	// }
+
+	// tagName('btnRed').onclick = function() {
+	// 	body.style.backgroundColor = 'red';
+	// };
+
+	// tagName('btnWhite').onclick = function() {
+	// 	body.style.backgroundColor = '#fff';
+	// };
+
+	// document.getElementsByClassName('btnYellow')[0].onclick = function() {
+	// 	body.style.backgroundColor = '#eeff33';
+	// };
+
+
+</script>
+</body>
+</html>

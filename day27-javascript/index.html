@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--[if IE 6]><html lang="ko-KR" class="lt-ie10 lt-ie9 lt-ie8 ie6"><![endif]-->
+<!--[if IE 7]><html lang="ko-KR" class="lt-ie10 lt-ie9 lt-ie8 ie7"><![endif]-->
+<!--[if IE 8]><html lang="ko-KR" class="lt-ie10 lt-ie9 ie8"><![endif]-->
+<!--[if IE 9]><html lang="ko-KR" class="lt-ie10 ie9"><![endif]-->
+<!--[if !IE]><!--><html lang="ko-KR"><!--<![endif]-->
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>DOM Script Basic</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div>
+		<p title="time is Gold!">시간은 금일세</p>
+		<p id="notification">보충은 다음주부터~</p>
+	</div>
+
+	<div>
+		<h2 id="heading-01">headline</h2>
+		<ul>
+			<li><a href="">item-01</a></li>
+			<li><a href="">item-02</a></li>
+			<li><a href="">item-03</a></li>
+		</ul>
+	</div>
+	<div>
+		<h2 id="heading-02">headline</h2>
+		<ul>
+			<li><a href="">item-01</a></li>
+			<li><a href="">item-02</a></li>
+			<li><a href="">item-03</a></li>
+		</ul>
+	</div>
+	<div>
+		<h2 id="heading-03">headline</h2>
+		<ul>
+			<li><a href="">item-01</a></li>
+			<li><a href="">item-02</a></li>
+			<li><a href="">item-03</a></li>
+		</ul>
+	</div>
+	<div>
+		<h2 id="heading-04">headline</h2>
+		<ul>
+			<li><a href="">item-01</a></li>
+			<li><a href="">item-02</a></li>
+			<li><a href="">item-03</a></li>
+		</ul>
+	</div>
+
+<script>
+	//문서에서 단락 요소에 접근(select)한다. 
+	// console.log('문서에서 단락 요소의 개수', document.getElementsByTagName('p').length ); 
+	// 단락은 여러개이다. 
+	// 접근한 단락 요소의 노드 유형을 콘솔(console) 패널에 기록(log)한다. 
+	// .length : 몇개인가. 
+	// p는 집합. 유사배열(Like Array) : NodeList or HTMLCollection. 배열과 유사하지만 실제 배열은 아니다.
+
+	// console.log('수집된 문서의 단락요소중 첫번째요소', document.getElementsByTagName('p').item(0) ); 
+	// console.log('수집된 문서의 단락요소중 두번째요소', document.getElementsByTagName('p')[1] ); 
+	// .item(0) : 첫번째꺼 꺼내오기. 
+	// [0]도 첫번째꺼 꺼내오기. 더 간단하므로 이 방법을 많이 씀
+
+	// console.log('단락 요소의 노드유형', document.getElementsByTagName('p')[0].nodeType ); 
+	// .nodeType 노드타입 알려줌. 여기선 1이 나와서 이건 '요소노드'라는 것을 알려줌 
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+	// 문서에서 이미 찾은 대상 요소를 다시금 또 찾는 바보짓을 안하고싶다! 
+	// 메모리(기억)할 수 있는 공간(Variable)이 필요
+
+	// 자바스크립트의 변수 선언
+	// 선언된 메모리 공간(변수)에 레이블(이름 주기표)을 달다. 
+	// var paras;
+
+	// 레이블이 달린 메모리 공간(변수)에 데이터를 담는다. 
+	// 대입연산자(=)
+	// 변수 = 데이터(값);
+	// paras = document.getElementsByTagName('p');
+	// console.log('단락 요소의 노드유형', paras[0].nodeType ); 
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+	var paras, divs, headings, uls, lis, links;
+ 
+	function print(msg) {
+		console.log(msg);
+	}
+	// console이 출력하는거기 때문에 return이 없어도 된다.
+
+	function tagName(name) {
+		return document.getElementsByTagName(name);
+	}
+	// return값이 없으면 undefined. 값이 없기때문
+
+	div =		 tagName('div'); // 그냥 tagName(div); 라고 하면 인수로 문자가 들어가는게 아니라, 이건 div 변수이다. 
+	paras =		 tagName('p');
+	headings =	 tagName('h2');
+	uls =		 tagName('ul');
+	lis =		 tagName('li');
+	links =		 tagName('a');
+
+
+	print(div);
+	print(paras);
+	print(headings);
+	print(uls);
+	print(lis);
+	print(links);
+	
+	function id(name) {
+		return document.getElementById(name);
+	}
+
+	var h2_01 = id('heading-01');
+
+	print(h2_01);
+
+
+</script>
+</body>
+</html>
