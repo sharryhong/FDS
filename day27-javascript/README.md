@@ -46,6 +46,3 @@ document.COMMENT_NODE
 - onmouseenter = function() {}
 - onmouseleave = function() {}
 
-##### DOM Level 0 (레거시 돔)
-
-- 초기 문서객체모델. 지금도 많이 쓴다. 웹 문서의 특정요소에 접근, 해당 요소의 속성을 교체할 수 있는 API제공했으나, 매우 제한적인 접근(하이퍼링크, 이미지, 폼 필드 요소에 국한)

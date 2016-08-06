@@ -1,0 +1,14 @@
+/*** @SharryHong's 2016-08-06 ***/
+.wrap-img {
+  position: relative;
+  padding-bottom: 140.53333%;
+  overflow: hidden;
+}
+
+.wrap-img img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+/*# sourceMappingURL=../map/style.css.map */

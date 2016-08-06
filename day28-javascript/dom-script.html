@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>DOM Scripting with javaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+	<p>
+		<strong>Hello</strong> How are U?? 
+	</p>
+
+	<form action="#" method="GET" name="primary_form">
+		<p>
+			<!-- 접근성 위해 label반드시 필요한데 placeholder로 대체는 안된다. -->
+			<label for="c_id">ID</label> 
+			<input type="text" name="c_id" id="c_id" placeholder="id">
+			<!-- name이 있어야 좋은 이유
+			1. name="c_id"이 없으면 submit전송이 안된다.  
+			2. document.primary_form 이라고 하면 바로 찾을 수 있다. 요새는 이렇게 찾진않는다. -->
+		</p>
+		<button type="submit">전송</button>
+	</form>
+
+	<form action="#" method="GET" name="secondary-form">
+		<p>
+			<label for="c_mail">Email</label> 
+			<input type="text" name="c_mail" id="c_mail" placeholder="hong@gmail.com">
+		</p>
+	</form>
+
+<script>
+	// DOM Lv.0 방식
+	var forms = document.forms;
+	console.log(forms); // 결과 : [form, form]
+
+	// window 콘솔창에서 하위메뉴 열때 : alt + 화살표 누르면 됨
+
+	// form name에서 -, _을 쓸 때 비교 
+	// 1. forms.primary_form 라고 하면 옆과 같이 잘 나오는데, // <form action=​"#" method=​"GET" name=​"primary_form">​…​</form>​
+	// 2. forms['secondary-form'] -를 쓰면 꼭 이 방법으로밖에 안나온다. 
+
+
+	//////////////////////////////////////////////
+	// DOM Lv.1 방식 
+	// 요소명과 id정도로만 접근했다. 그래서 class를 쓰지말라고 했었다.
+
+	var root_element = document.documentElement; // html문서에서만 가능. xml에서는 안됨
+	//root_element = document.getElementsByTagName('html')[0] // xml에서는 이렇게만 가능. xml, html 둘다 가능
+	console.log(root_element);
+
+	var head = document.head; // html 에서만 사용 가능
+	var body = document.body; // html 에서만 사용 가능
+
+	var inputs = document.getElementsByTagName('input');
+	console.log(inputs);
+	var buttons = document.getElementsByTagName('button');
+	console.log(buttons);
+
+	// ID속성을 통한 접근 방법(interface: selecting)
+	var c_id = document.getElementById('c_id');
+	var c_mail = document.getElementById('c_mail');
+	console.log('c_id:', c_id);
+	console.log('c_mail:', c_mail);
+
+	// 
+	var first_para = document.getElementsByTagName('p')[0];
+	var first_para_nodes = first_para.childNodes;
+
+	console.log(first_para_nodes[0]); // #text
+	console.log(first_para_nodes[1]); // <strong>Hello</strong>
+	console.log(first_para_nodes[2]); // "How are U??"
+
+	console.log(first_para_nodes[0].nodeType); // 3: 텍스트노드. 빈칸
+	console.log(first_para_nodes[1].nodeType); // 1: 요소노드
+	console.log(first_para_nodes[2].nodeType); // 3: 텍스트노드
+
+	console.log(first_para_nodes[0].nodeType === document.TEXT_NODE); // true
+	console.log(first_para_nodes[1].nodeType === document.ELEMENT_NODE); // true
+	console.log(first_para_nodes[2].nodeType === document.ELEMENT_NODE); // false
+</script>
+</body>
+</html>

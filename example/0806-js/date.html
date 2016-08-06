@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--[if IE 6]><html lang="ko-KR" class="lt-ie10 lt-ie9 lt-ie8 ie6"><![endif]-->
+<!--[if IE 7]><html lang="ko-KR" class="lt-ie10 lt-ie9 lt-ie8 ie7"><![endif]-->
+<!--[if IE 8]><html lang="ko-KR" class="lt-ie10 lt-ie9 ie8"><![endif]-->
+<!--[if IE 9]><html lang="ko-KR" class="lt-ie10 ie9"><![endif]-->
+<!--[if !IE]><!--><html lang="ko-KR"><!--<![endif]-->
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>Date</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<p>날짜를 인수로 전달하면 요일을 한국어로 반환하는 함수 만들기</p>
+
+<script>
+
+	var time = new Date();
+	console.log(time);
+
+	var nowDate = time.getDate();
+	console.log(nowDate);
+
+	var koDate = ['일', '월', '화', '수', '목', '금', '토'];
+
+	function dateKorean(ko) {
+
+		return console.log(koDate[ko]+"요일");
+		// if (ko===0) {
+		// 	console.log("오늘은 일요일~");
+		// } else if (ko===1) {
+		// 	console.log("오늘은 월요일~");
+		// } else if (ko===2) {
+		// 	console.log("오늘은 화요일~");
+		// } else if (ko===3) {
+		// 	console.log("오늘은 수요일~");
+		// } else if (ko===4) {
+		// 	console.log("오늘은 목요일~");
+		// } else if (ko===5) {
+		// 	console.log("오늘은 금요일~");
+		// } else if (ko===6) {
+		// 	console.log("오늘은 토요일~");
+		// }
+	}
+
+	dateKorean(nowDate);
+
+</script>
+</body>
+</html>

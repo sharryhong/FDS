@@ -1,0 +1,17 @@
+$base-font: 'Merriweather', serif;
+
+$base-font-size: 11px;
+$heading-font-size: 14px;
+$base-line-height: 1.2;
+
+p {
+	font-size: $base-font-size;
+	line-height: 1.2;
+}
+
+%base-head-font {
+	font-family: $base-font;
+	font-size: $heading-font-size;
+	font-weight: 400;
+}
+
