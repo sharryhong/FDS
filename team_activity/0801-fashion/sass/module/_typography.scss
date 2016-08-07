@@ -1,7 +1,8 @@
 $base-font: 'Merriweather', serif;
+$sans-font: 'Merriweather Sans', sans-serif;
 
-$base-font-size: 11px;
-$heading-font-size: 14px;
+$base-font-size: 0.6875rem;
+$heading-font-size: 0.875rem;
 $base-line-height: 1.2;
 
 p {
@@ -15,3 +16,7 @@ p {
 	font-weight: 400;
 }
 
+%sans-font {
+	font-family: $sans-font;
+	font-weight: 400;
+}

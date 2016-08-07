@@ -227,28 +227,98 @@ textarea {
   font: inherit;
 }
 
+body *, body *::before, body *::after {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: bottom;
+}
+
 p {
-  font-size: 11px;
+  font-size: 0.6875rem;
   line-height: 1.2;
 }
 
 .product .title .name, .product .title .price {
   font-family: "Merriweather", serif;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 400;
 }
 
+.btn {
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 400;
+}
+
+button {
+  padding: 0;
+  background: none;
+  border: none;
+}
+
+.btn {
+  display: inline-block;
+  font-size: 0.75rem;
+}
+
+.btn.gray {
+  color: #a3a3a3;
+  background: #eaeaea;
+}
+
+.btn.maincolor {
+  color: #fff;
+  background: #ddba76;
+}
+
+.btns.half {
+  display: flex;
+  padding: 1em;
+}
+
+.btns.half button {
+  width: 50%;
+}
+
+.btns.half button + button {
+  margin-left: 1em;
+}
+
 /*** @SharryHong's 2016-08-06 ***/
-.wrap-img {
+.product {
   position: relative;
-  padding-bottom: 140.53333%;
   overflow: hidden;
 }
 
-.wrap-img img {
-  position: absolute;
-  top: 0;
+@media (max-width: 499px) {
+  .product {
+    height: 100vh;
+  }
+}
+
+@media (min-width: 500px) {
+  .product .wrap-img {
+    position: relative;
+    padding-bottom: 140.53333%;
+    overflow: hidden;
+  }
+  .product .wrap-img img {
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.product .wrap-img img {
   width: 100%;
+}
+
+.product .page-bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
 }
 
 .product .title {
@@ -269,6 +339,23 @@ p {
   line-height: 60px;
   margin: 0;
   margin-right: 30px;
+}
+
+.product .btns {
+  height: 80px;
+}
+
+.product .btns.half {
+  display: flex;
+  padding: 1em;
+}
+
+.product .btns.half button {
+  width: 50%;
+}
+
+.product .btns.half button + button {
+  margin-left: 1em;
 }
 
 /*# sourceMappingURL=../map/main.css.map */

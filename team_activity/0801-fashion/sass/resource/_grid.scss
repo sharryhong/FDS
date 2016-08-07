@@ -1,0 +1,40 @@
+@charset "utf-8";
+/*SharryHong's grid*/
+
+.grid::before,
+.grid::after {
+	content: '';
+	display: table;
+}
+
+.grid::after {
+	clear: both;
+}
+
+[class*="unit-"] {
+	box-sizing: border-box;
+	float: left;
+	width: 100%;
+}
+
+.unit-s-1-2 { width: 50%; }
+.unit-s-1-3 { width: 33.3333%; }
+.unit-s-2-3 { width: 66.6667%; }
+
+@media #{$mq-l} {
+	.unit-l-1-2 { width: 50%; }
+	.unit-l-1-3 { width: 33.3333%; }
+	.unit-l-2-3 { width: 66.6667%; }
+}
+
+/*gutter Module*/
+.gutter,
+.gutter-group [class*="unit-"] {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.no-gutter {
+	padding-left: 0;
+	padding-right: 0;
+}

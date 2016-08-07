@@ -1,11 +1,6 @@
 // 각 Design Module에서 높이가 다른 product image를 넣어도 
 // height가 비율로 자동 적용되도록 하기 위한 mixin
 
-// @mixin ratio-height($width: 750, $height: null) {
-// 	padding-bottom: percentage($height / $width);
-// }
-
-
 @mixin ratio-height-img($width: 750, $height: null) {
 	position: relative;
 	padding-bottom: percentage($height / $width);

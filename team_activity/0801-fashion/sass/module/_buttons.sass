@@ -1,0 +1,28 @@
+button
+	padding: 0
+	background: none
+	border: none
+
+// 버튼 기본
+.btn
+	@extend %sans-font
+	display: inline-block
+	font-size: 0.75rem
+
+.btn.gray
+	color: $btn-gray-color
+	background: $btn-gray-bgcolor
+
+
+.btn.maincolor
+	color: #fff
+	background: $btn-base-bgcolor
+
+// width: 50% 차지하는 버튼 
+.btns.half
+	display: flex
+	padding: $btn-box-padding
+	button
+		width: 50%
+	button+button
+		margin-left: $btn-box-padding
