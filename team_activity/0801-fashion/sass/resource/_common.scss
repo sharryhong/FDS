@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+body *, body *::before, body *::after {
+	box-sizing: border-box;
+}
+
+// 목록 초기화 스타일 모듈
+%reset-list ul,
+%reset-list ol, 
+%reset-list,
+%reset-list {
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-left: 0;
+	list-style: none;
+}
+
+img {
+	vertical-align: bottom;
+}
+
+%clearfix::after {
+	display: block;
+	content: '';
+	clear: both;
+}
+
+// ir기법. 이미지 대체 기법
+%ir {
+	display: block;
+	overflow: hidden;
+	text-indent: -9999em;
+}
+
+%blind {
+	position: absolute;
+	text-indent: -9999em;
+	overflow: hidden;
+}

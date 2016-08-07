@@ -1,0 +1,34 @@
+/*** @SharryHong's 2016-08-06 ***/
+
+.product
+	position: relative
+	overflow: hidden
+	@media #{$mq-s}
+		height: 100vh
+
+	.wrap-img
+		@media #{$mq-l}
+			@include ratio-height-img($height: 1054)
+
+		img
+			width: 100%
+
+	.page-bottom
+		position: absolute
+		bottom: 0
+		width: 100%
+		background: #fff
+	.title
+		@include black-box($height: 60px, $align: "leftRight")
+	.btns
+		height: $btn-box-height
+	.btns.half
+		display: flex
+		padding: $btn-box-padding
+		button
+			width: 50%
+		button+button
+			margin-left: $btn-box-padding
+
+
+

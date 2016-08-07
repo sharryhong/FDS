@@ -30,7 +30,7 @@ button img {
 .show-grid::before {
 	content: '';
 	position: absolute;
-	z-index: 100;
+	z-index: -100;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -93,6 +93,7 @@ button img {
 }
 
 .gnb {
+	@extend %reset-list;
 	display: none;
 	position: absolute;
 	left: 0;
@@ -354,12 +355,17 @@ button img {
 	font-size: 2.0625rem;
 }
 
+.sns span {
+	@extend %blind;
+}
+
 .sns li {
 	display: inline-block;
 	width: 30%;
 }
 
 .sitemap {
+	@extend %reset-list;
 	width: 76%;
 	margin-left: auto;
 	margin-right: auto;

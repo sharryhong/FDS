@@ -1,0 +1,27 @@
+// 자주 사용하는 box 디자인
+
+@mixin black-box($height, $align) 
+	height: $height
+	background: #333
+	color: #fff
+
+	@if $align == leftRight
+		.name 
+			@extend %base-head-font
+			float: left
+			line-height: $height
+			margin: 0
+			margin-left: 20px
+		
+		.price 
+			@extend %base-head-font
+			float: right
+			line-height: $height
+			margin: 0
+			margin-right: 30px
+
+	@if $align == center
+		*
+			@extend %base-head-font
+			text-align: center
+			line-height: $height

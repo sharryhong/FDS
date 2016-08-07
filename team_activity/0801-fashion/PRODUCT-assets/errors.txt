@@ -1,0 +1,4 @@
+[2016-08-06 10:16:13] layer "+28": Expected Either a default asset specification or a layer asset specification but "+" found.
+[2016-08-06 10:16:13] layer "+28": Expected Either a default asset specification or a layer asset specification but "+" found.
+[2016-08-06 10:16:13] layer "+": Expected Either a default asset specification or a layer asset specification but "+" found.
+[2016-08-06 10:16:13] layer "+": Expected Either a default asset specification or a layer asset specification but "+" found.
