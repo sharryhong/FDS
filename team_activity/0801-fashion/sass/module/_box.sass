@@ -5,6 +5,7 @@
 	background: #333
 	color: #fff
 
+	// black-box 내부에 콘텐츠가 왼쪽, 오른쪽 위치
 	@if $align == leftRight
 		.name 
 			@extend %base-head-font
@@ -20,6 +21,7 @@
 			margin: 0
 			margin-right: 30px
 
+	// black-box 내부에 콘텐츠가 중앙에 위치
 	@if $align == center
 		*
 			@extend %base-head-font
