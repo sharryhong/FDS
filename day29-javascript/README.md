@@ -2,7 +2,7 @@
 
 # DAY 29 - javaScript
 
-### 오늘의 시험 풀이
+#### 오늘의 시험 풀이
 
 - <script> 요소에 대한 설명 중 올바른 것은
  - 스크립트 해석 및 실행이 DOM이 완성되기 전에 처리 되므로 별도의 이벤트 감지를 통해 객체에 접근해야 한다.
@@ -25,10 +25,10 @@
 - DOM API에서 지원하는 방법이 아닌 것
  - 유효성 검사 (Validation) : html5에서 지원, 지리 (Geolocation) : html5에서 지원(BOM)
 
- #### 다음 중 객체가 아닌 것을 모두 고르세요.
- - undefined, null 
+#### 다음 중 객체가 아닌 것을 모두 고르세요.
+- undefined, null 
 
- - 크롬 개발자도구에서 properties 에서 확인 가능하다. 
+- 크롬 개발자도구에서 properties 에서 확인 가능하다. 
 
 ```
 body.default-theme.des-mat
