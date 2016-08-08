@@ -70,24 +70,24 @@ VM411:1 Uncaught TypeError: Cannot read property 'toString' of null(…)
 
 [선택] 현재 선택한 대상을 변수 el
 
-id속성으로 대상(요소노드)을 선택 document.getElementById('id_name');
-요소노드의 이름으로 대상(요소노드)을 선택 document.getElementsByTagName('tag_name');
-class 속성으로 
+id속성으로 대상(요소노드)을 선택 document.getElementById('id_name'); <br>
+요소노드의 이름으로 대상(요소노드)을 선택 document.getElementsByTagName('tag_name');<br>
+class 속성으로 <br>
 특정 속성으로 
 
-[탐색] 부모노드 el.parentNode
-[탐색] 첫번째 자식노드 el.firstChild
-[탐색] 마지막 자식노드 el.lastChild
-[탐색] 이전 형제노드 el.previousSibling
-[탐색] 다음 형제노드 el.nextSibling
+[탐색] 부모노드 el.parentNode<br>
+[탐색] 첫번째 자식노드 el.firstChild<br>
+[탐색] 마지막 자식노드 el.lastChild<br>
+[탐색] 이전 형제노드 el.previousSibling<br>
+[탐색] 다음 형제노드 el.nextSibling<br>
 [탐색] 자식노드들 el.childNodes
 
 [탐색]은 하기 쉽지 않아 사용을 잘 하지 않았지만 jQuery는 탐색이 쉽게 해준다.
 
 - 노드.children // 그 안의 요소만 가져옴. 빈칸은 textnode인데 가져오지 않으므로 편리하다. 
 
-$0.children[0] // 첫번째자식요소 찾음
-$0.children[$0.children.length -1] // 마지막 자식요소 찾음
+$0.children[0] // 첫번째자식요소 찾음<br>
+$0.children[$0.children.length -1] // 마지막 자식요소 찾음<br>
 $0 은 콘솔창에서 가리키는 요소 
 
 - 노드.firstChild , childNodes[0] // 첫번째 자식노드 찾기 
