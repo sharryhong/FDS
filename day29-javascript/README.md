@@ -172,18 +172,18 @@ for(var child, i=0, j=parent_childs.length; i<j; i=i+1){
 
 #### node 만들기. 동적 생성!, 조작
 
-- .createElement('element') // 실제 DOM에 붙는건 아니다.
-- .createAttribute('attribute')  // 안씀
-- .createTextNode('text') // 텍스트 노드 만들기
+- `document.createElement('element')` // html 요소 만들기. 실제 DOM에 붙는건 아니다.
+- `document.createAttribute('attribute')`  // 안씀
+- `document.createTextNode('text')` // 텍스트 노드 만들기
 
-- 부모노드.appendChild(자식노드) // 부모의 꽁지쪽에 붙이기
+- `부모노드.appendChild(자식노드)` // 부모의 꽁지쪽에 붙이기
  - 모달의 경우 이렇게 붙여서 aria로 연결시키고, role="dialog"라고 붙이면 리더기도 제대로 접근하게 된다.
  - 앞에 붙이는 건 없으니, 함수로 만들어서 붙이자. 헐~
-- 목표노드.부모노드.insertBefore(insert삽입할노드, target목표노드) // 노드 ~ 앞에 삽입
-- removeChild(node)
-- replaceChild(alternate, target)
-- cloneNode(boolean) // false가 기본값 ul이면 ul만 복제. true면 ul과 자식까지 복제
-- innerHTML // 위의 것들을 손쉽게 해줌 
+- `목표노드.부모노드.insertBefore(insert삽입할노드, target목표노드)` // 노드 ~ 앞에 삽입
+- `node.removeChild(childnode)`
+- `node.replaceChild(alternate, target)` // `replacedNode = parentNode.replaceChild(newChild, oldChild);`
+- `node.cloneNode(boolean)` // false가 기본값 ul이면 ul만 복제. true면 ul과 자식까지 복제
+- `element.innerHTML` // 위의 것들을 손쉽게 해줌 
 
 
 ### 프로그래밍 사고
