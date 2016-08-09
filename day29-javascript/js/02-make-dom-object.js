@@ -58,4 +58,3 @@ function prependChild(con, selector) {
 }
 prependChild(target_container, '#parent');
 
-// 쌤꺼
