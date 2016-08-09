@@ -188,7 +188,7 @@ for(var child, i=0, j=parent_childs.length; i<j; i=i+1){
 
 ### 프로그래밍 사고
  
-[쌤 자료 링크 바로가기](https://github.com/yamoo9/FDS/blob/master/References/00-coding.md)
+[쌤 자료 링크 바로가기](https://github.com/yamoo9/FDS/blob/master/References/A__Fundmantal/00-coding.md)
 
 이때 “수행되어져야 하는 명령”을 정의하기 위해서는 해결 과제(요구사항)를 명확히 이해한 후, 복잡함을 단순하게 분해(모듈화!)하고 자료를 정리하고 구분해야하며 순서에 맞게 행위를 배열해야 한다.
 
