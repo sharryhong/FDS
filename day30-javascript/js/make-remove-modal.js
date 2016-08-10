@@ -10,27 +10,32 @@ function makeModal() {
   // this.setAttribute('disabled', true); 를 했으므로 
   // 사실 if (!exist_modal) {} 안해줘도 된다. => 코드 리펙토링
   if (!exist_modal) {
-    var modal = document.createElement('div');
+    var modal = createNode('div');
+    // var modal = document.createElement('div');
     modal.setAttribute('class', 'modal');
-    var modal_title = document.createElement('h2');
-    var modal_title_txt = document.createTextNode('Modal Window');
+    var modal_title = createNode('h2', 'Modal Window');
+    // var modal_title = document.createElement('h2');
+    // var modal_title_txt = document.createTextNode('Modal Window');
     modal_title.setAttribute('class', 'modal-title');
-    modal_title.appendChild(modal_title_txt);
-    var modal_desc = document.createElement('p');
-    var modal_desc_txt = document.createTextNode('Modal Window Content....');
+    // modal_title.appendChild(modal_title_txt);
+    var modal_desc = createNode('p','Modal Window Content....');
+    // var modal_desc = document.createElement('p');
+    // var modal_desc_txt = document.createTextNode('Modal Window Content....');
     modal_desc.setAttribute('class', 'modal-desc');
-    modal_desc.appendChild(modal_desc_txt);
-    var btn_modal_cta = document.createElement('button');
-    var btn_modal_cta_txt = document.createTextNode('send message');
+    // modal_desc.appendChild(modal_desc_txt);
+    var btn_modal_cta = createNode('button','send message');
+    // var btn_modal_cta = document.createElement('button');
+    // var btn_modal_cta_txt = document.createTextNode('send message');
     btn_modal_cta.setAttribute('class', 'modal-cta');
     btn_modal_cta.setAttribute('type', 'button');
-    btn_modal_cta.appendChild(btn_modal_cta_txt);
-    var btn_modal_close = document.createElement('button');
-    var btn_modal_close_txt = document.createTextNode('x');
+    // btn_modal_cta.appendChild(btn_modal_cta_txt);
+    var btn_modal_close = createNode('button', 'x');
+    // var btn_modal_close = document.createElement('button');
+    // var btn_modal_close_txt = document.createTextNode('x');
     btn_modal_close.setAttribute('class', 'modal-close');
     btn_modal_close.setAttribute('type', 'button');
     btn_modal_close.setAttribute('aria-label', 'close modal window');
-    btn_modal_close.appendChild(btn_modal_close_txt);
+    // btn_modal_close.appendChild(btn_modal_close_txt);
     btn_modal_close.onclick = removeModal;
     modal.appendChild( modal_title );
     modal.appendChild( modal_desc );
@@ -47,7 +52,8 @@ function removeModal() {
   // Modal???
   // 방법 1. .modal 찾아와서 제거할 것
   var modal = query('.modal');
-  modal.parentNode.removeChild(modal);
+  // modal.parentNode.removeChild(modal);
+  removeNode(modal);
   // 방법 2. 함수 실행 전에 컨텍스트를 변경해서 제거하는 방법
 
   // 상태 변경
@@ -56,3 +62,5 @@ function removeModal() {
 }
 
 make_btn.onclick = makeModal;
+
+
