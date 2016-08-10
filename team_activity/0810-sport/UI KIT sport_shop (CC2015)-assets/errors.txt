@@ -1,0 +1,2 @@
+[2016-08-10 09:44:42] layer "+00": Expected Either a default asset specification or a layer asset specification but "+" found.
+[2016-08-10 09:44:42] layer "STICKYBANDITS.NL": Unsupported extension: nl

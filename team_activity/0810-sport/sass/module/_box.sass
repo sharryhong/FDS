@@ -1,0 +1,29 @@
+// 자주 사용하는 box 디자인
+
+@mixin black-box($height, $align) 
+	height: $height
+	background: #333
+	color: #fff
+
+	// black-box 내부에 콘텐츠가 왼쪽, 오른쪽 위치
+	@if $align == leftRight
+		.name 
+			@extend %base-head-font
+			float: left
+			line-height: $height
+			margin: 0
+			margin-left: 20px
+		
+		.price 
+			@extend %base-head-font
+			float: right
+			line-height: $height
+			margin: 0
+			margin-right: 30px
+
+	// black-box 내부에 콘텐츠가 중앙에 위치
+	@if $align == center
+		*
+			@extend %base-head-font
+			text-align: center
+			line-height: $height
