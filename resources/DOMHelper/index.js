@@ -61,3 +61,23 @@ function queryAll(selector_str, context) { //context는 안넣어도되게 뒤�
 function query(selector_str, context) {
 	return queryAll(selector_str, context)[0];
 }
+
+// 문서 객체(요소노드)를 제거하는 헬퍼함수
+function removeNode(node) {
+	return node.parentNode.removeChild(node);
+}
+
+// createElement(), createTextNode()
+// 2가지 일을 동시에 수행하는 헬퍼함수 
+// 요소를 생성한 다음 내부에 텍스트를 자식 노드로 삽입
+function createNode(el_name, text) {
+	var el_node = document.createElement(el_name);
+	// if(text) {
+	if(typeof text !== 'undefined' && typeof text === 'string') {
+		var text_node = document.createTextNode(text);
+		el_node.appendChild(text_node);
+	}
+	return el_node;
+	// return element.appendChild(text); // 안되!
+}
+// createNode('div', 'hellow world');
