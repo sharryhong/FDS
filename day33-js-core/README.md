@@ -97,7 +97,7 @@ length
 3
 
 >> 이 배열(객체)에 속성, 값을 추가해보자. 
-favorite_items['type'] = 'array';
+favorite_items['type'] = 'array'; // 연관된 배열 속성 (실제 배열내에는 없다)
 
 console.dir(favorite_items);
 >> 결과
@@ -124,6 +124,46 @@ type
 - 자바스크립트의 배열은 사실 객체이다. 
 - 배열 내에 함수가 있을 경우, temp[2](); 라고하면 temp배열의 3번째에 있는 함수가 실행된다.
 - 배열 내에 배열이 있을 경우, temp[3][3](); 라고하면 temp배열의 4번째에 있는 배열의 3번째 있는 함수 실행 
+
+- 문서객체모델(DOM)의 노드리스트(node List)는 배열과 흡사해보이나, 배열은 아니다 : 유사배열
+
+- 인자가 하나인데 숫자인경우 오류!!
+ - 원래는 new Array(9) 라고 하면 [9] 이렇게 들어와야 하겠지만
+ - 숫자하나만 있다면 배열 요소 갯수 설정이 되어버린다. 
+ - 예: var myArr = new Array(7); 라고하면 [undefined × 7] 이렇게 된다.
+ - 따라서 이렇게 하지 않도록한다. 
+
+##### 객체(Object)
+
+- 자바스크립트 언어의 모든 것은 객체이나... undefined, null 만은 객체가 아니다.
+
+- 부정 : '', false, 0, NaN(숫자 객체), undefined(객체아님), null(객체아님)
+
+```
+>> NaN이 객체인가 테스트하기 
+NaN.toString()
+"NaN"
+
+Object.prototype.toString.call(NaN)
+"[object Number]"
+``` 
+
+- 변수에 참조
+ - `var myObj = new Object( );`
+
+- 객체(Object), 프로퍼티(변수) 추가 
+ - `myObj.property = data;`
+ - data : 숫자,문자,불린, 배열,함수,객체 정보를넣을수있음
+
+- 객체.프로퍼티 값으로 설정되는 함수는 메소드(Method)라고 부른다.
+
+- 객체(Object), 프로퍼티(변수) 추가 
+ - `myObj[ ‘property’ ] = data;` // 객체 속성을 반복해서 부를때 많이 사용된다.
+
+- JSON 을 사용하면 데이터를 구조화하여...  
+
+
+
 
 ###### 많은 기능을 담는 것을 만들고 싶다 : 객체를 만들어서 사용한다는 개념으로 하면 좋다. => 객체지향 
 
