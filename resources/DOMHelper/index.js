@@ -139,3 +139,8 @@ function camelCase(css_prop){
 function isNumber(data) {
 	return typeof data === 'number';
 }
+
+// JavaScript의 모든 데이터 유형을 올바르게 감지할 수 있는 함수
+function isType(data) {
+	return Object.prototype.toString.call(data).slice(8,-1).toLowerCase();
+}
