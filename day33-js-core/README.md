@@ -539,6 +539,8 @@ var html_code = [
 body.innerHTML += html_code; // 현재 html코드에 html_code를 붙여라.
 ```
 
+- 나중엔 JSON 데이터로 ... 
+
 
 #### 그 외 참고
 
