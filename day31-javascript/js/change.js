@@ -1,28 +1,23 @@
+/*******************************
+* 라이언 갤러리   
+*/
+
+// 바뀌어야 하는 이미지 
 var main_img = query('.main-con img');
-console.log(main_img);
 var main_img_src = main_img.getAttribute('src');
-console.log(main_img_src);
-
-var btn01 = query('.indicator li:nth-child(1) button');
-var btn02 = query('.indicator li:nth-child(2) button');
-var btn03 = query('.indicator li:nth-child(3) button');
-
 var img_array = ['img/img01.jpg', 'img/img02.jpg', 'img/img03.jpg'];
 
-function changeImg(n) {
-	return main_img.setAttribute('src', img_array[n]);
+var buttons = [];
+
+function changeImg() {
+	main_img.setAttribute('src', this.img_src);
+	console.log('click');
 }
 
-btn01.onclick = function() {
-	changeImg(0);
+for(var i = 0, j = img_array.length; i < j; i++){
+	buttons[i] = query('.indicator li:nth-child('+(i+1)+') button');
+	buttons[i].img_src = img_array[i];
+	console.log(buttons[i].img_src);
+	buttons[i].onclick = changeImg;
 }
 
-btn02.onclick = function() {
-	changeImg(1);
-}
-
-btn03.onclick = function() {
-	changeImg(2);
-}
-
-// var context = 
