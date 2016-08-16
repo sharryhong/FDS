@@ -30,3 +30,24 @@ for(var i = 0, j = btn_length.length; i < j; i++){
 	// 각 버튼을 클릭하면 changeImg 함수 실행하기 
 	buttons[i].onclick = changeImg;
 }
+
+/********** 단계
+1. 중복되는 코드여도 우선 구현되도록 코딩하였습니다. 
+예) var btn01 = query('.indicator li:nth-child(1) button');
+var img_array = ['img/img01.jpg', 'img/img02.jpg', 'img/img03.jpg'];
+function changeImg(n) {
+	return main_img.setAttribute('src', img_array[n]);
+}
+btn01.onclick = function() {
+	changeImg(0);
+}
+
+2. 중복되는 코드를 없애기 위한 작업으로 for문을 작성하면서 함수, 배열, 객체 등에 대한 공부를 더 해야겠다는 걸 깨달았습니다. 
+
+3. 처음 작성하였던 매개변수가 있는 함수로는 for문 내에서 buttons[i].onclick = 함수실행; 구현이 쉽지 않았습니다. 
+그래서 자바스크립트 함수, 객체 등에 대해 더 공부한 후(책) 
+각 buttons[i]의 객체 인스턴스를 추가하여 인스턴스 값을 던져주어야겠다고 생각했습니다. 
+=> 여기까지가 현재 코드
+
+4. sass로 갤러리다운 스타일을 추가하고, 코드 리펙토링 계속 하기로 합니다. :) 
+*/
