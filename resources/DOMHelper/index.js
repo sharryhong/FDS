@@ -144,3 +144,123 @@ function isNumber(data) {
 function isType(data) {
 	return Object.prototype.toString.call(data).slice(8,-1).toLowerCase();
 }
+
+
+// error메시지 띄우는 함수
+function errorMsg(message) {
+	if ( isType(message) !== 'string') {
+	// 함수 자신을 다시 호출 : 재귀함수
+	errorMsg('오류 메시지는 문자 데이터 유형이어야합니다.')
+	}
+	throw new Error(message);
+}
+
+// 이전 노드 찾기 // 최신브라우저는 $0.previousElementSibling;
+// function prevEl(node) {
+// 	// 검증 : 유효성 검사
+// 	if(node.nodeType !== 1) {
+// 		errorMsg('전달된 인자는 요소노드여야 합니다.');
+// 	}
+// 	do {
+// 		node = node.previousSibling;
+// 	} while(node && node.nodeType !== 1); // nodeType이 요소노드(1)이면 끝남
+// 	return node;
+// }
+
+// 노드인지 아닌지 테스트하는 함수. 노드이면 true, 아니면 false반환
+function isElNode(node) {
+	return node.nodeType === 1;
+}
+function isntElNode(node) {
+	return !isElNode(node);
+}
+
+function prevEl(node) {
+	if(isntElNode(node)) {
+		errorMsg('전달된 인자는 요소노드여야 합니다.');
+	}
+	// IE 9+, 신형 웹 브라우저
+	if(node.previousElementSibling) {
+		return node.previousElementSibling;
+	}
+	// 구형 IE 6~8
+	else {
+		do { node = node.previousSibling; }
+		// while(node && node.nodeType !== 1); // nodeType이 요소노드(1)이면 끝남
+		while(node && isntElNode(node));
+		return node;
+	}
+}
+
+// 다음 노드 찾기 
+function nextEl(node) {
+	// if(isntElNode(node)) {
+	// 	errorMsg('전달된 인자는 요소노드여야 합니다.');
+	// } // 빈 텍스트 노드 등이 전달되어도 되도록 하자. 
+	do {
+		node = node.nextSibling;
+	} while(node && isntElNode(node));
+	return node;
+}
+
+// 첫번째 자식요소 노드를 찾는 헬퍼 함수
+function firstEl(node) {
+	if(isntElNode(node)) {
+		errorMsg('전달된 인자는 요소노드여야 합니다.');
+	}
+	if(!node.firstElementChild) { // IE9+
+		return node.firstElementChild;
+	} else {
+		// IE 6~8
+		// node 찾고자 하는 자식 노드의 부모이다. 
+		// 제일 먼저 부모노드인 node의 첫번째 자식노드를 찾는다. 
+		node = node.firstChild;
+		console.log(node);
+		// 
+		// 삼항식에서 더 많이 나오는 것을 앞에다 둔다. 
+
+		do { node = node.nextSibling; }
+		while( node && isntElNode(node));
+		return node;
+	}
+}
+
+// 더 쉽게 짜보자.
+function _firstEl(node) {
+	return node.children[0];
+}
+
+function _lastEl(node) {
+	var children = node.children;
+	return children[children.length -1];
+}
+
+// 마지막 자식요소 노드를 찾는 헬퍼 함수
+function lastEl(node) {
+	if(isntElNode(node)) {
+		errorMsg('전달된 인자는 요소노드여야 합니다.');
+	}
+	if(!node.lastElementChild) { // IE9+
+		return node.lastElementChild;
+	} else {
+		// IE 6~8
+		// node 찾고자 하는 자식 노드의 부모이다. 
+		// 제일 먼저 부모노드인 node의 첫번째 자식노드를 찾는다. 
+		node = node.lastChild;
+		console.log(node);
+		// 
+		// 삼항식에서 더 많이 나오는 것을 앞에다 둔다. 
+
+		do { node = node.previousSibling; }
+		while( node && isntElNode(node));
+		return node;
+	}
+}
+
+// ------------------------------------------------
+// 요소노드의 이름이 동일한지 체크하는 헬퍼 함수
+function isElName(node, name) {
+  if ( isntElNode(node) ) { errorMsg('첫번째 인자로 요소노드가 전달되어야 합니다.') }
+  if ( isType(name) !== 'string' ) { errorMsg('두번째 인자로 텍스트 데이터 유형이 전달되어야 합니다.') }
+  return (node.localName || node.nodeName.toLowerCase()) === name;
+}
