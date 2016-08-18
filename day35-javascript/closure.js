@@ -46,20 +46,20 @@ for(; i<l; i++){
 // 외부와 구분되는 함수 만듬. 모듈패턴. 전역이 오염되지 않는다. (캠슐화)
 // IIFE 패턴 (즉시 실행되는 함수)
 // 일반적인 함수의 호출과정과 달리 이름이 없는 함수를 즉시 호출하는 것을 말한다. 
-(function(){}); 혹은 // 다른 방법들도 있으나 이 방법 권장. 
-(function(){})(); 
+// (function(){}); 혹은 // 다른 방법들도 있으나 이 방법 권장. 
+// (function(){})(); 
 
 // 예 : 
-(function(global, $){
-	'use strict';
-	// 외부와 단절된 코드 공간
-})(this, this.jQuery);
+// (function(global, $){
+// 	'use strict';
+// 	// 외부와 단절된 코드 공간
+// })(this, this.jQuery);
 
-// 
-for(; i<l; i++){
-	demo_nav_links[i].onclick = (function(index){
-		return function(){
-			console.log(index);
-		};
-	}(i)); // 즉시실행함수이므로, for문 i=0일때부터 바로 실행된다.
-}
+// // 
+// for(; i<l; i++){
+// 	demo_nav_links[i].onclick = (function(index){
+// 		return function(){
+// 			console.log(index);
+// 		};
+// 	}(i)); // 즉시실행함수이므로, for문 i=0일때부터 바로 실행된다.
+// }
