@@ -264,3 +264,78 @@ function isElName(node, name) {
   if ( isType(name) !== 'string' ) { errorMsg('두번째 인자로 텍스트 데이터 유형이 전달되어야 합니다.') }
   return (node.localName || node.nodeName.toLowerCase()) === name;
 }
+
+// 유사배열을 배열화. 배열의 능력을 쓰기 위해
+function makeArray(data) {
+	// 전달된 객체는 배열 또는 유사 배열인가? 
+	var check_data = isType(data), 
+		result_arr = [], // 배열 만들어 새로 담을 배열 변수
+		len = data.length;
+	// 실제 배열인 경우 그냥 리턴
+	if(isType(data) === 'array') {
+		return data;
+	}
+	// 유사 배열인 경우
+	if(len && check_data !== 'string') {
+		while(len--){ // --len인 경우 원하는 결과를 얻을 수 없으므로 주의
+			result_arr.push(data[len]);
+		}
+	}
+	return result_arr.reverse(); 
+	// 위는 값이 반대로 들어가므로. reverse()도 배열에 쓸 수 있는 함수. 
+}
+
+// 다른 방법으로 유사배열을 배열화
+// 문제 : Array.from 한번만 부르면 될걸 계속 부르게된다. ?
+function convertArray(data){
+	if(Array.from){ // 지원되는 브라우저에서 자동 배열화
+		return Array.from(data); 
+	} else {
+		return Array.prototype.slice.call(data);
+	}
+}
+
+// 1. 정식으로 클로저를 사용하는 방법으로 문제 해결
+// 이 방법에서 convertArray_wrapper()에서 
+//                                                                                                                                                         if, else는 한번만 실행되고(Array.from지원하는 브라우저니? 질문하기)
+// 내부함수인 closureFn()만 수행하게 된다. 
+// 이 방법은 호출을 해야하므로 그리 좋은 방법은 아니다.
+function convertArray_wrapper() {
+	var closureFn;
+	// 내부에서 클로저 함수를 반환. 중요!! 
+	// function _fn(data) {
+	// 	return data;
+	// }
+	// return _fn;
+	if(Array.from) {
+		closureFn = function(data) {
+			return Array.from(data);
+		};
+	} else {
+		closureFn = function(data) {
+			return Array.prototype.slice.call(data);
+		}
+	}
+	return closureFn;
+}
+
+// 함수 실행할 때 한번 실행되어 Array.from이 있는 브라우저, 
+// 아닌 브라우저에 따라 그것 한번만 실행된다. 
+var convertArray = convertArray_wrapper(); 
+// convertArray(data); 처럼 실행시킨다. 
+
+
+// 2. 약식(호출과정없이. IIFE패턴)을 사용하여 클로저를 처리하는 문제 해결방법
+// 좀 더 좋은 방법. 호출이 없다. 
+var convertArray = (function(){
+	if(Array.from) {
+		return function(data) {
+			return Array.from(data);
+		}
+	} else {
+		return function(data) {
+			return Array.prototype.slice.call(data);
+		}
+	}
+})();
+// 스스로 실행되어 Array.from이 지원되는 브라우저인지 확인이 이미 끝났다. 
