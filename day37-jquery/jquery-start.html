@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko-KR" class="no-js">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>jQuery 시작하기</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- CDN -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<!-- Local -->
+	<script>
+		// CDN jQuery 로드가 실패했다면 로컬 jQuery 파일을 로드하라. 
+		// console.log(!!this.jQuery); // true. // offline이라면 로컬에서 다운받기
+		this.jQuery || document.write('<script src="../resources/jquery-3.1.0.min.js"><\/script>');
+	</script>
+</head>
+<body>
+
+
+<script>
+// script를 head영역에 쓰게 되면 
+// $(document).ready(..); 이렇게 해야하는데 좀 더 느리다. 따라서 앞으로 body아래쪽에 쓰도록 한다. 
+// 그리고 위 방법으로 하면, 다른 라이브러리와 충돌이 날 수도 있다. 
+// 아래방법대로 불러오면 $는 반드시 jQuery이다. 
+(function(global, $){ 
+	'use strict';
+
+	// 자바스크립트 지원환경 유무파악. class 식별자 처리
+	$('html').removeClass('no-js').addClass('js');
+})(this, this.jQuery);
+</script>
+</body>
+</html>
