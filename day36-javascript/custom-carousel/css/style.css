@@ -1,0 +1,86 @@
+.ui-carousel .ui-carousel--content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ui-carousel .ui-carousel--navigation__button button {
+  background: transparent;
+  border: none;
+}
+
+body.demonstration {
+  min-height: 100vh;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.ui-carousel {
+  position: relative;
+  border: 4px solid #bebebe;
+  height: 400px;
+  overflow: auto;
+}
+
+.js .ui-carousel {
+  overflow: hidden;
+}
+
+.ui-carousel .ui-carousel--content {
+  width: 562.5px;
+  height: 400px;
+  color: #fff;
+}
+
+.ui-carousel .ui-carousel--content:nth-child(1) {
+  background: #05131a;
+}
+
+.ui-carousel .ui-carousel--content:nth-child(2) {
+  background: #0a2633;
+}
+
+.ui-carousel .ui-carousel--content:nth-child(3) {
+  background: #103a4d;
+}
+
+.ui-carousel .ui-carousel--content:nth-child(4) {
+  background: #154d66;
+}
+
+.ui-carousel .ui-carousel--content:nth-child(5) {
+  background: #1a6080;
+}
+
+.ui-carousel .ui-carousel--content:nth-child(6) {
+  background: #1f7399;
+}
+
+.ui-carousel .ui-carousel--navigation__button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: 62.5px;
+  height: 400px;
+}
+
+.ui-carousel .ui-carousel--navigation__button button {
+  width: 100%;
+  cursor: pointer;
+  background: #404345;
+  color: #fff;
+}
+
+.ui-carousel .ui-carousel--navigation__button button:hover, .ui-carousel .ui-carousel--navigation__button button:focus {
+  background: #5dcdff;
+}
+
+.ui-carousel .ui-carousel--navigation__button button[class*="__prev_button"] {
+  margin-bottom: 1px;
+}
+
+/*# sourceMappingURL=../map/style.css.map */

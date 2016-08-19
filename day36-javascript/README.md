@@ -88,3 +88,17 @@ Coffee(name){
 - 배열 합체
  - 배열.concat(추가할배열) => 원하는 결과 나옴
  - 배열.push(추가할배열) => 마지막에 배열 자체가 추가됨
+
+#### UI Carousel 실습
+
+
+// innerHTML 활용 예시
+var btn-html = [
+	'<div class="ui-carousel-navi-btn">',
+		'<button>',
+			'<span></span>',
+		</button>',
+	'</div>',
+].join('');
+
+carousel.innerHTML += btn-html;

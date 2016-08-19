@@ -339,3 +339,50 @@ var convertArray = (function(){
 	}
 })();
 // 스스로 실행되어 Array.from이 지원되는 브라우저인지 확인이 이미 끝났다. 
+
+// JavaSCript 함수는 객체이다.
+// 객체는 속성을 가진다.
+
+// 단위 제거/가져오기/소유하고 있는지 확인
+function getUnit(value){
+  var i=0,l=getUnit.units.length,unit;
+  var reg;
+  for ( ; i<l; i++ ) {
+    unit = getUnit.units[i];
+    if ( value.indexOf(unit) > -1 ) {
+      // break;
+      return unit;
+    }
+  }
+  return null;
+}
+
+getUnit.units = 'px rem em % vw vh vmin vmax'.split(' ');
+
+function removeUnit(value) {
+  removeUnit.unit = getUnit(value);
+  return parseFloat(value, 10);
+}
+removeUnit.unit = null;
+
+function hasUnit(value) {
+  return !!getUnit(value);
+}
+
+function setStyle(elNode, property, value) {
+  if ( isntElNode(elNode) ) {
+    errorMsg('요소노드가 전달되어야 합니다.');
+  }
+  if (isType(property) !== 'string') {
+    errorMsg('두번째 전달인자는 문자열이어야 합니다.');
+  }
+  elNode.style[property] = value;
+}
+
+function css(elNode, prop, value) {
+  if ( !value ) {
+    return getStyle(elNode, prop);
+  } else {
+    setStyle(elNode, prop, value);
+  }
+}
