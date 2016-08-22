@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko-KR" class="no-js">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>jQuery Library</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="modernizr-custom.js"></script>
+	<script src="../resources/jquery-3.1.0.min.js"></script>
+	<link rel="stylesheet" href="../resources/ress.css">
+</head>
+<style>
+	.gnb-group {
+		position: relative;
+		height: 100vh;
+	}
+	.gnb-btn {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 10;
+		width: 30px;
+		height: 30px;
+		border: 1px solid #999;
+		background: yellow;
+	}
+	.gnb {
+		position: absolute;
+		top: 0;
+		left: -300px;
+		width: 300px;
+		height: 100%;
+		padding-top: 50px;
+		background: #33ee77;
+	}
+</style>
+<body>
+	
+	<div class="gnb-group">
+		<button type="button" class="gnb-btn"><span class="btn">+</span></button>
+		<nav>
+			<ul class="gnb">
+				<li><a href="#">menu01</a></li>
+				<li><a href="#">menu02</a></li>
+				<li><a href="#">menu03</a></li>
+				<li><a href="#">menu04</a></li>
+			</ul>
+		</nav>
+	</div>
+
+<script>
+	(function(global, $){
+		'use strict';
+		
+		$('.gnb-btn').on('click', function(){
+			$(this).css('left','300px');
+			$('.gnb').css('left','0');
+		});
+
+	})(this, this.jQuery);
+</script>
+</body>
+</html>
