@@ -68,10 +68,24 @@
   // $('.page-header') : 선택 
   // .on('click', function(){}); : 이벤트시
   // var $this = $(this); 선택한 돔 객체 
-  $('.page-header').on('click', function() {
+  // $('.page-header').on('click', function() {
+  //   var $this = $(this);
+  //   // $this.addClass('primary');
+  //   $this.toggleClass('primary');
+  // });
+
+  $('.page-gnb').eq(0)
+  .on('mouseenter', function(){
     var $this = $(this);
-    // $this.addClass('primary');
-    $this.toggleClass('primary');
+    if($this.hasClass('secondary')){
+      $this.css('font-size','+=10');
+    }
+    $this.addClass('primary');
+  })
+  .on('mouseleave', function(){
+    var $this = $(this);
+    $this.removeClass('primary');
+    $this.addClass('secondary');
   });
 </script>
 

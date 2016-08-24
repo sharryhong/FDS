@@ -11,6 +11,22 @@
 -> ["T", "E", "X", "T"]
 ```
 
+```
+  $('.page-gnb').eq(0)
+  .on('mouseenter', function(){
+    var $this = $(this);
+    if($this.hasClass('secondary')){
+      $this.css('font-size','+=10');
+    }
+    $this.addClass('primary');
+  })
+  .on('mouseleave', function(){
+    var $this = $(this);
+    $this.removeClass('primary');
+    $this.addClass('secondary');
+  });
+```
+
 ##### jQuery 변수 
 - `var $container = $('.container'); 처럼 제이쿼리 객체 담은 변수임을 명시적으로 표시. 해도 되고 안해도 되지만.. 
 
@@ -127,7 +143,10 @@ $('button').css({
  - [CALLBACK] $().css(key, function(){ }) // argument[1] 은 value 
  - 이 방법은 주로 플러그인 개발할 때 사용
 
-- .addClass 
+- .addClass : class 추가
+- .remeveClass : class 제거
+- .toggleClass : class가 있다면 제거, 없으면 추가
+- .hasClass : class가 있다면
 
 ```
 // 자주쓰는 jQuery 코드 
@@ -146,3 +165,4 @@ $this.toggleClass('primary');
 ##### 참고 
 
 - aria <https://www.w3.org/TR/wai-aria-practices>
+- jQuery공부 <http://try.jquery.com/>
