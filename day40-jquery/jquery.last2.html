@@ -98,6 +98,17 @@
       }, 3000);
       
 
+      // 이벤트 바인딩시에 이벤트객체에 사용자가 정의한 객체를 합성(객체합성)
+      // 외부에 변수를 만들지 않고, 이벤트 객체를 통해 조건 처리하는 토글 구문
+      $('p:eq(2)').on('click', {'clicked': false}, function(ev){
+        if(!ev.data.clicked) {
+          console.log('toggle 1');
+        } else {
+          console.log('toggle 2');
+        }
+        ev.data.clicked = !ev.data.clicked;
+      });
+
 </script>
 </body>
 </html>

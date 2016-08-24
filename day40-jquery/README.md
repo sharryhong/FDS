@@ -169,3 +169,25 @@ $.each([1,2,3,4,5].reverse(), function(index, item) {
 
 $('[class*="hesus"]').wrapAll('<aside class="wrapAllHesus">');
 ```
+
+##### radioClass plugin 만들기
+
+1. 목표 : radioClass plugin 만들기
+  
+  - Tab Menu 등에 사용
+
+2. if(!$.fn.radioClass) // radioClass없으면 $.fn(prototype)에 추가하기
+
+- 메소드 체이닝하려면 jquery object가 있어야 한다. 
+ - return this; 꼭 필요! return이 없으면 undefined로 jquery 메소드 체이닝을 할 수 없다.
+
+3. 만들고나서 코드 리펙토링. 사용자가 어떤 행동을 할지 생각.
+
+4. Documentation 작성
+
+##### memory plugin 만들기
+
+1. 목표 : 
+
+- $.data(); // 데이터 저장. 유틸리티 메소드(static) 
+ - click할때 한번만 a요소를 jquery객체로 만들기에 사용하자.
