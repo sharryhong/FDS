@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <title>jQuery 스타일링 클래스 속성제어</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: center;
+      align-items: center;
+    }
+    .demo-box {
+      width: 400px;
+      box-sizing: border-box;
+      margin: 1rem 0;
+      border: 4px solid #999;
+      padding: 1em;
+    }
+    .demo-box.look {
+      background: #ed5;
+    }
+  </style>
+	<script src="../resources/jquery-3.1.0.min.js"></script>
+</head>
+<body>
+
+  <div class="button-controls" role="group">
+    <button type="button" class="addClass_look">add <strong>look</strong></button>
+    <button type="button" class="removeClass_look">remove <strong>look</strong></button>
+    <button type="button" class="toggleClass_look">toggle <strong>look</strong></button>
+  </div>
+  <div class="demo-box">demo-box</div>
+
+<script src="js/jquery02.js"></script>
+</body>
+</html>
