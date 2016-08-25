@@ -3,9 +3,14 @@
 
 	// XMLHttpRequest() 생성자 함수를 통해
 	// 비동기 통신을 수행할 객체 생성
-	function createXHR() {
-		return new XHR(); // 비동기 통신을 할 준비가 되어있다. 
-	}
+	var createXHR = (function() {
+		// return new XHR(); // 비동기 통신을 할 준비가 되어있다. 
+		// 크로스브라우징 고려. IE6이하 웹 브라우저를 위한 대체 코드
+		XHR = XHR || ActiveXObject('Microsoft.XMLHTTP');
+		return function() {
+			return new XHR;
+		};
+	})();
 	// 라이브러리, 프레임워크가 이 과정을 해준다. 
 
 	// 1. create
@@ -29,22 +34,48 @@
 	var result_view = document.querySelector('.ajax-result');
 	var call_ajax_btn = document.querySelector('.call-ajax-data-btn');
 
-	xhr.open('GET', 'data/data.txt', false);
-
 	call_ajax_btn.onclick = updateViewPlace;
 
-	function updateViewPlace() {
-		// ajx 통신 보내기
-		xhr.send();
-		if (xhr.status === 200 && xhr.readyState ===4) { // 전송성공
-			console.log('통신 데이터 전송 성공 ^^');
-			result_view.textContent = xhr.response;
-		} else { 
-			console.log('통신 데이터 전송 실패 ;( ');
-			result_view.textContent = '데이터 로드 실패 ㅜㅜ ';
+	xhr.open('GET', 'data/data.html');
+
+	// 비동기 통신 객체에 이벤트 핸들러 바인딩
+	xhr.onreadystatechange = function() {
+		console.log(this); // this === xhr 객체
+		if ( this.status === 200 && this.readyState === 4 ) {
+			console.log('통신 데이터 전송 성공! ^ㄴ^');
+			// result_view.textContent = '[' + this.statusText + '] ' + this.responseText;
+			result_view.innerHTML = this.response;
+		} else {
+			console.log('통신 데이터 전송 실패! ㅠ_ㅠ');
+			result_view.textContent = '[' + this.statusText + '] ' + '데이터 로드에 실패했습니다....';
 		}
 		console.log(xhr);
 	}
+
+	function updateViewPlace() {
+		// AJAX 통신 요청 보내기
+		xhr.send();
+		// 비동기 통신을 요청했을 경우,
+		// 이벤트(`readystatechange`)를 통해 비동기 데이터가 로드된 시점에
+		// 아래 조건문이 수행되어야 한다.
+	}
+
+
+	// 동기통신일 때 돌아감
+	// call_ajax_btn.onclick = updateViewPlace;
+
+	// function updateViewPlace() {
+	// 	// ajx 통신 보내기
+	// 	xhr.send();
+	// 	if (xhr.status === 200 && xhr.readyState ===4) { // 전송성공
+	// 		console.log('통신 데이터 전송 성공 ^^');
+	// 		result_view.textContent = xhr.response;
+	// 	} else { 
+	// 		console.log('통신 데이터 전송 실패 ;( ');
+	// 		result_view.textContent = '데이터 로드 실패 ㅜㅜ ';
+	// 	}
+	// 	console.log(xhr);
+	// }
 
 	// // 통신 상태 확인
 	// if (xhr.status === 200) { // status가 200이면 전송에 성공한 것이다. 500은 서버에 문제
