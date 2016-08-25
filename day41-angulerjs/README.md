@@ -29,6 +29,12 @@
 ##### ajax 기술 
 - XHR (XML Http Request) : ajax비동기 통신을 하기 위한 생성자를 통해 객체를 만든다. 따라서 여러개를 만들어 동시다발적으로 수행시킬 수 있다. 
 - ajax는 xhr 객체를 필요로한다. 
+- 서버필요. 우리는 로컬서버, 호스팅 필요
+
+1. 로컬서버연결 : gitbash에서 http-server -o -a localhost -p 8081
+ - npm list -g http-server 우선 설치되어 있어야 한다. (서버설치)
+
+- status 오류 번호?
 
 -
 
