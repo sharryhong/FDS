@@ -1,0 +1,12 @@
+{
+  "name": "day42-angulerjs",
+  "version": "1.0.0",
+  "description": "- back단을 못하더라도.. 사용자의 웹브라우저에 data 저장하는 방법(storage)\r  - 크롬 개발자도구에서 Application메뉴에서 Storage > Local Storage에 저장됨 \r  - 서버는 아니지만 사용자의 컴퓨터에서 테스트하기 \r  - console창에서 `localStorage` 하면 객체임을 알 수 있고 length속성을 가지고 있음을 알 수 있다. \r  - 도메인 하나당 5Mb정도 저장가능",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
