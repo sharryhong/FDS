@@ -52,11 +52,13 @@
 
 #### Filter : sorting(정렬), formatting(형식에 맞춰 변경), filtering data(데이터 필터)
 
+- `demo-try3.html`
+
 - 파이프(`|`) 붙인다.
 
 - currency : 통화형태로 바꿈. `$`붙임
 - number
-- filter
+- filter 
 - date
 
 ```
@@ -80,4 +82,14 @@
 
 - uppercase : 대문자로 처리
 - lowercase : 소문자로 처리
-- orderBy
+- orderBy : ng-repeat에 붙임. 오름차순 순서대로 정렬해줌 (`-`붙이면 반대, 뒤에 true붙이면 reverse되어 반대로 나옴(변수처리한다.))
+
+```
+<body data-ng-init="
+order_reverse = true; ...
+
+<button type="button" data-ng-click="order_reverse = !order_reverse">이름 순 정렬 토글 버튼</button>
+
+<!-- name순서 -->
+<li data-ng-repeat="person in people | orderBy: 'name':order_reverse">
+```

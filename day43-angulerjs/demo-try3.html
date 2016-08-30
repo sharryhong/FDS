@@ -20,6 +20,8 @@
 	</style>
 </head>
 <body data-ng-init="
+order_reverse = false;
+limit_count = person.length;
 people = [
   {
     'name'    : 'tomy',
@@ -27,6 +29,18 @@ people = [
     'mail'    : 'tomy@study.com',
     'birthday' : '2000-01-03',
     'has-money' : 1000000,
+    'picture' : {
+      'width': 200,
+      'height': 200,
+      'src': 'http://placehold.it/220x220/34c0ff/fff/?text=tomy'
+    }
+  },
+  {
+    'name'    : 'tomy2',
+    'age'     : 25,
+    'mail'    : 'tomy@study.com',
+    'birthday' : '1995-01-03',
+    'has-money' : 1500000,
     'picture' : {
       'width': 200,
       'height': 200,
@@ -55,6 +69,17 @@ people = [
       'height': 200,
       'src': 'http://placehold.it/220x220/3a0099/fff/?text=zeus'
     }
+  },
+  {
+    'name'    : 'adam',
+    'age'     : 18,
+    'mail'    : 'adam@study.com',
+    'has-money' : 500000,
+    'picture' : {
+      'width': 200,
+      'height': 200,
+      'src': 'http://placehold.it/220x220/3a0099/fff/?text=adam'
+    }
   }
 ];
 ">
@@ -71,10 +96,27 @@ people = [
   </li>
 </ul> -->
 
+<button type="button" data-ng-click="order_reverse = !order_reverse">이름 순 정렬 토글 버튼</button>
+
+<!-- 모두 다 검색
+<input type="search" data-ng-model="search"> -->
+<!-- 이름만 검색 -->
+<input type="search" data-ng-model="search.name">
+<!-- input에 입력하는 값이 search.name으로.. 이 name속성의 값이 검색어가 된다.  -->
+
+<pre>
+	{{search | json}}
+</pre>
+
 <ol class="people-list">
   <!-- 시작: people.length 개수만큼 반복하여 <li> 템플릿 완성 -->
   <!-- json방식에 최적화 되어 있다. -->
-  <li data-ng-repeat="person in people">
+  <li data-ng-repeat="person in people | filter: search | limitTo: limit_count | orderBy: 'name':order_reverse">
+  <!-- 1. filter: search 필터함수 실행시키고
+  2. limitTo: limit_count
+  3. orderBy: 'name':order_reverse"
+  4. data-ng-repeat="person in people -->
+
     <div data-ng-bind="person.name | uppercase"></div>
     <div data-ng-bind="person.age"></div>
     <div data-ng-bind="person.mail"></div>
