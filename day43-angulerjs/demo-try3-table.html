@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko-KR" data-ng-app>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>ngrepeat - AngularJS 이해를 위한 실습 part 3</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<!-- 인터넷 불안정할때 로컬데이터 사용 -->
+	<script>
+		// window.angular || document.write('<script src="framwork/angular.min.js"><\/script>');
+
+		(function(global, ng) { // ng = this.angular
+			'use strict';
+			ng || document.write('<script src="framwork/angular.min.js"><\/script>');
+			console.log('Angular 버전: ', ng.version.full);
+		})(this, this.angular); 
+	</script>
+	<style>
+		th, td {
+			padding: 0.5em;
+			border: 1px solid #333;
+		}
+	</style>
+</head>
+<body data-ng-init="
+
+limit_count = person.length;
+people = [
+  {
+    'name'    : 'tomy',
+    'age'     : 23,
+    'mail'    : 'tomy@study.com',
+    'birthday' : '2000-01-03',
+    'has-money' : 1000000,
+    'picture' : {
+      'width': 200,
+      'height': 200,
+      'src': 'http://placehold.it/220x220/34c0ff/fff/?text=tomy'
+    }
+  },
+  {
+    'name'    : 'tomy2',
+    'age'     : 25,
+    'mail'    : 'tomy@study.com',
+    'birthday' : '1995-01-03',
+    'has-money' : 1500000,
+    'picture' : {
+      'width': 200,
+      'height': 200,
+      'src': 'http://placehold.it/220x220/34c0ff/fff/?text=tomy'
+    }
+  },
+  {
+    'name'    : 'sunny',
+    'age'     : 32,
+    'mail'    : 'sunny@study.com',
+    'birthday' : '1980-02-11',
+    'has-money' : 5000000,
+    'picture' : {
+      'width': 200,
+      'height': 200,
+      'src': 'http://placehold.it/220x220/7045cf/fff/?text=sunny'
+    }
+  },
+  {
+    'name'    : 'zeus',
+    'age'     : 61,
+    'mail'    : 'zeus@study.com',
+    'has-money' : 30000,
+    'picture' : {
+      'width': 200,
+      'height': 200,
+      'src': 'http://placehold.it/220x220/3a0099/fff/?text=zeus'
+    }
+  },
+  {
+    'name'    : 'adam',
+    'age'     : 18,
+    'mail'    : 'adam@study.com',
+    'has-money' : 500000,
+    'picture' : {
+      'width': 200,
+      'height': 200,
+      'src': 'http://placehold.it/220x220/3a0099/fff/?text=adam'
+    }
+  }
+];
+">
+
+<table>
+	<tr>
+		<th>이름	
+			<button type="button" data-ng-click="sortBy='name'; 
+			reverse=!reverse; name_r=!name_r">
+			<span data-ng-show="name_r">∧</span>
+			<span data-ng-hide="name_r">∨</span>
+			</button>
+		</th>
+		<th>나이	
+			<button type="button" data-ng-click="sortBy='age'; 
+			reverse=!reverse; age_r=!age_r">
+			<span data-ng-show="age_r">∧</span>
+			<span data-ng-hide="age_r">∨</span>
+			</button>
+		</th>
+		<th>mail</th>
+		<th>생년월일</th>
+		<!-- <th>사진</th> -->
+	</tr>
+	<tr data-ng-repeat="person in people  | orderBy:sortBy:reverse">
+		<td>{{person.name | uppercase}}</td>
+		<td>{{person.age}}</td>
+		<td>{{person.mail}}</td>
+		<td>{{person.birthday | date:'yyyy년 MM월 dd일'}}</td>
+		<!-- <td><img
+		data-ng-src="{{ person.picture.src }}" 
+		alt="{{ person.name }}"
+		width="{{ person.picture.width }}"
+		height="{{ person.picture.height }}"
+		></td> -->
+	</tr>
+</table>
+
+</body>
+</html>

@@ -20,7 +20,7 @@
 	</style>
 </head>
 <body data-ng-init="
-order_reverse = false;
+order_reverse = true;
 limit_count = person.length;
 people = [
   {
@@ -96,7 +96,7 @@ people = [
   </li>
 </ul> -->
 
-<button type="button" data-ng-click="order_reverse = !order_reverse">정렬 토글 버튼</button>
+<!-- <button type="button" data-ng-click="order_reverse = !order_reverse">정렬 토글 버튼</button> -->
 
 <p>
 	<label for="person_name">Name: </label>
@@ -105,6 +105,19 @@ people = [
 <p>
 	<label for="person_age">Age: </label>
 	<input id="person_age" type="search" data-ng-model="search.age">
+</p>
+<p>
+	<label for="person_limit">limit: </label>
+	<input id="person_limit" type="search" data-ng-model="limit_count">
+</p>
+
+<p>
+	<label>
+		<input type="radio" name="sorting" data-ng-click="order_reverse = false;"> 오름차순
+	</label>
+	<label>
+		<input type="radio" name="sorting" data-ng-click="order_reverse = true;"> 내림차순
+	</label>
 </p>
 
 <!-- 모두 다 검색
