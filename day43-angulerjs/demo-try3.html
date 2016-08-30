@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko-KR" data-ng-app>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>ngrepeat - AngularJS 이해를 위한 실습 part 3</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<!-- 인터넷 불안정할때 로컬데이터 사용 -->
+	<script>
+		// window.angular || document.write('<script src="framwork/angular.min.js"><\/script>');
+
+		(function(global, ng) { // ng = this.angular
+			'use strict';
+			ng || document.write('<script src="framwork/angular.min.js"><\/script>');
+			console.log('Angular 버전: ', ng.version.full);
+		})(this, this.angular); 
+	</script>
+	<style>
+		
+	</style>
+</head>
+<body data-ng-init="
+people = [
+  {
+    'name'    : 'tomy',
+    'age'     : 23,
+    'mail'    : 'tomy@study.com',
+    'birthday' : '2000-01-03',
+    'has-money' : 1000000,
+    'picture' : {
+      'width': 200,
+      'height': 200,
+      'src': 'http://placehold.it/220x220/34c0ff/fff/?text=tomy'
+    }
+  },
+  {
+    'name'    : 'sunny',
+    'age'     : 32,
+    'mail'    : 'sunny@study.com',
+    'birthday' : '1980-02-11',
+    'has-money' : 5000000,
+    'picture' : {
+      'width': 200,
+      'height': 200,
+      'src': 'http://placehold.it/220x220/7045cf/fff/?text=sunny'
+    }
+  },
+  {
+    'name'    : 'zeus',
+    'age'     : 61,
+    'mail'    : 'zeus@study.com',
+    'has-money' : 30000,
+    'picture' : {
+      'width': 200,
+      'height': 200,
+      'src': 'http://placehold.it/220x220/3a0099/fff/?text=zeus'
+    }
+  }
+];
+">
+
+<!-- 반복수행 // for in문과 비슷 -->
+<!-- <ul>
+  <li data-ng-repeat="person in people">
+    <div>{{ person.name }}</div>
+    <div>{{ person.age }}</div>
+    <div>{{ person.mail }}</div>
+    <div>
+      <img src="{{ person.picture }}" alt="{{ person.name }}">
+    </div>
+  </li>
+</ul> -->
+
+<ol class="people-list">
+  <!-- 시작: people.length 개수만큼 반복하여 <li> 템플릿 완성 -->
+  <!-- json방식에 최적화 되어 있다. -->
+  <li data-ng-repeat="person in people">
+    <div data-ng-bind="person.name | uppercase"></div>
+    <div data-ng-bind="person.age"></div>
+    <div data-ng-bind="person.mail"></div>
+    <div data-ng-bind="person.birthday | date"></div>
+    <div data-ng-bind="person.birthday | date:'yyyy년 MM월 dd일'"></div>
+    <!-- 기본 $ -->
+    <!-- <div data-ng-bind="person['has-money'] | currency"></div> -->
+    <!-- 단위 바꾸기 -->
+    <div data-ng-bind="person['has-money'] | currency:'Euro(€)'"></div>
+    <!-- number:0 소숫점 없애기. 이렇게 뒤에 '원'을 붙이고 싶을 땐 표현식만 가능 -->
+    <div>{{ person['has-money'] | number:0 }}원</div>
+    <div>
+      <!-- src="{{ person.picture.src }}" : 파일이 없다고 오류뜸. 실제 접근성에 위배됨. backend에서 불러왔다면 오류안뜨는데, front단이다보니 오류가 뜨게된다. -->
+      <!-- data-ng-src : 앵귤러가 처리해줌. Lazy Loading(게으른 로딩) -->
+      <img
+        data-ng-src="{{ person.picture.src }}" 
+        alt="{{ person.name }}"
+        width="{{ person.picture.width }}"
+        height="{{ person.picture.height }}"
+      >
+    </div>
+  </li>
+  <!-- 종료: people.length 개수만큼 반복하여 <li> 템플릿 완성 -->
+</ol>
+
+<pre>
+	<code>
+		<!-- json 데이터 방식으로 보이게 하여 debuging시 편하게 볼 때 쓴다. -->
+		{{people | json}}
+	</code>
+</pre>
+
+</body>
+</html>

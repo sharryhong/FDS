@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko-KR" data-ng-app>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>AngularJS 이해를 위한 실습 part 2</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<!-- 인터넷 불안정할때 로컬데이터 사용 -->
+	<script>
+		// window.angular || document.write('<script src="framwork/angular.min.js"><\/script>');
+
+		(function(global, ng) { // ng = this.angular
+			'use strict';
+			ng || document.write('<script src="framwork/angular.min.js"><\/script>');
+			console.log('Angular 버전: ', ng.version.full);
+		})(this, this.angular); 
+	</script>
+	<style>
+		
+	</style>
+</head>
+<body data-ng-init="
+	app = {
+		'name'		: 'DirectiveApp',
+		'switch'	: 'eyes',
+		
+	}
+">
+<!-- 'switch' 값이 true라고 하면 참 거짓만된다, 지금처럼 문자열로 쓰는것이 좋다. 
+	select 선택안했을 때 default 값 
+-->
+
+
+<!--
+	Directives & Expressions
+		⊙ ng-cloak [FOUC(Flash Of Unstyled Content)](https://en.wikipedia.org/wiki/Flash_of_unstyled_content)
+		  : {}가 표시되는 것을 막음?
+		⊙ ng-switch
+		⊙ ng-class
+		⊙ ng-show
+-->
+
+<div data-ng-cloak class="demo-app-container" data-ng-switch="app.switch">
+	<h1 class="demo-app-title">{{app_name}}</h1>
+	<select class="demo-app-swicher">
+		<option data-ng-click="app.switch='open'">Open</option>
+		<option data-ng-click="app.switch='close'">Close</option>
+		<option data-ng-click="app.switch='etc'">etc...</option>
+	</select>
+
+	<!-- 상태제어 -->
+	<p data-ng-switch-when="open" class="switch-is-open">
+		App Switch Value is Open.
+	</p>
+	<p data-ng-switch-when="close" class="switch-is-close">
+		App Switch Value is Close.
+	</p>
+	<p data-ng-switch-default class="switch-is-something">
+		App Switch Value is Something.
+	</p>
+</div>
+
+</body>
+</html>

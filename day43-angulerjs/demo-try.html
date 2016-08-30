@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko-KR" data-ng-app>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>AngularJS 이해를 위한 실습 part 1</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<!-- 인터넷 불안정할때 로컬데이터 사용 -->
+	<script>
+		// window.angular || document.write('<script src="framwork/angular.min.js"><\/script>');
+
+		(function(global, ng) { // ng = this.angular
+			'use strict';
+			ng || document.write('<script src="framwork/angular.min.js"><\/script>');
+			console.log('Angular 버전: ', ng.version.full);
+		})(this, this.angular); 
+	</script>
+	<style>
+		body {
+			margin: 0;
+			min-height: 100vh;
+		}
+		.color-place-view{
+			width: 100%;
+			height: 50vh;
+			background: {{ view_color }};
+		}
+	</style>
+</head>
+<body data-ng-init="
+	my_color = '#fc4146';
+	hidden = true;
+	colors = {
+		'pink' : '#f97580',
+		'purple' : '#8958f8',
+		'green' : '#68fd91',
+		'yellow' : '#f7d662',
+		'cyan' : '#52f6dd'
+	};
+	view_color = colors.pink; 
+	my_style = {
+		'background' : view_color,
+		'width' : '400px',
+		'height' : '400px'
+	};
+	">
+<!-- 전역변수로 my_color, is_hidden 생성. 지금은 테스트용으로 ng-init사용 -->
+
+
+<!-- 팔레트 토글 버튼 -->
+<button 
+	type="button" 
+	class="toggle-palette-btn" 
+	data-ng-click="hidden = !hidden">
+	<!-- {{ is_hidden }} -->
+	<!-- 팔레트 <span data-ng-show="hidden">보이기</span><span data-ng-hide="hidden">감추기</span> -->
+
+	<!-- 표현식방법 -->
+	<!-- 팔레트 {{ hidden ? '감추기' : '보이기' }} -->
+	
+	<!-- ng-bind사용 -->
+	팔레트 <span data-ng-bind = " hidden ? '감추기' : '보이기' "></span>
+
+</button>
+
+<!-- 팔레트 -->
+<div class="color-palette" data-ng-show="hidden">
+	<label><input type="radio" value="{{ colors.pink }}" data-ng-model="view_color">pink</label>
+	<label><input type="radio" value="{{ colors.purple }}" data-ng-model="view_color">purple</label>
+	<label><input type="radio" value="{{ colors.green }}" data-ng-model="view_color">green</label>
+	<label><input type="radio" value="{{ colors.yellow }}" data-ng-model="view_color">yellow</label>
+	<label><input type="radio" value="{{ colors.cyan }}" data-ng-model="view_color">cyan</label>
+	<!-- value="{{  }}" 는 표현식, data-ng-model="view_color"는 변수 -->
+</div>
+
+<!-- 팔레트 제어에 따른 뷰 -->
+<div class="color-place-view">{{ view_color }}</div>
+
+
+</body>
+</html>
