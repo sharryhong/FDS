@@ -43,6 +43,7 @@
   }
   </style>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script src="js/demo-try-4.js"></script>
 </head>
 <body data-ng-init="
 people = [
@@ -106,7 +107,8 @@ ordermap = {
 
 <!-- <pre>{{people | json}}</pre> -->
 
-<table id="people-table">
+<!-- ng-controller directive를 통해 controller와 view 연결 -->
+<table id="people-table"">
 
   <caption class="a11y-hidden">People Table List</caption>
 
@@ -153,9 +155,13 @@ ordermap = {
     </th>
   </tr>
 
-  <tr colspan="4">
-    <pre>{{ sort | json }}</pre>
-  </tr>
+  <!-- <tr>
+    <td colspan="2">
+      <pre>
+        {{ this.people | json }}
+      </pre>
+    </td>
+  </tr> -->
 
   <tr data-ng-repeat="person in people | orderBy: ordermap.sort">
     <td>{{ person.name | uppercase }}</td>

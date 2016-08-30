@@ -93,3 +93,17 @@ order_reverse = true; ...
 <!-- name순서 -->
 <li data-ng-repeat="person in people | orderBy: 'name':order_reverse">
 ```
+
+#### Controller (함수)
+
+- p.61
+
+- 속성(변수)/ 메소드(함수) 정의
+- view에서 데이터/컨트롤을 감춤/보임 조작
+- view로부터 이벤트 감지($scope가 감지한다.)/작동 조작
+- 데이터 조작(읽기/쓰기)
+- $scope 객체를 사용하여 view와 상호작용한다. 
+
+##### $scope 객체 
+- controller내부에 포함(주입, injected)되어 접근 가능
+- 하나의 controller에는 하나의 $scope가 있다. 
