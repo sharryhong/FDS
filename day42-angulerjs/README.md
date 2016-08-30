@@ -48,6 +48,7 @@ localStorage.key(0); // 첫번째 storage
   - compiler가 document object mode에 rootscope를 넣어서 파싱한다. 
   - 이 단계에서 실제 사용자들이 함수를 콜링한 형태로 앵귤러 컨트롤을 만들 때 마다 scope가 생성이 된다. 이 것이 view와 연결이 된다. 
   - 이 단계를 거쳐서(앵귤러가 이렇게 부트스트랩과정을 통해 다이내믹 돔을 완성해준다.)
+  - 이렇게 다이내믹 돔이 완성되고, view가 구현이 된다. 이렇게 다이내믹 돔이 완성 될때 앵귤러는 directive를 찾아서 변신을 시켜준다. 여기서 다이내믹 돔에 있는 html은 실제 템플릿이었는데, 이 템플릿이 model하고 합쳐져서 view로 완성이 되는 것 -> Sing Page Application 완성! 
 
  - 자동으로 class="ng-scope"가 생긴다.
  - ng-app -> $injector , $compile , $rootScope 가 하나씩 생긴다. <br> $compile (DOM)($rootScope) 단계를 거쳐서 Dynamic DOM(view)가 생성된다. <https://docs.angularjs.org/guide/bootstrap>
@@ -68,16 +69,27 @@ localStorage.key(0); // 첫번째 storage
 
 #### 앵귤러를 구성하는 애플리케이션 핵심구조
 - 모두 Module로 구성되어 있다. 
-- routes : spa를... 
- - ui(view), logic/data(controller) 연결 : $scope 
+- routes : spa를 controlling해주는 핵심모듈
+ - ui(view), logic/data(controll) 연결해주는 것이 route의 역할 
+ - view와 controll이 데이터를 주고 받을 때 $scope에게 일을 시키게 된다. 
+ - scope는 view와 model을 관리해준다. 
+
+- Filter : 걸러준다. script가 힘들게 하던 일들을 쉽게 처리해준다. 
+ - 정렬, 검색, sorting(구분) 등을 쉽게 해준다. 
+
+
 
 ##### Module : 역할 container
 
 - controller
+ - data(model) 처리되는 알고리즘 담당 
+ - 함수
  - model(자료,json)과 view(템플릿,html)제어 
- - $scope를 통해 연결(자동으로됨)
+ - $scope를 통해 연결(자동 injection됨)
+ - $scope는 해당되는 directive를 가지고 있는 것과 통신할 수 있게 끔 연결한다.
  - view를 제어하는 두뇌역할
- - factories/services를 이용해 데이터 검색 및 보관 
+ - 원래 contraller사이간에는 서로 모른다. factories/services를 이용해 교신. 데이터 검색 및 보관
+- factories/services는 서로 비슷하다. angularJS2에선 둘을 합치게 된다. 
 
 - view
  - 사용자 인터페이스(ui)를 렌더링한다. 
@@ -99,7 +111,8 @@ localStorage.key(0); // 첫번째 storage
  - controller 사이(컨트롤러 간 원래는 교신이 없다) 데이터 공유에 사용 
  - 사용자 정의 로직에 사용
 
-
+- Config 
+ - 
 
 -
 
