@@ -96,12 +96,21 @@ people = [
   </li>
 </ul> -->
 
-<button type="button" data-ng-click="order_reverse = !order_reverse">이름 순 정렬 토글 버튼</button>
+<button type="button" data-ng-click="order_reverse = !order_reverse">정렬 토글 버튼</button>
+
+<p>
+	<label for="person_name">Name: </label>
+	<input id="person_name" type="search" data-ng-model="search.name">
+</p>
+<p>
+	<label for="person_age">Age: </label>
+	<input id="person_age" type="search" data-ng-model="search.age">
+</p>
 
 <!-- 모두 다 검색
 <input type="search" data-ng-model="search"> -->
 <!-- 이름만 검색 -->
-<input type="search" data-ng-model="search.name">
+<!-- <input type="search" data-ng-model="search.name"> -->
 <!-- input에 입력하는 값이 search.name으로.. 이 name속성의 값이 검색어가 된다.  -->
 
 <pre>
