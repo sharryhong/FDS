@@ -1,7 +1,7 @@
 (function(global, angular, jq){
   'use strict';
 
-  angular.module('ngApp').controller('ngController', function($scope){
+  function ngCtrl($scope) {
 
     var content_text = 'AngularJS Application is Awesome!!';
 
@@ -15,6 +15,8 @@
 
     content_text = content_text.split(' ').slice(-1).toString().toLowerCase().replace('!!', '');
     ngTHeadline.text( content_text );
-  });
+  }
+
+  angular.module('ngApp').controller('ngController', ngCtrl);
 
 })(this, this.angular, this.jQuery);

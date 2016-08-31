@@ -31,7 +31,25 @@ var getMyApp = angular.module('myApp');
 - 관련 사이트 <http://haruair.com/blog/3186>
 
 
+- 관리를 위해 파일들 나눠서 관리하고, 성능을 위해 압축을 한다. 
+- 이 때, 압축을 하면 $scope등도 이름이 바뀌어버려서 작동하지 않게된다.
+- 방법 1 : [] 안에 명시된 문자는 줄여쓰지 않는다. 
+
+```
+var myApp = angular.module('myApp', []);
+myApp.controller('myController', ['$scope', function($scope) {...}]);
+```
+
+- 방법 2 : 압축과정에서 주입된 $inject.. $scope 이름 변경되지 않도록함
+
+```
+myController.$inject = ['$scope'];
+```
+
 ##### chrome 확장 프로그램 
 
 - ng-inspector for angular 
 - angularjs graph
+
+- YUI Compressor : 코드압축
+ - 설치 후 tools > build system > yui compressor > build (ctrl+b)

@@ -18,13 +18,13 @@
     <p>{{ content }}</p>
   </div>
 
-  <div class="demo-temp" data-ng-controller="demoCtrl as dc">
+  <div class="demo-temp" data-ng-controller="demoController as dc">
     <h3>{{dc.headline}}</h3>
     <!-- 컨트롤러 자신을 참조하는 dc 별칭을 확인 -->
     <pre>{{ dc | json }}</pre>
   </div>
 
-  <section class="other-ctrl" data-ng-controller="otherCtrl as oc">
+  <section class="other-Controller" data-ng-controller="otherController as oc">
     <article data-ng-click="oc.trigger()">
       <!-- <h3 title="{{init_value}}">{{init_value}}</h3> -->
       <h3 title="{{oc.init_value}}">{{oc.init_value ? '트리거 작동됨..' : '트리거 미작동..'}}</h3>
