@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko-KR" data-ng-app>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>AngularJS 복습</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+
+</head>
+<body data-ng-app>
+	<div class="ng-template" data-ng-controller="moduleController">
+		<h1 class="ng-template-headline"></h1>
+		<p>{{ this.content }}</p>
+	</div>
+
+
+<script>
+	(function(global, angular) {
+		'use strict';
+		// 전역에 바로 노출 (angular 상위버전에서는 이렇게 안한다.)
+		global.moduleController = function($scope) {
+
+			console.log('angular.version:', angular.version.full); // angular.version: 1.2.0
+			console.log('this:', this); // this: undefined
+			console.log('$scope:', $scope); // this: undefined
+
+			console.log('angular.element:', angular.element);
+			var template_headline = document.querySelector('.ng-template-headline');
+			template_headline = angular.element(template_headline); // jquery쓰면 이거 안해도 되
+			console.log(template_headline);
+			template_headline.addClass('test').text('난 jQuery를 쓰지 않았다. jqLite이다. ');
+
+			var template_headline_content = template_headline.text();
+
+			$scope.content = template_headline_content;
+
+		}
+	})(this, this.angular); 
+</script>
+</body>
+</html>

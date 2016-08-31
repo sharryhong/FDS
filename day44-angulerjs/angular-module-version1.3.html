@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko-KR" data-ng-app>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>AngularJS 1.3버전</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script src="../resources/jquery-3.1.0.min.js"></script>
+
+</head>
+<!-- 최신버전(1.3버전 이후)에는 모듈명을 반드시 넣는다. 모듈명 중요~! 모듈은 여러개 만들 수 있다.-->
+<body data-ng-app="ngApp">
+
+	<div class="ng-template" data-ng-controller="ngController">
+		<!-- <h1 class="ng-template-headline"></h1>
+		<button
+			data-ng-click="mCtrl.setContent()"
+			type="button">fire conetnt below</button>
+		<p>{{ mCtrl.content }}</p> -->
+	</div>
+
+
+<script>
+	(function(global, angular, jq) {
+		'use strict';
+		
+		var app = angular.module('ngApp', [])
+
+		app.controller('ngController', function(){
+
+		})
+
+	})(this, this.angular, this.jQuery); 
+</script>
+</body>
+</html>
