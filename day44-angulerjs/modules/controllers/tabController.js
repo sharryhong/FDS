@@ -19,6 +19,18 @@
       this.selected_tab = getRandomCount($tabmenu_btns);
     };
 
+
+    // 초기 활성화된 탭 인텍스 속성
+    $scope.selected_tab_idx = 0; 
+    // 선택한 탭이 맞는가 검증
+    $scope.isSelectedTab = function(tab_idx) {
+      return this.selected_tab_idx === tab_idx;
+    };
+    // 탭을 사용자가 클릭할 경우, 탭의 인덱스를 사용자가 선택한 탭의 인덱스로 변경
+    $scope.selectTab = function(idx) {
+      this.selected_tab_idx = idx;
+    };
+
   }]);
 
 })(this, this.angular, this.jQuery);
