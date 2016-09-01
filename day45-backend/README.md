@@ -115,8 +115,8 @@ or [Boxen](https://github.com/boxen/our-boxen)
 |HTTP/REST(명령어)|Post   |Get    | Put   | Delete| 
 |SQL	  (명령어)|INSERT |SELECT | UPDATE| DELETE|
 
-// (CRUD)클러우드 : 웹개발에서 아주 중요한 기능. 이 것만 잘해도 개발이 가능
-// REST api : 명령어 
+- (CRUD)클러우드 : 웹개발에서 아주 중요한 기능. 이 것만 잘해도 개발이 가능
+- REST api : 명령어 
 
 ---
 #### REST API 설계시 주의할 점
@@ -124,8 +124,11 @@ or [Boxen](https://github.com/boxen/our-boxen)
 - 버전관리 https://api.foo.com/v1/bar
 - 명사형 사용 https://foo.com/showid/ --> https://foo.com/user/
 - 반응형 https://foo.com/m/user/, https://m.foo.com/user/ (x)
+ - 데스크탑용, 모바일용 따로 개발하는 것은 아주 좋지 않은 선택이다. 
 - 언어코드 https://foo.com/kr/, https://kr.foo.com/ (x)
+ - 언어코드를 주소로 넣지 않는게 좋다. 브라우저 언어로 나오게.. 메타테그가 알아서 인식. 
 - 응답상태 코드 (200, 400, 500)
+ - 예) 에러코드가 404이면 해당하는 페이지 나오도록 
 
 ---
 ![](https://www.troyhunt.com/content/images/2016/02/41694168readImage2.png)
@@ -135,38 +138,54 @@ or [Boxen](https://github.com/boxen/our-boxen)
 
 ![](http://cdn.mysitemyway.com/icons-watermarks/flat-circle-white-on-black/bfa/bfa_terminal/bfa_terminal_flat-circle-white-on-black_512x512.png)
 
+- 터미널
+- 쌤 
+- Term 터미널
+- bash 쓰지 않고, zsh(제트쉘) -- oh-my-zsh.sh (이쁨, 테마(agnoster) 설정 가능. git 경로도 나옴) , solarized-dark 컬러
+
+
 ---
 #### Editor 
 
 ![](http://www.unixstickers.com/image/data/stickers/vim/vim.sh.png)
+
+- 터미널 안에서 돌아가는 에디터
+- 플러그인을 여러 개 달 수 있다. 
 
 ---
 #### Dashboard
 
 - **Admin**: Built-in or 3rd party
 - **Google Analytics**: general
-- **Firebase Analytics**: **hot**
+ - 데이터만 얻고 싶을 때 
+- **Firebase Analytics**: 요새 **hot**
+ - 웹, 앱, 데이터 관리할 수 있는 google의 서비스. 비쌈
 
 ---
 #### 웹 개발 프로세스
 
 ##### 서비스 제안 기획 및 개발
 
-- 기획자
+- 기획자 <br>
 스토리보드(유저 시나리오), DB정책, 페이지별 Data Flow 기획 - 프로젝트 관리 - Test
 
-- Back-End
+- Back-End<br>
 유저 시나리오 검토 - API 설계 - Back-End 개발 - Unit Test - Load Test
-- Front-End
+- Front-End<br>
 유저 시나리오 검토 - API 설계 - Front-End 개발 - Mock/Unit Test - API 연동
 
 ##### 배포 및 유지보수
 
-Do not Deploy with **FTP** --> sftp or ftps
+Do not Deploy with **FTP** (보안에 취약하다) --> sftp or ftps (ftp에 s가 붙으면 보안에 강화됨. 유료)
 
-- IaaS or PaaS 
+- IaaS(인프라) or PaaS(플랫폼) : 클라우드 서비스. 요새는 구분이 별로 없어졌다. 아마존이 둘다 함 
 	- 트래픽에 따라 자유롭게 용량할당 가능
 	- 로컬로 구성하는 것보다는 조금은 비싼 가격(트래픽에따라 다름)
+
+- [아마존 서비스](https://aws.amazon.com/ko/types-of-cloud-computing/)
+ - s3 : 클라우드 
+ - 서버가 올라가는 ec2
+ - 
 
 ---
 # MEAN stack
@@ -222,8 +241,10 @@ console.log("Server is running at localhost:3030");
 ### routing rule
 
 - 유의미한 정보를 둘것(/home(x))
+ - home은 root이므로
 - 너무 긴 URL은 SEO에 악영향
 - `_`대신 `-`로
+ - _는 변수명 등에 쓰이므로 
 - 공백이나 영어외의 문자는 되도록이면 지양
 - 소문자!
 
@@ -252,7 +273,9 @@ module.exports.home = home;
 ```
 
 ---
-### sync, Async
+### sync, Async 동기, 비동기 
+- 비동기는 순서상관없지만, 동기방식일경우는 순서가 중요하다.
+
 ```
 var fs = require("fs");
 
@@ -282,6 +305,7 @@ fs.readFile("base.html", function(err, data){
 $ vi router.js
 
 var baseResource = fs.readFileSync("./layout/base.html", "utf8");
+// .readFileSync 동기적으로 불러오기 
 
 baseResource = baseResource.replace("{{ header }}", "headerResource");
 
