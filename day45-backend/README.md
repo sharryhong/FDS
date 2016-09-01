@@ -65,19 +65,22 @@ Back-End
 ---
 #### URL, URN, URI
 
-- URL: Uniform Resource Locator
-(http://www.example.com/)
-- URN: Uniform Resource Name
-(urn: id=29764825)
-- URI: Uniform Resource Identifier
-(http://www.example.com/people?id=29764825)
+- URL: Uniform Resource Locator (http://www.example.com/)
+- URN: Uniform Resource Name (urn: id=29764825)
+ - url뒤에 붙어 나오는 것
+- URI: Uniform Resource Identifier (http://www.example.com/people?id=29764825)
+ - url(http://www.example.com/people)+urn(id=29764825)
+ - 파이썬에서 url을 파싱할때 id등 정보를 긁어올 수 있다.(+정규표현식 등) -> 데이터사이언스 언어에도 잘 쓰임 
+ - 정보를 숨겨야 한다. 
 
 ---
 #### License
 
 - GPL(GNU Public License)
+ - 라이센스 다 달아야 하는 등 악명이 높다. 
 - FreeBSD
 - MIT License
+ - 거의 무료. 대부분의 오픈소스 개발자들은 이 것 쓴다. 
 
 ---
 ### 백엔드 개발자는 어떻게 일하는가
@@ -103,13 +106,17 @@ or [Boxen](https://github.com/boxen/our-boxen)
 ---
 #### REST API
 - REpresentational Safe Transfer Application Programming Interface
+ - 안전하게 전송 가능한 인터페이스. 명시적으로 
 - by Roy Fielding, 2000
 
 |구분     |		|		|		|		|
 |:--------|:------|:------|:------|:------|
-|CRUD	  |Create |Read   | Update| Delete|
-|HTTP/REST|Post   |Get    | Put   | Delete|
-|SQL	  |INSERT |SELECT | UPDATE| DELETE|
+|CRUD	  (기능)|Create |Read   | Update| Delete| 
+|HTTP/REST(명령어)|Post   |Get    | Put   | Delete| 
+|SQL	  (명령어)|INSERT |SELECT | UPDATE| DELETE|
+
+// (CRUD)클러우드 : 웹개발에서 아주 중요한 기능. 이 것만 잘해도 개발이 가능
+// REST api : 명령어 
 
 ---
 #### REST API 설계시 주의할 점
