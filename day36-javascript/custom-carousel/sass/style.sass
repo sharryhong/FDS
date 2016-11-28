@@ -1,0 +1,99 @@
+// @import resource/normalize
+// @import resource/common
+// @import ui-carousel
+
+// ------------------------------------------------
+// Configuration
+// ------------------------------------------------
+
+// mix으로 중앙정렬 외 다른 기능 추가
+=flex-align-center($orientation: both, $flow: row nowrap)
+  display: flex
+  flex-flow: $flow
+  @if $orientation == both
+    justify-content: center
+    align-items: center
+  @if $orientation == h // 수평만 중앙정렬
+    justify-content: center
+  @if $orientation == v // 수직만 중앙정렬
+    align-items: center
+
+// placeholder로 중앙정렬
+%align-hv-center
+  display: flex
+  justify-content: center
+  align-items: center
+
+%reset-button
+  background: transparent
+  border: none
+
+$carousel-prefix: ui-carousel
+$content-bg: #34c0ff
+$content-width: 500px
+$content-height: 400px
+$content-buttons-width: $content-width / 8
+
+
+// mix($content-bg, #454545, 15%*$i)를 함수로 만들어보자.
+// shade() // 검은색과 섞는 함수
+// tint() // 흰색과 섞는 함수
+@function shade($color, $amount: 10%, $mix: #000)
+  @return mix($content-bg, $mix, $amount)
+
+@function tint($color, $amount: 10%, $mix: #fff)
+  @return mix($content-bg, $mix, $amount)
+
+// ------------------------------------------------
+
+body.demonstration
+  min-height: 100vh
+  // @extend %align-hv-center
+  // +flex-align-center(h) // 수평만 중앙정렬
+  +flex-align-center
+
+// UI Carousel Component Style
+.#{$carousel-prefix} // 인터폴레이션 사용
+  position: relative 
+  border: 4px solid #bebebe
+  height: $content-height
+  overflow: auto
+
+  // 자바스크립트 지원되는 브라우저에서만 스크롤 안보이게 하기
+  .js & 
+    overflow: hidden
+
+  .#{$carousel-prefix}--content
+    @extend %align-hv-center
+    width: $content-width + $content-buttons-width
+    @debug $content-width
+    @debug $content-width + $content-buttons-width
+    height: $content-height
+    color: #fff
+    @for $i from 1 through 6
+      &:nth-child(#{$i})
+        background: shade($content-bg, 10% * $i)
+
+  .#{$carousel-prefix}--navigation__button
+    position: absolute
+    top: 0
+    right: 0
+    display: flex // button은 display: inline이므로. 버튼들 수직정렬시키기위해
+    flex-wrap: wrap
+    width: $content-buttons-width // 기본 콘텐츠 크기를 이만큼 추가시켜야 한다.
+    height: $content-height
+
+    button
+      $button-color: #404345
+      @extend %reset-button !optional
+      width: 100%
+      cursor: pointer
+      background: $button-color
+      color: #fff
+
+      &:hover,
+      &:focus
+        background: tint($button-color, 80%)
+      
+      &[class*="__prev_button"]
+        margin-bottom: 1px

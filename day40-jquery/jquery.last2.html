@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <title>jQuery Plugin - UI Component</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .have-not-class-attribute {
+      text-decoration: overline underline;
+      background: #ededed;
+    }
+    .even {
+      background: #ee8;
+    }
+  </style>
+  <script src="../resources/jquery-3.1.0.min.js"></script>
+</head>
+<body>
+
+  <form action="">
+    <input type="text">
+  </form>
+
+  <nav class="gnb">
+    <h2>GNB</h2>
+    <ul>
+      <li class="first"><a href="">link content 1</a></li>
+      <li class="second"><a href="">link content 2</a></li>
+      <li><a href="">link content 3</a></li>
+      <li><a href="">link content 4</a></li>
+      <li class="last-2nd"><a href="">link content 5</a></li>
+      <li class="last"><a href="">link content 6</a></li>
+    </ul>
+  </nav>
+
+  <ol>
+    <li>this is list 1 in ordered list</li>
+    <li>this is list 2 in ordered list</li>
+    <li>this is list 3 in ordered list</li>
+    <li>this is list 4 in ordered list</li>
+  </ol>
+
+<script src="../resources/DOMHelper/index.js"></script>
+<script>
+  //================
+    $gnb = $('.gnb');
+    // $gnb.find('p').addClass('this-is-p').add('li', $gnb);
+
+    $gnb
+      .find('li:first-child a').clone() // $gnb의 li첫번째 자식 중 a먼저 clone하고
+      .add('<p>링크 뒤에 나오는 단락</p>') // p요소 동적추가
+      .appendTo('li:first-child', $gnb); // $gnb안의 li중 첫번째 자식에게 붙인다.
+
+    // $('li:gt(3)', '.gnb')
+    $('<blockquote>')
+      .text('this is block quotation.')
+      .prependTo('body'); // 부모가 뒤에 있으면 prependTo('부모') 부모의 첫번째 자식으로 붙인다. 
+
+    $('<div>') // html div요소를 동적 생성하여 
+      .addClass('custom-division') // 클래스를 붙이고
+      .attr({ // 속성을 추가하고 
+        'id': 'hi-seoul',
+        'title': 'hey jude'
+      })
+      .text('Hey Div El') // 텍스트를 넣고 
+      .on('click', function(){ // 클릭하면
+        console.log(this); //this(<div>요소)를 출력한다.
+      })
+      .appendTo('.gnb'); // gnb맨 뒤에 넣기 
+      // 반환값이 중요하다! 만약에 .appendTo('.gnb');를 먼저하고 .on('click'을 나중에 하면 타겟을 잃어서 안된다. 더이상 div가 반환값이 아니다. 
+
+      // =============== 이렇게하면 성능에 더 좋다 ===================== // 
+      $('<div>', {
+        'id': 'hi-seoul',
+        'class': 'custom-div',
+        'attr': {
+          'title': 'hey jude'
+        },
+        'text': 'Hey Div El',
+        'on': {
+          'click': function() {
+            console.log(this);
+          }
+        }
+      }).appendTo('body');
+
+      var $h2 = $('<h2 id="demo-test-h2">demo heading 2</h2>');
+      var h3 = document.createElement('h3');
+      var h3_text = document.createTextNode('new content - heading 3');
+      var gnb = document.querySelector('.gnb');
+
+      var $ol = $('ol');
+      $ol.prependTo('body');
+
+      window.setTimeout(function(){
+        $('ol').before($h2, [h3, gnb]);
+      }, 3000);
+      
+
+      // 이벤트 바인딩시에 이벤트객체에 사용자가 정의한 객체를 합성(객체합성)
+      // 외부에 변수를 만들지 않고, 이벤트 객체를 통해 조건 처리하는 토글 구문
+      $('p:eq(2)').on('click', {'clicked': false}, function(ev){
+        if(!ev.data.clicked) {
+          console.log('toggle 1');
+        } else {
+          console.log('toggle 2');
+        }
+        ev.data.clicked = !ev.data.clicked;
+      });
+
+</script>
+</body>
+</html>

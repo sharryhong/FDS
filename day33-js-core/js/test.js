@@ -1,0 +1,10 @@
+var check_fact = 100;
+console.log(check_fact);
+console.log(check_fact++);
+console.log(check_fact);
+console.log(++check_fact);
+console.log(check_fact);
+console.log(check_fact--);
+console.log(check_fact);
+console.log(--check_fact);
+console.log(check_fact);

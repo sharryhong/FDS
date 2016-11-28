@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko-KR" class="no-js">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>캐로셀 UI 컴포넌트</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="demonstration">
+
+<!-- 개발할때 핵심부분 먼저 만들고 확장하자. 
+	1. 설계를 먼저 해야한다. 
+	 - 1.1 하나씩 움직일 것인가 : 개발이 어렵다.
+	 - 1.2 전체를 container로 묶어서 이동시킬 것인가. 
+	  - 이동 후 축 원래대로을 점핑 + 마지막 박스가 맨 앞으로 온다. 
+
+	우선 < > 만 개발하고, 나중에 인디케이터 추가 등 
+	처음부터 너무 무겁게 만들지 말자. 
+
+	접근성 준수를 위해 고려해야할 사항이 많다. 
+-->
+
+<!-- 보이지 않는 컨텐츠는 스크린리더기가 읽지 않는다. -->
+<!-- 문법에 이상이 없는지 확인하자. -->
+<!-- 아리아도 잘 적용하였는지 확인하자. -->
+
+
+<!-- 스크립트가 동적으로 처리한 결과 예시 -->
+<article class="main-ad-area">
+	<section>
+		<h2>AD Headline 01</h2>
+	</section>
+	<section>
+		<h2>AD Headline 02</h2>
+	</section>
+	<section>
+		<h2>AD Headline 03</h2>
+	</section>
+	<section>
+		<h2>AD Headline 04</h2>
+	</section>
+</article>
+
+<!-- 마크업이 완료된 예시 -->
+<!-- <article 
+	class="ui-carousel" 
+	role="application" 
+	aria-label="Demostration UI Carousel Component">
+	<div class="ui-carousel--content__wrapper" role="group">
+		<section class="ui-carousel--content">
+			<h2 class="ui-carousel--content__heading">01</h2>
+		</section>
+		<section class="ui-carousel--content">
+			<h2 class="ui-carousel--content__heading">02</h2>
+		</section>
+		<section class="ui-carousel--content">
+			<h2 class="ui-carousel--content__heading">03</h2>
+		</section>
+		<section class="ui-carousel--content">
+			<h2 class="ui-carousel--content__heading">04</h2>
+		</section>
+		<section class="ui-carousel--content">
+			<h2 class="ui-carousel--content__heading">05</h2>
+		</section>
+		<section class="ui-carousel--content">
+			<h2 class="ui-carousel--content__heading">06</h2>
+		</section>
+	</div>
+	<div class="ui-carousel--navigation__button" role="group">
+		<button 
+			type="button" 
+			class="ui-carousel--navigation__prev_button" 
+			aria-label="이전 버튼">
+			<span class="fa fa-angle-up" aria-hidden="true"></span>
+		</button>
+		<button 
+			type="button" 
+			class="ui-carousel--navigation__next_button" 
+			aria-label="다음 버튼">
+			<span class="fa fa-angle-down" aria-hidden="true"></span>
+		</button>
+	</div>
+</article> -->
+
+<script src="../../resources/DOMHelper/index.js"></script>
+<script src="js/ui-carousel.js"></script>
+</body>
+</html>

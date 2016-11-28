@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>jquery와 angular 비교</title>
+	<script src="../resources/jquery-3.1.0.min.js"></script>
+	<script>
+		function init($) {
+			var $twb = $('#twb'),
+				$twb_binding = $('#twb-binding');
+			$twb.on('keyup', function(event){
+				$twb_binding.text(event.target.value);
+			});
+		}
+		jQuery.noConflict(true)(init); 
+		// jQuery(document).ready(init); 와 같다. (단 이건 $, jquery를 버리지 않았다. )
+		
+		// jquery, $를 버린다. init은 실행. jquery 객체는 반환한다. -> init()함수 실행. -> document.ready 되는 시점에 실행된다.  function init($) 에서만 $가 jquery이다. 
+		// jQuery.noConflict(); 하면 $포기하며 jquery 객체는 반환한다.
+	</script>
+</head>
+<body> 
+
+	<input type="text" id="twb">
+	<p id="twb-binding"></p>
+
+</body>
+</html>

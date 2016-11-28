@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko-KR" data-ng-app>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>jquery와 angular 비교</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+</head>
+<body> 
+
+	<div data-ng-controller="divController"></div>
+
+<script>
+	// module정의 한 후 사용할 수 있다. 
+	angular.controller('divController', ['$scope', '$http', function($scope, $http){
+		$http // 가서 서버에서 모델 가지고 와라
+		$scope // 가서 템플릿에 뷰 업데이트 하고 와라 
+	}])
+</script>
+
+</body>
+</html>

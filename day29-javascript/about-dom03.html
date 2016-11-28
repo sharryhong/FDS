@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>DOM + JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/about-dom.css">
+</head>
+<body>
+	
+	<div id="parent" class="papa" data-con="true" role="tab" aria-hidden="false">
+	<!-- data-*, aria-* ... 는 개발자가 정의한 속성-->
+		<div class="child">
+			<!-- first child -->
+			<div class="children">children 1</div>
+			<div class="children">children 2</div>
+			<div class="children">children 3</div>
+			<div class="children">children 4</div>
+			<div class="children">children 5</div>
+		</div>
+		<div class="child">
+			<div class="children">children 1</div>
+			<div class="children">children 2</div>
+			<div class="children">children 3</div>
+			<div class="children">children 4</div>
+			<div class="children">children 5</div>
+		</div>
+		<div class="child">
+			<div class="children">children 1</div>
+			<div class="children">children 2</div>
+			<div class="children">children 3</div>
+			<div class="children">children 4</div>
+			<div class="children">children 5</div>
+		</div>
+		<div class="child">
+			<!-- last child -->
+			<div class="children">children 1</div>
+			<div class="children">children 2</div>
+			<div class="children">children 3</div>
+			<div class="children">children 4</div>
+			<div class="children">children 5</div>
+		</div>
+	</div>
+
+<script>
+var parent_el = document.getElementById('parent');
+console.log('id:', parent_el.id); // 'parent' 출력
+console.log('class:', parent_el.className);
+console.log('title:', parent_el.title);
+// title은 마우스 올렸을 때 나오는 문구. 필요할때 : a 링크를 클릭하면 새창이 뜬다.. 이럴 때처럼 예측이 가능하도록 해줄 때. --> 모바일에선 title은 적용 안되므로 접근성에 안좋을 수 있으니 조심~
+
+// 예전방식은 위처럼 id, className, title만 되고 
+// 아래처럼 role, data-*, aria-* 같은 속성은 안된다.
+console.log('role:', parent_el.role); // undefiend
+console.log('data-:', parent_el['data-con']); // undefiend
+
+// 아래처럼 getAttribute로 해야한다.
+console.log('role:', parent_el.getAttribute('role'));
+console.log('data-con:', parent_el.getAttribute('data-con'));
+console.log('aria-hidden:', parent_el.getAttribute('aria-hidden'));
+</script>
+</body>
+</html>

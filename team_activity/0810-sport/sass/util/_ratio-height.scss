@@ -1,0 +1,6 @@
+// 가로모드일 때 원래 세로 비율로
+
+@mixin ratio-height($width: 750, $height: null) {
+	height: percentage($height / $width);
+}
+

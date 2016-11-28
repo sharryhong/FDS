@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>DOM + JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/about-dom.css">
+</head>
+<body>
+	
+	<div id="parent">
+		<div class="child">
+			<!-- first child -->
+			<div class="children">children 1</div>
+			<div class="children">children 2</div>
+			<div class="children">children 3</div>
+			<div class="children">children 4</div>
+			<div class="children">children 5</div>
+		</div>
+		<div class="child">
+			<div class="children">children 1</div>
+			<div class="children">children 2</div>
+			<div class="children">children 3</div>
+			<div class="children">children 4</div>
+			<div class="children">children 5</div>
+		</div>
+		<div class="child">
+			<div class="children">children 1</div>
+			<div class="children">children 2</div>
+			<div class="children">children 3</div>
+			<div class="children">children 4</div>
+			<div class="children">children 5</div>
+		</div>
+		<div class="child">
+			<!-- last child -->
+			<div class="children">children 1</div>
+			<div class="children">children 2</div>
+			<div class="children">children 3</div>
+			<div class="children">children 4</div>
+			<div class="children">children 5</div>
+		</div>
+	</div>
+
+<script>
+	
+var parent = document.getElementById('parent');
+
+// 자손노드들까지 수집
+var parent_children = parent.getElementsByTagName('div');
+
+// 자식노드들 수집
+var parent_child = parent.childNodes; 
+
+console.log(parent_child);
+console.log('수집된 parent의 자식노드 개수:', parent_child.length);
+
+// test : 콘솔 패널 화면에 각 수집된 parent_child의 노드 유형을 출력해보시오. 
+// var el_nodetype =  parent_child[1].nodeType;
+var el_length = parent_child.length;
+
+// for (i=0; i < el_length; i++) {
+// 	var el_nodetype =  parent_child[i].nodeType;
+// 	console.log(el_nodetype);
+// 	var el_node =  parent_child[i];
+// 	console.log(el_node);
+// 	if (el_nodetype === 1) {
+// 		console.log("Element Node");
+// 	} else if (el_nodetype === 2) {
+// 		console.log("Attribute Node");
+// 	} else if (el_nodetype === 3) {
+// 		console.log("Text Node");
+// 	} 
+// }
+
+// 쌤 풀이(if 등 쓰지않고)
+console.log(0, parent_child[0].nodeType);
+console.log(1, parent_child[1].nodeType);
+console.log(2, parent_child[2].nodeType);
+console.log(3, parent_child[3].nodeType);
+console.log(4, parent_child[4].nodeType);
+console.log(5, parent_child[5].nodeType);
+console.log(6, parent_child[6].nodeType);
+console.log(7, parent_child[7].nodeType);
+console.log(8, parent_child[8].nodeType);
+
+// 미리보는 반복문
+// while, do ~ while, for, for ~ in, for ~ of, forEach 
+
+// 미리보는 조건문
+// if ~ else if ~ else, switch case default break, 3항식
+
+for (var i=0; i<9; i=i+1) {
+	if (parent_child[i].nodeType === 1) {
+		parent_el_first_child_el = parent_el_child_nodes[i];
+		console.log(i + '%c node is Element Node.', 'background: #fe1; color: #39f');
+
+		 // 크롬 개발자도구에서 스타일링 줄 수 있다.
+	} else if (parent_child[i].nodeType === 3) {
+		console.log(i, 'node is Text Node.')
+	}
+	
+}
+
+// #parent .child:first-child 요소의 자식노드를 순환하여 노드 유형 로그하기
+
+// var parent = document.getElementById('parent');
+// // 자손노드들까지 수집
+// var parent_children = parent.getElementsByTagName('div');
+// // 자식노드들 수집
+// var parent_child = parent.childNodes; 
+
+// var parent_child_first = parent_child.childNodes;
+
+// for(var i=0; i<6; i++) {
+// 	if(parent_child_first[i].nodeType === 1) {
+// 		console.log(i + "node is Element Node");
+// 	} else if(parent_child_first[i].nodeType === 2) {
+// 		console.log(i + "node is Attribute Node");
+// 	} else if(parent_child_first[i].nodeType === 3) {
+// 		console.log(i + "node is Text Node");
+// 	}
+// }
+
+// 쌤  var parent_child = parent.childNodes; 
+// var parent_child_first = parent_child.childNodes; 
+// var el_list =  parent_child_first.childNodes;
+// console.log(parent_child_first[1].nodeType);
+// console.log(0, parent_child_first[0].nodeType);
+// for (var i=0; i<9; i=i+1) {
+// 	if (parent_child[i].nodeType === 1) {
+// 		console.log(i + '%c node is Element Node.', 'background: #fe1; color: #39f');
+// 		break; // 안쓰면 마지막 것만 나온다.
+
+// 		 // 크롬 개발자도구에서 스타일링 줄 수 있다.
+// 	} else if (parent_child[i].nodeType === 3) {
+// 		console.log(i, 'node is Text Node.')
+// 	}
+	
+// }
+
+var parent_el_first_child_el;
+
+// console.log(parent_el_first_child_el);
+
+var test_list     = parent_el_first_child_el.childNodes;
+var test_list_len = test_list.length;
+
+for ( var node_type, k=0; k<test_list_len; k=k+1 ) {
+  node_type = test_list[k].nodeType;
+  if (node_type === 1) {
+    console.log('%c current node is ELEMENT_NODE.', 'font-weight: 900'); }
+  if (node_type === 3) {
+    console.log('current node is TEXT_NODE.'); }
+  if (node_type === 8) {
+    console.log('current node is COMMENT_NODE.'); }
+}
+
+
+
+</script>
+</body>
+</html>

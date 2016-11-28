@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko-KR" data-ng-app>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>AngularJS 스터디</title>
+	<!-- CDN사용 -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<!-- 인터넷 불안정할때 로컬데이터 사용 -->
+	<script>
+		// window.angular || document.write('<script src="framwork/angular.min.js"><\/script>');
+
+		(function(global, ng) { // ng = this.angular
+			'use strict';
+			ng || document.write('<script src="framwork/angular.min.js"><\/script>');
+			console.log('Angular 버전: ', ng.version.full);
+		})(this, this.angular); 
+	</script>
+	
+	<script src="../resources/jquery-3.1.0.min.js"></script>
+</head>
+<body data-ng-init="application_name='MyApp using'"> 
+	<!-- application_name는 변수 -->
+	<!-- <h1>Angular JavaScript Framework</h1> -->
+	<!-- <h1>{{application_name}}</h1> 데이터 바인딩 -->
+	
+	<!-- <h1 data-ng-bind="application_name"></h1>  -->
+	<!-- binding방법. 더 빠르다 -->
+
+	<input type="text" data-ng-model="application_name">
+	<h1 data-ng-bind="application_name"></h1> 
+</body>
+</html>

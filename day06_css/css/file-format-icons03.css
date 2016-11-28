@@ -1,5 +1,5 @@
 body {
-  margin: 10%;
+  margin: 5%;
 }
 
 /**
@@ -19,14 +19,21 @@ body {
  * --------------------------------
  * 파일 타입 이미지 제공을 위한 기본 디자인
  * ----------------------------- */
+.lecture-file-list li {
+  float: left;
+  width: 200px;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
 .lecture-file-list a {
-  display: block;
-  /*font-size: 38px;*/
-  font-size: 2.38em;
+  display: inline-block;
+  font-size: 1rem;
   text-decoration: none;
   text-indent: 40px;
+  line-height: 38px;
   background-repeat: no-repeat;
-  background-position: 0 7px;
+  background-position: center left;
+  background-size: 29px 38px
 }
 
 /**
@@ -34,18 +41,63 @@ body {
  * 파일 포멧에 따라 자동적으로 아이콘을
  * 배경 이미지로 설정하는 스타일
  * ----------------------------- */
+a[href$=".aac"] {
+  background-image: url("../img/icon-aac.png");
+}
+a[href$=".ai"] {
+  background-image: url("../img/icon-ai.png");
+}
+a[href$=".avi"] {
+  background-image: url("../img/icon-avi.png");
+}
 a[href$=".doc"] {
   background-image: url("../img/icon-doc.png");
+}
+a[href$=".flac"] {
+  background-image: url("../img/icon-flac.png");
+}
+a[href$=".gif"] {
+  background-image: url("../img/icon-gif.png");
+}
+a[href$=".html"] {
+  background-image: url("../img/icon-html.png");
+}
+a[href$=".jpg"] {
+  background-image: url("../img/icon-jpg.png");
+}
+a[href$=".js"] {
+  background-image: url("../img/icon-js.png");
 }
 a[href$=".mov"] {
   background-image: url("../img/icon-mov.png");
 }
+a[href$=".mp3"] {
+  background-image: url("../img/icon-mp3.png");
+}
+a[href$=".mp4"] {
+  background-image: url("../img/icon-mp4.png");
+}
+a[href$=".pdf"] {
+  background-image: url("../img/icon-pdf.png");
+}
+a[href$=".png"] {
+  background-image: url("../img/icon-png.png");
+}
 a[href$=".psd"] {
   background-image: url("../img/icon-psd.png");
 }
+a[href$=".tiff"] {
+  background-image: url("../img/icon-tiff.png");
+}
+a[href$=".txt"] {
+  background-image: url("../img/icon-txt.png");
+}
+a[href$=".xls"] {
+  background-image: url("../img/icon-xls.png");
+}
 
-a[href^="http://"][target="_blank"] {
-  /* 배경 이미지 설정 */
+a[href^="http://"][target="_blank"],
+a[href^="https://"][target="_blank"] {
   background-image: url("../img/external-link.png");
-  background-position: 0 8px;
+  background-size: 29px 29px
 }
