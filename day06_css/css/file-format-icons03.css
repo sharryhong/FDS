@@ -35,6 +35,9 @@ body {
   background-position: center left;
   background-size: 29px 38px
 }
+.lecture-file-list a:hover {
+  text-decoration: underline;
+}
 
 /**
  * --------------------------------
